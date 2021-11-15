@@ -1,1 +1,6 @@
-# MoneyManager
+# MOCO
+
+SIMPLE MONEY MANAGER AND CONSUMPTION MAP
+
+🛠 2021.11.15 ~
+
