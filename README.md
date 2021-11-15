@@ -6,7 +6,7 @@ SIMPLE MONEY MANAGER AND CONSUMPTION MAP
 
 <br>
 
-### 이터레이션1
+### Iteration1
 
 > [📍 Day1: 기획 및 디자인](./TIL/day1-211115.md) 
 
