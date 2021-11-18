@@ -6,11 +6,11 @@ SIMPLE MONEY MANAGER AND CONSUMPTION MAP
 
 <br>
 
-### Iteration1
+[📍기획서](./TIL/projectplan.md) 
 
-> [📍 Day1: 기획 및 디자인](./TIL/day1-211115.md) 
+[📍발표자료](./TIL/presentation.md) 
 
-> [📍기획서](./TIL/day2-211116.md) 
+<br>
 
-> [📍발표자료](./TIL/day3-211117.md) 
+[🐱 팀빌딩과 개발일지](./TIL/dailylog.md) (update: 211118)
 
