@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  MOCO
+
+  Created by 지영 on 2021/11/18.
+  
+*/
+
+"income" = "Income";
+"expense" = "Expenses";
+"date" = "Date";
+"place" = "Place";
+"online" = "Online";
+"offline" = "Offline";
+"delete" = "Delete this expense";
+"enter_location" = "Enter location";
+"cancel" = "Cancel";

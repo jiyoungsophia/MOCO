@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  MOCO
+
+  Created by 지영 on 2021/11/18.
+  
+*/
+
+"income" = "수입";
+"expenses" = "지출";
+"date" = "날짜";
+"place" = "장소";
+"online" = "온라인";
+"offline" = "오프라인";
+"delete" = "이 지출 삭제하기";
+"enter_location" = "장소 입력";
+"cancel" = "취소";
+
+
+
