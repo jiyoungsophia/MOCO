@@ -75,6 +75,12 @@
 
 ## Day4 - 211118
 
+* 메인 뷰에서 월을 선택하게 하는데,이 부분을 어떻게 구현해야 할지 찾다가 3시간 정도 날렸다 
+  * 토스처럼 구현하자니 매달 자동으로 새로운 월이 생기도록 해야하는데 .. 음,,
+  * 편한가계부에 라이브러리같아 보이는걸 썼길래 당연히 라이브러리가 저렇게 이쁘게 생긴 라이브러리는 못찾겠다 !
+
+<img src="../Screenshots/calendartoss.png" alt="basic" width="30%;" /><img src="../Screenshots/caledarmm.png" alt="basic" width="30%;" />
+
 <br>
 
 ### ⚡️TEAM BUILDING
