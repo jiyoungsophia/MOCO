@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j2U-m9-xEd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Yearly View Controller-->
+        <scene sceneID="kga-CU-Tm4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Llh-nI-O9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vEe-1U-WYf">
+                    <connections>
+                        <action selector="recognizeTap:" destination="j2U-m9-xEd" id="8nm-Br-Klz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <viewController storyboardIdentifier="YearlyViewController" id="j2U-m9-xEd" customClass="YearlyViewController" customModule="MOCO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YFC-GR-IcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqA-XX-sYI">
+                                <rect key="frame" x="37" y="224" width="340" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxC-nk-cJ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gFB-CM-EZv">
+                                                <rect key="frame" x="0.0" y="10.5" width="340" height="29"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eN-BC-6ft">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="29"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="chevron.left" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23" weight="medium"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="prevButtonClicked:" destination="j2U-m9-xEd" eventType="touchUpInside" id="PMm-Ya-Lmr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJS-sH-Y3a">
+                                                        <rect key="frame" x="113.5" y="0.0" width="113" height="29"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0K-bj-irs">
+                                                        <rect key="frame" x="226.5" y="0.0" width="113.5" height="29"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="chevron.right" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23" weight="medium"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="nextButtonClicked:" destination="j2U-m9-xEd" eventType="touchUpInside" id="IPa-Hs-Aj1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gFB-CM-EZv" secondAttribute="trailing" id="1j4-0a-uiv"/>
+                                            <constraint firstItem="gFB-CM-EZv" firstAttribute="centerY" secondItem="sxC-nk-cJ9" secondAttribute="centerY" id="gcO-tG-mWq"/>
+                                            <constraint firstItem="gFB-CM-EZv" firstAttribute="leading" secondItem="sxC-nk-cJ9" secondAttribute="leading" id="kM3-qM-bhV"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="73m-KT-2BZ">
+                                        <rect key="frame" x="0.0" y="50" width="340" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fck-4c-7k5">
+                                            <size key="itemSize" width="85" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="73m-KT-2BZ" secondAttribute="trailing" id="2vH-7F-6u4"/>
+                                    <constraint firstAttribute="height" constant="200" id="FY0-rK-qbw"/>
+                                    <constraint firstAttribute="trailing" secondItem="sxC-nk-cJ9" secondAttribute="trailing" id="OVW-Y4-iJF"/>
+                                    <constraint firstItem="73m-KT-2BZ" firstAttribute="top" secondItem="sxC-nk-cJ9" secondAttribute="bottom" id="Oy8-Px-fQa"/>
+                                    <constraint firstAttribute="bottom" secondItem="73m-KT-2BZ" secondAttribute="bottom" id="Znh-bj-NhV"/>
+                                    <constraint firstAttribute="width" constant="340" id="ayC-fh-rYR"/>
+                                    <constraint firstItem="sxC-nk-cJ9" firstAttribute="height" secondItem="MqA-XX-sYI" secondAttribute="height" multiplier="0.25" id="frm-cK-jZp"/>
+                                    <constraint firstItem="sxC-nk-cJ9" firstAttribute="leading" secondItem="MqA-XX-sYI" secondAttribute="leading" id="fwx-hb-VIt"/>
+                                    <constraint firstItem="sxC-nk-cJ9" firstAttribute="top" secondItem="MqA-XX-sYI" secondAttribute="top" id="j6h-RS-yJa"/>
+                                    <constraint firstItem="73m-KT-2BZ" firstAttribute="leading" secondItem="MqA-XX-sYI" secondAttribute="leading" id="nVO-Yw-enf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sp3-hX-c6W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="MqA-XX-sYI" firstAttribute="centerX" secondItem="Sp3-hX-c6W" secondAttribute="centerX" id="17K-EG-evb"/>
+                            <constraint firstItem="MqA-XX-sYI" firstAttribute="top" secondItem="Sp3-hX-c6W" secondAttribute="top" constant="180" id="ndQ-UR-Jj7"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vEe-1U-WYf" appends="YES" id="Tp3-Qe-tZK"/>
+                        </connections>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="backView" destination="MqA-XX-sYI" id="NmT-eE-c3B"/>
+                        <outlet property="collectionView" destination="73m-KT-2BZ" id="Xtv-3L-4x9"/>
+                        <outlet property="hearderView" destination="sxC-nk-cJ9" id="GfX-KN-Ljv"/>
+                        <outlet property="yearLabel" destination="zJS-sH-Y3a" id="OGK-IY-XJg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1015.9420289855074" y="53.571428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

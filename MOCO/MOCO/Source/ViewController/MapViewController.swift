@@ -6,13 +6,23 @@
 //
 
 import UIKit
+import Hero
 
 class MapViewController: UIViewController {
-
+    
+    static let identifier = "MapViewController"
+    
+    @IBOutlet var swipeRecognizer: UISwipeGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
-
+    
+    @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
+        if swipeRecognizer.direction == .right {
+            hero.modalAnimationType = .slide(direction: .right)
+            hero.dismissViewController()
+        }
+    }
 }
