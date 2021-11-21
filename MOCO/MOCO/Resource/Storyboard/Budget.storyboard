@@ -9,6 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSansKR-Black.otf">
+            <string>NotoSansKR-Black</string>
+        </array>
+        <array key="NotoSansKR-Light.otf">
+            <string>NotoSansKR-Light</string>
+        </array>
         <array key="NotoSansKR-Medium.otf">
             <string>NotoSansKR-Medium</string>
         </array>
@@ -53,15 +59,43 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-us-R8m">
                                 <rect key="frame" x="28" y="228" width="358" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-X8-feT">
+                                        <rect key="frame" x="24" y="24" width="215" height="29"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkW-De-XXe">
+                                        <rect key="frame" x="24" y="61" width="215" height="35"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Black" family="Noto Sans KR" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C75-UY-Ylr">
+                                        <rect key="frame" x="247" y="32" width="87" height="64"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Light" family="Noto Sans KR" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="C75-UY-Ylr" secondAttribute="trailing" constant="24" id="4Qv-yw-cqB"/>
+                                    <constraint firstItem="WkW-De-XXe" firstAttribute="leading" secondItem="FFf-X8-feT" secondAttribute="leading" id="8zu-2r-uf3"/>
+                                    <constraint firstItem="WkW-De-XXe" firstAttribute="top" secondItem="FFf-X8-feT" secondAttribute="bottom" constant="8" id="DqQ-Ny-ddf"/>
+                                    <constraint firstItem="C75-UY-Ylr" firstAttribute="bottom" secondItem="WkW-De-XXe" secondAttribute="bottom" id="EMr-20-w4g"/>
+                                    <constraint firstItem="C75-UY-Ylr" firstAttribute="leading" secondItem="FFf-X8-feT" secondAttribute="trailing" constant="8" id="FKv-ct-RhS"/>
+                                    <constraint firstItem="FFf-X8-feT" firstAttribute="top" secondItem="eb2-us-R8m" secondAttribute="top" constant="24" id="Ppc-0W-yuA"/>
+                                    <constraint firstItem="WkW-De-XXe" firstAttribute="trailing" secondItem="FFf-X8-feT" secondAttribute="trailing" id="VlM-Sl-A9r"/>
                                     <constraint firstAttribute="height" constant="120" id="oUE-bl-eYp"/>
+                                    <constraint firstItem="FFf-X8-feT" firstAttribute="leading" secondItem="eb2-us-R8m" secondAttribute="leading" constant="24" id="ucZ-f0-G9H"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-1X-aiF">
                                 <rect key="frame" x="0.0" y="356" width="414" height="506"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hzP-dF-vN9">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hzP-dF-vN9">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>

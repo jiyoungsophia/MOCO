@@ -23,7 +23,6 @@ class BudgetViewController: UIViewController {
         floationgButton.layer.shadowColor = UIColor.black.cgColor
         floationgButton.layer.shadowOffset = .zero
         floationgButton.layer.shadowOpacity = 0.2
-        
     }
     
     func configuration() {
@@ -36,7 +35,10 @@ class BudgetViewController: UIViewController {
         collectionView.dataSource = self
         
         monthTitleButton.semanticContentAttribute = .forceRightToLeft
+        monthTitleButton.setTitle(DateFormatter.monthFormat.string(from: Date()), for: .normal)
     }
+    
+    
     
     func swipeGesture() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
@@ -87,7 +89,7 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension BudgetViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spacing: CGFloat = 14
+        let spacing: CGFloat = 28
         let width = UIScreen.main.bounds.width - (spacing * 2)
         return CGSize(width: width, height: 100)
     }

@@ -38,6 +38,8 @@
 		3EF4627527477E3900BD66AC /* MonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF4627327477E3900BD66AC /* MonthCell.swift */; };
 		3EF4627627477E3900BD66AC /* MonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4627427477E3900BD66AC /* MonthCell.xib */; };
 		3EF4627827478CF600BD66AC /* Yearly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4627727478CF600BD66AC /* Yearly.storyboard */; };
+		3EF4627A274A205300BD66AC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF46279274A205300BD66AC /* Date+Extensions.swift */; };
+		3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,7 @@
 		3EF4627327477E3900BD66AC /* MonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCell.swift; sourceTree = "<group>"; };
 		3EF4627427477E3900BD66AC /* MonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCell.xib; sourceTree = "<group>"; };
 		3EF4627727478CF600BD66AC /* Yearly.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Yearly.storyboard; sourceTree = "<group>"; };
+		3EF46279274A205300BD66AC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EF4625A27468CD700BD66AC /* Hero in Frameworks */,
+				3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,7 @@
 				3E7793E4274549C200344A60 /* UIColor+Extensions.swift */,
 				3E7794282746647B00344A60 /* String+Extensions.swift */,
 				3EF462622746A54300BD66AC /* UIView+Extensions.swift */,
+				3EF46279274A205300BD66AC /* Date+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			name = MOCO;
 			packageProductDependencies = (
 				3EF4625927468CD700BD66AC /* Hero */,
+				3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */,
 			);
 			productName = MOCO;
 			productReference = 3EBBC682274290DF00113DA1 /* MOCO.app */;
@@ -268,6 +274,7 @@
 			mainGroup = 3EBBC679274290DF00113DA1;
 			packageReferences = (
 				3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */,
+				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 3EBBC683274290DF00113DA1 /* Products */;
 			projectDirPath = "";
@@ -318,6 +325,7 @@
 				3EF4627527477E3900BD66AC /* MonthCell.swift in Sources */,
 				3E77944727467AC500344A60 /* MapViewController.swift in Sources */,
 				3EBBC68A274290DF00113DA1 /* ViewController.swift in Sources */,
+				3EF4627A274A205300BD66AC /* Date+Extensions.swift in Sources */,
 				3EBBC686274290DF00113DA1 /* AppDelegate.swift in Sources */,
 				3EBBC688274290DF00113DA1 /* SceneDelegate.swift in Sources */,
 				3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */,
@@ -546,6 +554,14 @@
 				minimumVersion = 1.6.1;
 			};
 		};
+		3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +569,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */;
 			productName = Hero;
+		};
+		3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
