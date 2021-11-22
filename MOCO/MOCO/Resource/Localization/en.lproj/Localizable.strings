@@ -8,6 +8,8 @@
 
 "income" = "Income";
 "expense" = "Expenses";
+"amount" = "Amount";
+"length_alert" = "You can enter up to %d letters";
 "date" = "Date";
 "place" = "Place";
 "online" = "Online";
@@ -15,6 +17,7 @@
 "delete" = "Delete this expense";
 "enter_location" = "Enter location";
 "cancel" = "Cancel";
+"reset" = "Reset";
 
 "jan" = "JAN";
 "feb" = "FEB";
@@ -28,3 +31,5 @@
 "oct" = "OCT";
 "nov" = "NOV";
 "dec" = "DEC";
+
+"dateformat" = "MMM";

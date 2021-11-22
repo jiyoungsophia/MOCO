@@ -9,6 +9,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    static let identifier = "SearchViewController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

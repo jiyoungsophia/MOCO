@@ -17,6 +17,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
     
     @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {

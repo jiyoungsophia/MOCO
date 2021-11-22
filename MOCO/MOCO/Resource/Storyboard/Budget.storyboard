@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="40" id="sTY-Cm-DX3"/>
                                 </constraints>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="gearshape" catalog="system">
+                                <state key="normal" title="Button" image="gearshape2X1">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                 </state>
                             </button>
@@ -110,6 +110,9 @@
                                     <constraint firstAttribute="width" secondItem="eOe-ei-2jy" secondAttribute="height" multiplier="1:1" id="kBw-cz-PdW"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="group4"/>
+                                <connections>
+                                    <action selector="floatingButtonClicked:" destination="RE1-KB-5RY" eventType="touchUpInside" id="nXa-k8-bGm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u0t-yF-Idr"/>
@@ -150,7 +153,7 @@
     </scenes>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape2X1" width="34" height="34"/>
         <image name="group4" width="70" height="70"/>
         <image name="moco" width="154.5" height="42"/>
         <systemColor name="labelColor">

@@ -12,5 +12,5 @@ SIMPLE MONEY MANAGER AND CONSUMPTION MAP
 
 <br>
 
-[🐱 팀빌딩과 개발일지](./TIL/dailylog.md) (update: 211118)
+[🐱 팀빌딩과 개발일지](./TIL/dailylog.md) (update: 211122)
 

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E425751274A883B00A62670 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E425750274A883B00A62670 /* Write.storyboard */; };
+		3E425753274A887200A62670 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425752274A887200A62670 /* IncomeViewController.swift */; };
+		3E425755274A887F00A62670 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425754274A887F00A62670 /* ExpenseViewController.swift */; };
+		3E42575C274B64C100A62670 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E42575B274B64C000A62670 /* DatePickerViewController.swift */; };
+		3E42575F274B73FC00A62670 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E42575E274B73FC00A62670 /* UIViewController+Extension.swift */; };
+		3E425761274B7A1300A62670 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425760274B7A1300A62670 /* UIButton+Extensions.swift */; };
+		3E425763274BA0BC00A62670 /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425762274BA0BC00A62670 /* Number+Extensions.swift */; };
+		3E425765274BC8FF00A62670 /* TextFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425764274BC8FF00A62670 /* TextFieldManager.swift */; };
 		3E7793DB2745445500344A60 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D62745445300344A60 /* NotoSansKR-Regular.otf */; };
 		3E7793DC2745445500344A60 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D72745445400344A60 /* NotoSansKR-Black.otf */; };
 		3E7793DD2745445500344A60 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D82745445400344A60 /* NotoSansKR-Medium.otf */; };
@@ -16,11 +24,9 @@
 		3E77942327465A4A00344A60 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E77942527465A4A00344A60 /* Localizable.strings */; };
 		3E7794292746647B00344A60 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7794282746647B00344A60 /* String+Extensions.swift */; };
 		3E779433274679BE00344A60 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E779432274679BE00344A60 /* Map.storyboard */; };
-		3E77943627467A1700344A60 /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E77943527467A1700344A60 /* Edit.storyboard */; };
 		3E77943927467A2700344A60 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E77943827467A2700344A60 /* Search.storyboard */; };
 		3E77943C27467A6500344A60 /* Budget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E77943B27467A6500344A60 /* Budget.storyboard */; };
 		3E77944027467AB200344A60 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E77943F27467AB200344A60 /* BudgetViewController.swift */; };
-		3E77944427467ABD00344A60 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E77944327467ABD00344A60 /* EditViewController.swift */; };
 		3E77944727467AC500344A60 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E77944627467AC500344A60 /* MapViewController.swift */; };
 		3E77944A27467ACC00344A60 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E77944927467ACC00344A60 /* SearchViewController.swift */; };
 		3EBBC686274290DF00113DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBC685274290DF00113DA1 /* AppDelegate.swift */; };
@@ -57,6 +63,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E425750274A883B00A62670 /* Write.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Write.storyboard; sourceTree = "<group>"; };
+		3E425752274A887200A62670 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
+		3E425754274A887F00A62670 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		3E42575B274B64C000A62670 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		3E42575E274B73FC00A62670 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		3E425760274B7A1300A62670 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		3E425762274BA0BC00A62670 /* Number+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
+		3E425764274BC8FF00A62670 /* TextFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldManager.swift; sourceTree = "<group>"; };
 		3E7793D62745445300344A60 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		3E7793D72745445400344A60 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		3E7793D82745445400344A60 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -67,11 +81,9 @@
 		3E77942627465A8B00344A60 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E7794282746647B00344A60 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3E779432274679BE00344A60 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Map.storyboard; path = MOCO/Resource/Storyboard/Map.storyboard; sourceTree = SOURCE_ROOT; };
-		3E77943527467A1700344A60 /* Edit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Edit.storyboard; path = MOCO/Resource/Storyboard/Edit.storyboard; sourceTree = SOURCE_ROOT; };
 		3E77943827467A2700344A60 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Search.storyboard; path = MOCO/Resource/Storyboard/Search.storyboard; sourceTree = SOURCE_ROOT; };
 		3E77943B27467A6500344A60 /* Budget.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Budget.storyboard; path = MOCO/Resource/Storyboard/Budget.storyboard; sourceTree = SOURCE_ROOT; };
 		3E77943F27467AB200344A60 /* BudgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BudgetViewController.swift; path = MOCO/Source/ViewController/BudgetViewController.swift; sourceTree = SOURCE_ROOT; };
-		3E77944327467ABD00344A60 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditViewController.swift; path = MOCO/Source/ViewController/EditViewController.swift; sourceTree = SOURCE_ROOT; };
 		3E77944627467AC500344A60 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = MOCO/Source/ViewController/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		3E77944927467ACC00344A60 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = MOCO/Source/ViewController/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		3EBBC682274290DF00113DA1 /* MOCO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOCO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,10 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				3E77943B27467A6500344A60 /* Budget.storyboard */,
-				3E77943527467A1700344A60 /* Edit.storyboard */,
 				3E779432274679BE00344A60 /* Map.storyboard */,
 				3E77943827467A2700344A60 /* Search.storyboard */,
 				3EF4627727478CF600BD66AC /* Yearly.storyboard */,
+				3E425750274A883B00A62670 /* Write.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -148,6 +160,9 @@
 				3E7794282746647B00344A60 /* String+Extensions.swift */,
 				3EF462622746A54300BD66AC /* UIView+Extensions.swift */,
 				3EF46279274A205300BD66AC /* Date+Extensions.swift */,
+				3E42575E274B73FC00A62670 /* UIViewController+Extension.swift */,
+				3E425760274B7A1300A62670 /* UIButton+Extensions.swift */,
+				3E425762274BA0BC00A62670 /* Number+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,10 +219,13 @@
 			isa = PBXGroup;
 			children = (
 				3E77943F27467AB200344A60 /* BudgetViewController.swift */,
-				3E77944327467ABD00344A60 /* EditViewController.swift */,
 				3E77944627467AC500344A60 /* MapViewController.swift */,
 				3E77944927467ACC00344A60 /* SearchViewController.swift */,
 				3EF4626D274744F400BD66AC /* YearlyViewController.swift */,
+				3E425752274A887200A62670 /* IncomeViewController.swift */,
+				3E425754274A887F00A62670 /* ExpenseViewController.swift */,
+				3E425764274BC8FF00A62670 /* TextFieldManager.swift */,
+				3E42575B274B64C000A62670 /* DatePickerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -292,6 +310,7 @@
 			files = (
 				3E7793DD2745445500344A60 /* NotoSansKR-Medium.otf in Resources */,
 				3E7793DE2745445500344A60 /* NotoSansKR-Bold.otf in Resources */,
+				3E425751274A883B00A62670 /* Write.storyboard in Resources */,
 				3E7793DF2745445500344A60 /* NotoSansKR-Light.otf in Resources */,
 				3EBBC692274290E200113DA1 /* LaunchScreen.storyboard in Resources */,
 				3EF4627627477E3900BD66AC /* MonthCell.xib in Resources */,
@@ -302,7 +321,6 @@
 				3E779433274679BE00344A60 /* Map.storyboard in Resources */,
 				3E7793DC2745445500344A60 /* NotoSansKR-Black.otf in Resources */,
 				3EF4627827478CF600BD66AC /* Yearly.storyboard in Resources */,
-				3E77943627467A1700344A60 /* Edit.storyboard in Resources */,
 				3E77943927467A2700344A60 /* Search.storyboard in Resources */,
 				3E77943C27467A6500344A60 /* Budget.storyboard in Resources */,
 				3EBBC68D274290DF00113DA1 /* Main.storyboard in Resources */,
@@ -316,10 +334,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E425763274BA0BC00A62670 /* Number+Extensions.swift in Sources */,
+				3E425765274BC8FF00A62670 /* TextFieldManager.swift in Sources */,
 				3E77944A27467ACC00344A60 /* SearchViewController.swift in Sources */,
-				3E77944427467ABD00344A60 /* EditViewController.swift in Sources */,
 				3EF4626E274744F400BD66AC /* YearlyViewController.swift in Sources */,
+				3E425755274A887F00A62670 /* ExpenseViewController.swift in Sources */,
 				3EF462632746A54300BD66AC /* UIView+Extensions.swift in Sources */,
+				3E42575F274B73FC00A62670 /* UIViewController+Extension.swift in Sources */,
+				3E42575C274B64C100A62670 /* DatePickerViewController.swift in Sources */,
 				3E7794292746647B00344A60 /* String+Extensions.swift in Sources */,
 				3E77944027467AB200344A60 /* BudgetViewController.swift in Sources */,
 				3EF4627527477E3900BD66AC /* MonthCell.swift in Sources */,
@@ -327,7 +349,9 @@
 				3EBBC68A274290DF00113DA1 /* ViewController.swift in Sources */,
 				3EF4627A274A205300BD66AC /* Date+Extensions.swift in Sources */,
 				3EBBC686274290DF00113DA1 /* AppDelegate.swift in Sources */,
+				3E425761274B7A1300A62670 /* UIButton+Extensions.swift in Sources */,
 				3EBBC688274290DF00113DA1 /* SceneDelegate.swift in Sources */,
+				3E425753274A887200A62670 /* IncomeViewController.swift in Sources */,
 				3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */,
 				3E7793E5274549C200344A60 /* UIColor+Extensions.swift in Sources */,
 			);

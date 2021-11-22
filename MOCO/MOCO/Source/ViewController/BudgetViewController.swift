@@ -8,6 +8,11 @@
 import UIKit
 import Hero
 
+enum ViewStatus {
+    case income
+    case expense
+}
+
 class BudgetViewController: UIViewController {
 
     @IBOutlet weak var incomeView: UIView!
@@ -17,12 +22,14 @@ class BudgetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         swipeGesture()
         configuration()
         floationgButton.layer.shadowColor = UIColor.black.cgColor
         floationgButton.layer.shadowOffset = .zero
         floationgButton.layer.shadowOpacity = 0.2
+        
+        let localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
+        print(localizedDate)
     }
     
     func configuration() {
@@ -36,9 +43,18 @@ class BudgetViewController: UIViewController {
         
         monthTitleButton.semanticContentAttribute = .forceRightToLeft
         monthTitleButton.setTitle(DateFormatter.monthFormat.string(from: Date()), for: .normal)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(incomeTapGesture))
+        incomeView.addGestureRecognizer(tap)
     }
     
-    
+    @objc func incomeTapGesture() {
+        let sb = UIStoryboard(name: "Write", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: IncomeViewController.identifier) as! IncomeViewController
+
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
+    }
     
     func swipeGesture() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
@@ -71,6 +87,13 @@ class BudgetViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func floatingButtonClicked(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Write", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: ExpenseViewController.identifier) as! ExpenseViewController
+
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
+    }
 }
 
 extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -84,6 +107,14 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Write", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: ExpenseViewController.identifier) as! ExpenseViewController
+
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
 }
 
