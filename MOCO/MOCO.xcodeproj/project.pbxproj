@@ -129,11 +129,20 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		3E425766274BD4C500A62670 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3E425764274BC8FF00A62670 /* TextFieldManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		3E7793CA2745424600344A60 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				3EBBC685274290DF00113DA1 /* AppDelegate.swift */,
 				3EBBC687274290DF00113DA1 /* SceneDelegate.swift */,
+				3E425766274BD4C500A62670 /* Manager */,
 				3EF462642746A61600BD66AC /* Cell */,
 				3EF4624D27467CFE00BD66AC /* ViewController */,
 			);
@@ -224,7 +233,6 @@
 				3EF4626D274744F400BD66AC /* YearlyViewController.swift */,
 				3E425752274A887200A62670 /* IncomeViewController.swift */,
 				3E425754274A887F00A62670 /* ExpenseViewController.swift */,
-				3E425764274BC8FF00A62670 /* TextFieldManager.swift */,
 				3E42575B274B64C000A62670 /* DatePickerViewController.swift */,
 			);
 			path = ViewController;

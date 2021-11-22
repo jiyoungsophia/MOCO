@@ -65,7 +65,6 @@ class ExpenseViewController: UIViewController {
         placeMemoLabel.text = "place".localized()
         placeMemoAlertLabel.text = "length_alert".localized(with: 15, comment: "15글자")
         placeMemoAlertLabel.isHidden = true
-        placeTextField.text = "online".localized()
         
         onlineButton.placeButton()
         onlineButton.setTitle("online".localized(), for: .normal)
@@ -117,15 +116,28 @@ class ExpenseViewController: UIViewController {
     @IBAction func onlineButtonClicked(_ sender: UIButton) {
         placeView.isHidden = false
         placeLabel.isHidden = true
+        placeTextField.text = "online".localized()
         onlineButton.placeButtonClicked()
+        offlineButton.placeButton()
     }
     
     @IBAction func offlineButtonClicked(_ sender: UIButton) {
         offlineButton.placeButtonClicked()
+        onlineButton.placeButton()
         
+        if placeView.isHidden == false {
+            placeView.isHidden = true
+            placeTextField.text = ""
+        }
+                
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
         present(vc, animated: true, completion: nil)
+        
+        //TODO: search controller에서 돌아왔을때 (closure)
+//        placeView.isHidden = false
+//        placeTextField.isUserInteractionEnabled = false
+//        placeTextField.text = "오프라인주소"
     }
     
     @IBAction func memoDidChange(_ sender: UITextField) {
