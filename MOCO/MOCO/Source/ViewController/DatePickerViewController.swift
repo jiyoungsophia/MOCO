@@ -19,6 +19,7 @@ class DatePickerViewController: UIViewController {
             
         }
         datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
         
     }
     

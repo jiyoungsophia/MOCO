@@ -8,8 +8,6 @@
 import UIKit
 
 
-//TODO: 세자리수마다 ,
-//TODO: 첫 숫자로 0 안되도록
 class IncomeViewController: UIViewController {
     
     static let identifier = "IncomeViewController"
@@ -26,7 +24,7 @@ class IncomeViewController: UIViewController {
         
         incomeTextField.delegate = self
         incomeTextField.placeholder = "amount".localized()
-        incomeTextField.addTarget(self, action: #selector(textFieldZeroFilter), for: .editingChanged)
+        incomeTextField.addTarget(self, action: #selector(textFieldManager.shared.zeroFilter(_:)), for: .editingChanged)
         
         lengthAlertLabel.text = "length_alert".localized(with: 10, comment: "10글자")
         lengthAlertLabel.isHidden = true
@@ -52,16 +50,6 @@ class IncomeViewController: UIViewController {
     
     @objc func closeButtonClicked() {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    // 처음 0 처리
-    @objc func textFieldZeroFilter(_ textField: UITextField) {
-        if let text = textField.text, let intText = Int(text) {
-            textField.text = "\(intText)"
-        } else {
-            textField.text = ""
-        }
-        
     }
 }
 
