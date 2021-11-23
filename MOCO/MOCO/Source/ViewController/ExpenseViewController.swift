@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class ExpenseViewController: UIViewController {
     
@@ -53,7 +54,7 @@ class ExpenseViewController: UIViewController {
         expenseTextField.delegate = self
         placeTextField.delegate = self
         
-        expenseTextField.addTarget(self, action: #selector(textFieldManager.shared.zeroFilter(_:)), for: .editingChanged)
+        expenseTextField.addTarget(self, action: #selector(zeroFilter(_:)), for: .editingChanged)
         expenseTextField.placeholder = "amount".localized()
         expenseAlertLabel.text = "length_alert".localized(with: 10, comment: "10글자")
         expenseAlertLabel.isHidden = true
@@ -81,6 +82,14 @@ class ExpenseViewController: UIViewController {
     
     @objc func closeButtonClicked() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func zeroFilter(_ textField: UITextField) {
+        if let text = textField.text, let intText = Int(text) {
+            textField.text = "\(intText)"
+        } else {
+            textField.text = ""
+        }
     }
     
     @IBAction func dateButtonClicked(_ sender: UIButton) {
@@ -123,8 +132,9 @@ class ExpenseViewController: UIViewController {
                 
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
-        present(vc, animated: true, completion: nil)
         
+        present(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
         //TODO: search controller에서 돌아왔을때 (closure)
 //        placeView.isHidden = false
 //        placeTextField.isUserInteractionEnabled = false

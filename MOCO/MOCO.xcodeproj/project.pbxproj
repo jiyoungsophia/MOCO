@@ -34,6 +34,7 @@
 		3EBBC68A274290DF00113DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBC689274290DF00113DA1 /* ViewController.swift */; };
 		3EBBC68D274290DF00113DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBBC68B274290DF00113DA1 /* Main.storyboard */; };
 		3EBBC692274290E200113DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBBC690274290E200113DA1 /* LaunchScreen.storyboard */; };
+		3EBF27B3274BF562008DBC46 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27B2274BF562008DBC46 /* SearchCell.swift */; };
 		3EF4625A27468CD700BD66AC /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; };
 		3EF4625B27468CD700BD66AC /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4625D2746936900BD66AC /* Assets.xcassets */; };
@@ -93,6 +94,7 @@
 		3EBBC68C274290DF00113DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EBBC691274290E200113DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EBBC693274290E200113DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBF27B2274BF562008DBC46 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchCell.swift; path = MOCO/Source/Cell/SearchCell.swift; sourceTree = SOURCE_ROOT; };
 		3EF4625D2746936900BD66AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EF462622746A54300BD66AC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3EF462652746A64F00BD66AC /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		3EF462642746A61600BD66AC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3EBF27B2274BF562008DBC46 /* SearchCell.swift */,
 				3EF462652746A64F00BD66AC /* ExpenseCell.swift */,
 				3EF462662746A64F00BD66AC /* ExpenseCell.xib */,
 				3EF4627327477E3900BD66AC /* MonthCell.swift */,
@@ -352,6 +355,7 @@
 				3E42575C274B64C100A62670 /* DatePickerViewController.swift in Sources */,
 				3E7794292746647B00344A60 /* String+Extensions.swift in Sources */,
 				3E77944027467AB200344A60 /* BudgetViewController.swift in Sources */,
+				3EBF27B3274BF562008DBC46 /* SearchCell.swift in Sources */,
 				3EF4627527477E3900BD66AC /* MonthCell.swift in Sources */,
 				3E77944727467AC500344A60 /* MapViewController.swift in Sources */,
 				3EBBC68A274290DF00113DA1 /* ViewController.swift in Sources */,

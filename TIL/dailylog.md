@@ -14,6 +14,8 @@
 
 🟡 [Day8 - 211122](#day8---211122)
 
+🟡 [Day9 - 211123](#day9---211123)
+
 <br>
 
 <hr>
@@ -162,3 +164,50 @@
 * Navigation bar title color: titleTextAttribute
 * **Dispatch group**
 * Tableview 데이터에 따라 cell 다르게 부르기: **Diffable DataSource**
+
+ 
+
+## Day9 - 211123
+
+* TableView Headerd에 searchBar 붙일때, navigationBar에 넣는 것처럼 viewDidLoad 안에서 searchController 선언과 대입이 이루어지면 아무것도 먹질 않는다
+
+```swift
+// 안되는 코드
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let searchController = UISearchController(searchResultsController: nil
+        tableView.tableHeaderView = searchController.searchBar        
+    }
+```
+
+* 이렇게 바깥에서 먼저 선언해주어야 한다
+
+```swift
+ var searchController: UISearchController!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        searchController = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = searchController.searchBar
+    }
+```
+
+
+
+### ⚡️TEAM BUILDING
+
+* Regular expression
+
+* Info.plist와 권한 요청 이슈
+
+* tableview searchbar
+
+* simulator city run 
+
+* timer
+
+* location span
+
+  

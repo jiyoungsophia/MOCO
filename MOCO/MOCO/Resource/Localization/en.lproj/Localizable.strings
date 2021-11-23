@@ -19,6 +19,8 @@
 "cancel" = "Cancel";
 "reset" = "Reset";
 
+"dateformat" = "MMM  ";
+
 "jan" = "JAN";
 "feb" = "FEB";
 "mar" = "MAR";
@@ -32,4 +34,4 @@
 "nov" = "NOV";
 "dec" = "DEC";
 
-"dateformat" = "MMM";
+

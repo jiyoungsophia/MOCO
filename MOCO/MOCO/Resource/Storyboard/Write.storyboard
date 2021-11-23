@@ -326,6 +326,9 @@
                             <constraint firstItem="3qK-jd-kxV" firstAttribute="top" secondItem="vJw-5G-ddl" secondAttribute="bottom" constant="50" id="gh5-bq-WDZ"/>
                         </constraints>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dateBorder" destination="2sm-bs-F9q" id="hMK-oa-KBv"/>
                         <outlet property="dateButton" destination="hRV-gC-FtN" id="KVX-gv-B1X"/>

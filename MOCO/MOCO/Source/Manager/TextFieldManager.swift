@@ -12,13 +12,13 @@ final class textFieldManager {
     
     private init() {}
     
-    @objc func zeroFilter(_ textField: UITextField) {
-        if let text = textField.text, let intText = Int(text) {
-            textField.text = "\(intText)"
-        } else {
-            textField.text = ""
-        }
-    }
+//    @objc func zeroFilter(_ textField: UITextField) {
+//        if let text = textField.text, let intText = Int(text) {
+//            textField.text = "\(intText)"
+//        } else {
+//            textField.text = ""
+//        }
+//    }
     
     func changeTextField(textField: UITextField, string: String, alertLabel: UILabel, range: NSRange, maxLength: Int) -> Bool {
         if let textWithoutSeparator = textField.text?.replacingOccurrences(of: NumberFormatter.defaultFormat.groupingSeparator, with: "") {

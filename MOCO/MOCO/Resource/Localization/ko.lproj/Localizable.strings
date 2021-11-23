@@ -7,7 +7,7 @@
 */
 
 "income" = "수입";
-"expenses" = "지출";
+"expense" = "지출";
 "amount" = "금액";
 "length_alert" = "%d글자까지만 입력가능합니다";
 "date" = "날짜";
@@ -18,6 +18,8 @@
 "enter_location" = "장소 입력";
 "cancel" = "취소";
 "reset" = "초기화";
+
+"dateformat" = "M월  ";
 
 "jan" = "1월";
 "feb" = "2월";
@@ -32,4 +34,4 @@
 "nov" = "11월";
 "dec" = "12월";
 
-"dateformat" = "M월";
+

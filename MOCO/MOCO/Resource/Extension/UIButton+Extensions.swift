@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
     func placeButtonClicked() {
-        self.backgroundColor = UIColor.mocoBlue
+        self.backgroundColor = UIColor.mocoPink
         self.setTitleColor(.white, for: .normal)
         self.layer.cornerRadius = 25
         self.layer.shadowColor = UIColor.black.cgColor

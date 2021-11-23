@@ -28,8 +28,8 @@ class BudgetViewController: UIViewController {
         floationgButton.layer.shadowOffset = .zero
         floationgButton.layer.shadowOpacity = 0.2
         
-        let localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
-        print(localizedDate)
+//        let localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
+//        print(localizedDate)
     }
     
     func configuration() {
@@ -42,6 +42,7 @@ class BudgetViewController: UIViewController {
         collectionView.dataSource = self
         
         monthTitleButton.semanticContentAttribute = .forceRightToLeft
+        
         monthTitleButton.setTitle(DateFormatter.monthFormat.string(from: Date()), for: .normal)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(incomeTapGesture))

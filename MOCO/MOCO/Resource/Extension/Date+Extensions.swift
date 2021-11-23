@@ -10,13 +10,13 @@ import Foundation
 extension DateFormatter {
     static var monthFormat: DateFormatter {
         let formatter = DateFormatter()
-//        formatter.locale = Locale(identifier: "en_US")
 //        formatter.setLocalizedDateFormatFromTemplate("MMM ")
 //
-//        formatter.locale = Locale(identifier: "ko_KR")
 //        formatter.setLocalizedDateFormatFromTemplate("M월 ")
 
-        formatter.date(from: "dateformat".localized())
+//        formatter.date(from: "dateformat".localized())
+        formatter.timeZone = TimeZone(abbreviation: "KST")
+        formatter.dateFormat = "dateformat".localized()
         
         return formatter
     }
