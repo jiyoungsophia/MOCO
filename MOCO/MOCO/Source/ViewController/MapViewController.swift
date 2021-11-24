@@ -6,24 +6,69 @@
 //
 
 import UIKit
-import Hero
+import NMapsMap
+import CoreLocation
 
+// TODO: 비동기처리
 class MapViewController: UIViewController {
     
     static let identifier = "MapViewController"
     
-    @IBOutlet var swipeRecognizer: UISwipeGestureRecognizer!
+    @IBOutlet weak var mapView: NMFMapView!
+    @IBOutlet weak var locationButton: NMFLocationButton!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionViewConfig()
         
+        locationManager.delegate = self
     }
     
-    @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
-        if swipeRecognizer.direction == .right {
-            hero.modalAnimationType = .slide(direction: .right)
-            hero.dismissViewController()
-        }
+    func collectionViewConfig() {
+        let nibName = UINib(nibName: ExpenseCell.identifier, bundle: nil)
+        collectionView.register(nibName, forCellWithReuseIdentifier: ExpenseCell.identifier)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
+}
+
+extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpenseCell.identifier, for: indexPath) as? ExpenseCell else {
+            return UICollectionViewCell()
+        }
+        
+        return cell
+    }
+}
+
+extension MapViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let spacing: CGFloat = 28
+        let width = UIScreen.main.bounds.width - (spacing * 2)
+        return CGSize(width: width, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 28)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
+    
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    
 }

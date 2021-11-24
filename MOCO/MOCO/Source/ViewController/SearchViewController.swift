@@ -26,18 +26,33 @@ class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         tableView.tableHeaderView = searchController.searchBar
+        tableView.dataSource = self
+        tableView.delegate = self
         
         self.definesPresentationContext = true
         
     }
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 7
+    }
     
-//    private func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        print("cancel")
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.identifier, for: indexPath) as? SearchCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+    
+    
+    
 }
 
 extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
         dump(searchController.searchBar.text)
     }
     

@@ -7,15 +7,14 @@
 
 import UIKit
 
+// TODO: months 선언 위치
 class YearlyViewController: UIViewController {
     
     static let identifier = "YearlyViewController"
     
-    let months : [String] = [
-        "jan".localized(), "feb".localized(), "mar".localized(), "apr".localized(),
-        "may".localized(), "jun".localized(), "jul".localized(), "aug".localized(),
-        "sep".localized(), "oct".localized(), "nov".localized(), "dec".localized()
-    ]
+    
+
+    var months : [String] = []
     
     var calendar = Calendar.current
     let dateFormatter = DateFormatter()
@@ -30,24 +29,26 @@ class YearlyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configuration()
-        setCollectionViewConfig()
+        configure()
+        collectionViewConfig()
         makeMonthYear()
     }
     
-    func configuration() {
+    func configure() {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         backView.layer.cornerRadius = 10
         collectionView.layer.cornerRadius = 10
         hearderView.backgroundColor = UIColor.mocoOrange
-        hearderView.roundCorners(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+        hearderView.setTopCornerRound(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         
-        
+        // func makeMonthYear()
         dateFormatter.dateFormat = "yyyy"
         components.year = calendar.component(.year, from: Date())
+        
+        months = calendar.shortMonthSymbols
     }
     
-    func setCollectionViewConfig(){
+    func collectionViewConfig(){
         let nibName = UINib(nibName: MonthCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: MonthCell.identifier)
         
@@ -82,9 +83,26 @@ class YearlyViewController: UIViewController {
     }
     
     @objc func monthButtonClicked(selectButton: UIButton) {
+        
         selectButton.setTitleColor(UIColor.mocoOrange, for: .normal)
-        if let label = selectButton.titleLabel, let value = label.text {
-            monthButtonActionHandler?(value)
+        if let label = selectButton.titleLabel, let monthLabelText = label.text, let year = components.year {
+            monthButtonActionHandler?(monthLabelText)
+            
+            // "dateformat" = "MMM, yyyy";
+            // "dateformat" = "yyyy년 M월";
+            
+            
+            //TODO:
+            let filterDate = "\(year)-\(monthLabelText)"    // 6월 선택시 monthLabelText: 5월 31일 출력
+            
+            let format = DateFormatter()
+            format.dateFormat = "dateformat".localized()
+            format.timeZone = TimeZone(abbreviation: "KST")
+            let date = format.date(from: filterDate)
+            print(date)
+            
+            print(Locale.current.languageCode) // 언어에 따라 분기처리
+            // 언어랑 지역에 따라서 다 다름
         }
         hero.dismissViewController()
     }

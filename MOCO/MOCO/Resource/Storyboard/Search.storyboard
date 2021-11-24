@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AmI-ky-G7y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z5l-yL-mCR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="81" id="w4d-fs-Plr" customClass="SearchCell" customModule="MOCO" customModuleProvider="target">
@@ -34,26 +34,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvv-Ao-caJ">
-                                                    <rect key="frame" x="68" y="43.5" width="326" height="20.5"/>
+                                                    <rect key="frame" x="60" y="52.5" width="334" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egv-GE-lMd">
-                                                    <rect key="frame" x="358" y="17.5" width="36" height="20.5"/>
+                                                    <rect key="frame" x="362" y="18" width="36" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="wPN-um-p0a">
-                                                    <rect key="frame" x="20" y="25.5" width="28" height="30"/>
+                                                    <rect key="frame" x="16" y="25.5" width="28" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="28" id="7lD-nL-jm6"/>
                                                         <constraint firstAttribute="height" constant="30" id="YnE-ZA-S8u"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4s3-fn-uFA">
-                                                    <rect key="frame" x="68" y="16" width="270" height="23.5"/>
+                                                    <rect key="frame" x="60" y="8" width="286" height="40.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,11 +63,12 @@
                                                 <constraint firstItem="wPN-um-p0a" firstAttribute="centerY" secondItem="ZeA-8A-6zX" secondAttribute="centerY" id="6j8-Ul-poJ"/>
                                                 <constraint firstItem="yvv-Ao-caJ" firstAttribute="leading" secondItem="4s3-fn-uFA" secondAttribute="leading" id="XD6-0U-g2n"/>
                                                 <constraint firstAttribute="trailing" secondItem="yvv-Ao-caJ" secondAttribute="trailing" constant="20" id="Z9f-Xv-bBx"/>
-                                                <constraint firstItem="wPN-um-p0a" firstAttribute="leading" secondItem="ZeA-8A-6zX" secondAttribute="leading" constant="20" id="aVI-CI-c2a"/>
-                                                <constraint firstAttribute="trailing" secondItem="Egv-GE-lMd" secondAttribute="trailing" constant="20" id="cSE-dx-VWp"/>
-                                                <constraint firstItem="Egv-GE-lMd" firstAttribute="leading" secondItem="4s3-fn-uFA" secondAttribute="trailing" constant="20" id="hj9-an-DjY"/>
-                                                <constraint firstItem="4s3-fn-uFA" firstAttribute="top" secondItem="ZeA-8A-6zX" secondAttribute="top" constant="16" id="iwf-H8-66B"/>
-                                                <constraint firstItem="4s3-fn-uFA" firstAttribute="leading" secondItem="wPN-um-p0a" secondAttribute="trailing" constant="20" id="vyi-s4-gJ2"/>
+                                                <constraint firstAttribute="bottom" secondItem="yvv-Ao-caJ" secondAttribute="bottom" constant="8" id="aJb-w8-71c"/>
+                                                <constraint firstItem="wPN-um-p0a" firstAttribute="leading" secondItem="ZeA-8A-6zX" secondAttribute="leading" constant="16" id="aVI-CI-c2a"/>
+                                                <constraint firstAttribute="trailing" secondItem="Egv-GE-lMd" secondAttribute="trailing" constant="16" id="cSE-dx-VWp"/>
+                                                <constraint firstItem="Egv-GE-lMd" firstAttribute="leading" secondItem="4s3-fn-uFA" secondAttribute="trailing" constant="16" id="hj9-an-DjY"/>
+                                                <constraint firstItem="4s3-fn-uFA" firstAttribute="top" secondItem="ZeA-8A-6zX" secondAttribute="top" constant="8" id="iwf-H8-66B"/>
+                                                <constraint firstItem="4s3-fn-uFA" firstAttribute="leading" secondItem="wPN-um-p0a" secondAttribute="trailing" constant="16" id="vyi-s4-gJ2"/>
                                                 <constraint firstItem="Egv-GE-lMd" firstAttribute="centerY" secondItem="4s3-fn-uFA" secondAttribute="centerY" id="wGy-ck-UBl"/>
                                                 <constraint firstItem="yvv-Ao-caJ" firstAttribute="top" secondItem="4s3-fn-uFA" secondAttribute="bottom" constant="4" id="zPc-1h-9fa"/>
                                             </constraints>
@@ -98,27 +99,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOa-xT-I0t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1142.0289855072465" y="54.910714285714285"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="MRi-vn-aMc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AmI-ky-G7y" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fAn-rN-ToH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <segue destination="PvZ-rN-5q7" kind="relationship" relationship="rootViewController" id="Mao-by-EcU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iUp-9S-IYp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="231.8840579710145" y="54.910714285714285"/>
         </scene>
     </scenes>
     <resources>

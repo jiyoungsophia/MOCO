@@ -19,21 +19,23 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var floationgButton: UIButton!
     @IBOutlet weak var monthTitleButton: UIButton!
+    @IBOutlet weak var mapViewButton: UIButton!
+    @IBOutlet weak var mapContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         swipeGesture()
-        configuration()
+        configure()
         floationgButton.layer.shadowColor = UIColor.black.cgColor
         floationgButton.layer.shadowOffset = .zero
         floationgButton.layer.shadowOpacity = 0.2
         
-//        let localizedDate = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
-//        print(localizedDate)
+        mapContainerView.isHidden = true
+        
     }
     
-    func configuration() {
-        incomeView.setViewConfig(backgroundColor: UIColor.mocoBlue)
+    func configure() {
+        incomeView.setViewShadow(backgroundColor: UIColor.mocoBlue)
         
         let nibName = UINib(nibName: ExpenseCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: ExpenseCell.identifier)
@@ -66,14 +68,27 @@ class BudgetViewController: UIViewController {
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             if swipeGesture.direction == .left {
-                let sb = UIStoryboard(name: "Map", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: MapViewController.identifier) as! MapViewController
+                let sb = UIStoryboard(name: "Setting", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as! SettingViewController
                 vc.modalPresentationStyle = .fullScreen
                 vc.hero.modalAnimationType = .slide(direction: .left)
                 present(vc, animated: true, completion: nil)
             }
         }
     }
+    
+    @IBAction func showMapView(_ sender: UIButton) {
+        if mapContainerView.isHidden == true {
+            mapViewButton.setImage(UIImage(systemName: "map.fill"), for: .normal)
+            mapContainerView.isHidden = false
+        } else {
+            mapViewButton.setImage(UIImage(systemName: "map"), for: .normal)
+            mapContainerView.isHidden = true
+        }
+        
+    }
+    
+    
     
     @IBAction func yearlyButtonClicked(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Yearly", bundle: nil)

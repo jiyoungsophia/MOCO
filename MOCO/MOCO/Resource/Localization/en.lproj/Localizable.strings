@@ -19,7 +19,7 @@
 "cancel" = "Cancel";
 "reset" = "Reset";
 
-"dateformat" = "MMM  ";
+"dateformat" = "MMM, yyyy";
 
 "jan" = "JAN";
 "feb" = "FEB";

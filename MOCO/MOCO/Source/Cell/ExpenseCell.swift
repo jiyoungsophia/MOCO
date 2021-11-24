@@ -16,7 +16,7 @@ class ExpenseCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setCellConfig(backView: backView)
+        setCellShadow(backView: backView)
         
         
     }
