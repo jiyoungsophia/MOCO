@@ -30,4 +30,22 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func presentLocationAlert(title: String, message: String, settingTitle: String = "설정", handler: @escaping () -> ()) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: settingTitle, style: .default, handler: { _ in
+                handler()
+            }))
+            present(alert, animated: true, completion: nil)
+        }
+    
+    func openSettingURL() {
+            guard let settingURL = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+            if UIApplication.shared.canOpenURL(settingURL) {
+                UIApplication.shared.open(settingURL, options: [:], completionHandler: nil)
+            }
+        }
+    
 }

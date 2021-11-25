@@ -10,7 +10,7 @@ import Hero
 
 
 class BudgetViewController: UIViewController {
-
+    
     @IBOutlet weak var incomeView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var floationgButton: UIButton!
@@ -18,10 +18,10 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var ddayLabel: UILabel!
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
-
+    
     @IBOutlet weak var mapViewButton: UIButton!
     @IBOutlet weak var mapContainerView: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         swipeGesture()
@@ -31,12 +31,13 @@ class BudgetViewController: UIViewController {
         floationgButton.layer.shadowOpacity = 0.2
         
         mapContainerView.isHidden = true
-        
+        print("응??")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(#function)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,7 +84,7 @@ class BudgetViewController: UIViewController {
     @objc func incomeTapGesture() {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: IncomeViewController.identifier) as! IncomeViewController
-
+        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
@@ -106,7 +107,7 @@ class BudgetViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: YearlyViewController.identifier) as! YearlyViewController
         
         vc.monthButtonActionHandler = { selectedMonth in
-        self.monthTitleButton.setTitle(selectedMonth, for: .normal)
+            self.monthTitleButton.setTitle(selectedMonth, for: .normal)
         }
         
         vc.hero.modalAnimationType = .fade
@@ -119,7 +120,7 @@ class BudgetViewController: UIViewController {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: ExpenseViewController.identifier) as! ExpenseViewController
         let nav = UINavigationController(rootViewController: vc)
-
+        
         vc.buttonStatus = true
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)

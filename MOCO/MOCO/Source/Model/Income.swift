@@ -8,5 +8,11 @@
 import Foundation
 
 class Income {
-    
+ /*
+     amount
+     date
+     _id
+     year
+     month
+*/
 }

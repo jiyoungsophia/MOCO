@@ -8,5 +8,14 @@
 import Foundation
 
 class Expense {
-    
+ /*
+     date
+     amount
+     isOffline(bool)
+     onlineMemo?
+     place id? 
+     _id
+     year
+     month
+     */
 }

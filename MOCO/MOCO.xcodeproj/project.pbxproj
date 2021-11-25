@@ -39,6 +39,12 @@
 		3EBF27EC274E049A008DBC46 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27EB274E049A008DBC46 /* Income.swift */; };
 		3EBF27EE274E04A2008DBC46 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27ED274E04A2008DBC46 /* Expense.swift */; };
 		3EBF27F0274E04AD008DBC46 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27EF274E04AD008DBC46 /* Place.swift */; };
+		3EBF283D274F6233008DBC46 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBF283C274F6233008DBC46 /* SwiftyJSON */; };
+		3EBF2843274F6342008DBC46 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF2842274F6342008DBC46 /* Constants.swift */; };
+		3EBF2847274F6401008DBC46 /* SearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF2846274F6401008DBC46 /* SearchAPIManager.swift */; };
+		3EBF284B274F6519008DBC46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBF284A274F6519008DBC46 /* Alamofire */; };
+		3EBF284D274F7262008DBC46 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF284C274F7262008DBC46 /* Search.swift */; };
+		3EBF2850274F78EA008DBC46 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF284F274F78EA008DBC46 /* category.swift */; };
 		3EF4625A27468CD700BD66AC /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; };
 		3EF4625B27468CD700BD66AC /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4625D2746936900BD66AC /* Assets.xcassets */; };
@@ -51,7 +57,6 @@
 		3EF4627827478CF600BD66AC /* Yearly.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4627727478CF600BD66AC /* Yearly.storyboard */; };
 		3EF4627A274A205300BD66AC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF46279274A205300BD66AC /* Date+Extensions.swift */; };
 		3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */; };
-		91700EAE1A0E389268A0F0DD /* Pods_MOCO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55330A5F06449092D37F3888 /* Pods_MOCO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -99,13 +104,17 @@
 		3EBBC691274290E200113DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EBBC693274290E200113DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EBF27B2274BF562008DBC46 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchCell.swift; path = MOCO/Source/Cell/SearchCell.swift; sourceTree = SOURCE_ROOT; };
-		3EBF27BC274CDFD7008DBC46 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		3EBF27BD274CDFE6008DBC46 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		3EBF27DF274D4225008DBC46 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		3EBF27E1274D4239008DBC46 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		3EBF27EB274E049A008DBC46 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		3EBF27ED274E04A2008DBC46 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		3EBF27EF274E04AD008DBC46 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		3EBF2840274F62E0008DBC46 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = MOCO/Source/Manager/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		3EBF2841274F630F008DBC46 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Production.xcconfig; path = MOCO/Source/Manager/Production.xcconfig; sourceTree = SOURCE_ROOT; };
+		3EBF2842274F6342008DBC46 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3EBF2846274F6401008DBC46 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
+		3EBF284C274F7262008DBC46 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		3EBF284F274F78EA008DBC46 /* category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
 		3EF4625D2746936900BD66AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EF462622746A54300BD66AC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3EF462652746A64F00BD66AC /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
@@ -115,9 +124,6 @@
 		3EF4627427477E3900BD66AC /* MonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthCell.xib; sourceTree = "<group>"; };
 		3EF4627727478CF600BD66AC /* Yearly.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Yearly.storyboard; sourceTree = "<group>"; };
 		3EF46279274A205300BD66AC /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		55330A5F06449092D37F3888 /* Pods_MOCO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BE15595EB547D592C6D30D1 /* Pods-MOCO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.debug.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.debug.xcconfig"; sourceTree = "<group>"; };
-		FB8F2DEA215B69DA7B098271 /* Pods-MOCO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.release.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +131,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBF283D274F6233008DBC46 /* SwiftyJSON in Frameworks */,
+				3EBF284B274F6519008DBC46 /* Alamofire in Frameworks */,
 				3EF4625A27468CD700BD66AC /* Hero in Frameworks */,
 				3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */,
-				91700EAE1A0E389268A0F0DD /* Pods_MOCO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				3E425764274BC8FF00A62670 /* TextFieldManager.swift */,
+				3EBF2846274F6401008DBC46 /* SearchAPIManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -157,8 +165,10 @@
 		3E7793CA2745424600344A60 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3EBF284E274F78CE008DBC46 /* Utility */,
 				3EBBC685274290DF00113DA1 /* AppDelegate.swift */,
 				3EBBC687274290DF00113DA1 /* SceneDelegate.swift */,
+				3EBF2842274F6342008DBC46 /* Constants.swift */,
 				3EBF27EA274E0476008DBC46 /* Model */,
 				3E425766274BD4C500A62670 /* Manager */,
 				3EF462642746A61600BD66AC /* Cell */,
@@ -170,6 +180,7 @@
 		3E7793CB2745425200344A60 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3EBF283F274F62AA008DBC46 /* Config */,
 				3E77941F274659A200344A60 /* Localization */,
 				3EBBC693274290E200113DA1 /* Info.plist */,
 				3EF4625D2746936900BD66AC /* Assets.xcassets */,
@@ -219,8 +230,6 @@
 			children = (
 				3EBBC684274290DF00113DA1 /* MOCO */,
 				3EBBC683274290DF00113DA1 /* Products */,
-				F0997B4C7ED47011FB0B7074 /* Pods */,
-				AA14EF497181B12659E685E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,7 +244,6 @@
 		3EBBC684274290DF00113DA1 /* MOCO */ = {
 			isa = PBXGroup;
 			children = (
-				3EBF27BB274CDFCB008DBC46 /* Config */,
 				3E7793CB2745425200344A60 /* Resource */,
 				3E7793CA2745424600344A60 /* Source */,
 				3EBBC689274290DF00113DA1 /* ViewController.swift */,
@@ -245,23 +253,32 @@
 			path = MOCO;
 			sourceTree = "<group>";
 		};
-		3EBF27BB274CDFCB008DBC46 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				3EBF27BC274CDFD7008DBC46 /* Debug.xcconfig */,
-				3EBF27BD274CDFE6008DBC46 /* Production.xcconfig */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		3EBF27EA274E0476008DBC46 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3EBF27EB274E049A008DBC46 /* Income.swift */,
 				3EBF27ED274E04A2008DBC46 /* Expense.swift */,
 				3EBF27EF274E04AD008DBC46 /* Place.swift */,
+				3EBF284C274F7262008DBC46 /* Search.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3EBF283F274F62AA008DBC46 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				3EBF2840274F62E0008DBC46 /* Debug.xcconfig */,
+				3EBF2841274F630F008DBC46 /* Production.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		3EBF284E274F78CE008DBC46 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3EBF284F274F78EA008DBC46 /* category.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		3EF4624D27467CFE00BD66AC /* ViewController */ = {
@@ -291,23 +308,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		AA14EF497181B12659E685E4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				55330A5F06449092D37F3888 /* Pods_MOCO.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F0997B4C7ED47011FB0B7074 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8BE15595EB547D592C6D30D1 /* Pods-MOCO.debug.xcconfig */,
-				FB8F2DEA215B69DA7B098271 /* Pods-MOCO.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,12 +315,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EBBC696274290E300113DA1 /* Build configuration list for PBXNativeTarget "MOCO" */;
 			buildPhases = (
-				EE06F799E66F77D7CD4AAC9E /* [CP] Check Pods Manifest.lock */,
 				3EBBC67E274290DF00113DA1 /* Sources */,
 				3EBBC67F274290DF00113DA1 /* Frameworks */,
 				3EBBC680274290DF00113DA1 /* Resources */,
 				3EF4625C27468CD700BD66AC /* Embed Frameworks */,
-				ED93913B5635A512EDF56082 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,6 +328,8 @@
 			packageProductDependencies = (
 				3EF4625927468CD700BD66AC /* Hero */,
 				3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */,
+				3EBF283C274F6233008DBC46 /* SwiftyJSON */,
+				3EBF284A274F6519008DBC46 /* Alamofire */,
 			);
 			productName = MOCO;
 			productReference = 3EBBC682274290DF00113DA1 /* MOCO.app */;
@@ -362,6 +362,8 @@
 			packageReferences = (
 				3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */,
 				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3EBBC683274290DF00113DA1 /* Products */;
 			projectDirPath = "";
@@ -398,48 +400,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		ED93913B5635A512EDF56082 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MOCO/Pods-MOCO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MOCO/Pods-MOCO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MOCO/Pods-MOCO-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE06F799E66F77D7CD4AAC9E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MOCO-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3EBBC67E274290DF00113DA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -452,10 +412,13 @@
 				3E77944A27467ACC00344A60 /* SearchViewController.swift in Sources */,
 				3EF4626E274744F400BD66AC /* YearlyViewController.swift in Sources */,
 				3E425755274A887F00A62670 /* ExpenseViewController.swift in Sources */,
+				3EBF2843274F6342008DBC46 /* Constants.swift in Sources */,
 				3EF462632746A54300BD66AC /* UIView+Extensions.swift in Sources */,
 				3E42575F274B73FC00A62670 /* UIViewController+Extension.swift in Sources */,
 				3E42575C274B64C100A62670 /* DatePickerViewController.swift in Sources */,
+				3EBF2847274F6401008DBC46 /* SearchAPIManager.swift in Sources */,
 				3E7794292746647B00344A60 /* String+Extensions.swift in Sources */,
+				3EBF284D274F7262008DBC46 /* Search.swift in Sources */,
 				3E77944027467AB200344A60 /* BudgetViewController.swift in Sources */,
 				3EBF27B3274BF562008DBC46 /* SearchCell.swift in Sources */,
 				3EF4627527477E3900BD66AC /* MonthCell.swift in Sources */,
@@ -469,6 +432,7 @@
 				3EBF27EC274E049A008DBC46 /* Income.swift in Sources */,
 				3E425753274A887200A62670 /* IncomeViewController.swift in Sources */,
 				3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */,
+				3EBF2850274F78EA008DBC46 /* category.swift in Sources */,
 				3E7793E5274549C200344A60 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,7 +588,7 @@
 		};
 		3EBBC697274290E300113DA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BE15595EB547D592C6D30D1 /* Pods-MOCO.debug.xcconfig */;
+			baseConfigurationReference = 3EBF2840274F62E0008DBC46 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -645,7 +609,7 @@
 		};
 		3EBBC698274290E300113DA1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB8F2DEA215B69DA7B098271 /* Pods-MOCO.release.xcconfig */;
+			baseConfigurationReference = 3EBF2841274F630F008DBC46 /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -688,6 +652,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
 		3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
@@ -707,6 +687,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3EBF283C274F6233008DBC46 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		3EBF284A274F6519008DBC46 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		3EF4625927468CD700BD66AC /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */;

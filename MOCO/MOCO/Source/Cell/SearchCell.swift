@@ -12,7 +12,8 @@ class SearchCell: UITableViewCell {
     static let identifier = "SearchCell"
     
     @IBOutlet weak var placeLabel: UILabel!
-    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    // 없앨지 말지 고민,,
     @IBOutlet weak var categoryLabel: UILabel!
     
     override func awakeFromNib() {
@@ -24,6 +25,12 @@ class SearchCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configureCell(row: Search) {
+        placeLabel.text = row.placeName
+        addressLabel.text = row.roadAddress
+        categoryLabel.text = row.categoryName
     }
 
 }

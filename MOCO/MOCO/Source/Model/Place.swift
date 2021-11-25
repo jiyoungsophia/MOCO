@@ -8,5 +8,11 @@
 import Foundation
 
 class Place {
-    
+    /*
+     place name
+     category name
+     longtitude
+     latitude
+     id
+     */
 }

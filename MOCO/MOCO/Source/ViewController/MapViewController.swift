@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import NMapsMap
+//import NMapsMap
 import CoreLocation
 
 // TODO: 프로그레스바!!!
@@ -15,8 +15,8 @@ class MapViewController: UIViewController {
     
     static let identifier = "MapViewController"
     
-    @IBOutlet weak var mapView: NMFMapView!
-    @IBOutlet weak var locationButton: NMFLocationButton!
+    @IBOutlet weak var mapView: UIView!
+    @IBOutlet weak var locationButton: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     

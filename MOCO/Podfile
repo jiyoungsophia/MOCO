@@ -6,6 +6,6 @@ target 'MOCO' do
   use_frameworks!
 
   # Pods for MOCO
-  pod 'NMapsMap'
+  
 
 end
