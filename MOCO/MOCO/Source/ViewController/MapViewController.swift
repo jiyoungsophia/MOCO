@@ -9,7 +9,8 @@ import UIKit
 import NMapsMap
 import CoreLocation
 
-// TODO: 비동기처리
+// TODO: 프로그레스바!!!
+
 class MapViewController: UIViewController {
     
     static let identifier = "MapViewController"
@@ -23,11 +24,11 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(#function)
         collectionViewConfig()
-        
         locationManager.delegate = self
     }
+
     
     func collectionViewConfig() {
         let nibName = UINib(nibName: ExpenseCell.identifier, bundle: nil)

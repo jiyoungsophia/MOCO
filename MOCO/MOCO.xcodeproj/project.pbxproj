@@ -36,6 +36,9 @@
 		3EBF27B3274BF562008DBC46 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27B2274BF562008DBC46 /* SearchCell.swift */; };
 		3EBF27E0274D4225008DBC46 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBF27DF274D4225008DBC46 /* Setting.storyboard */; };
 		3EBF27E2274D4239008DBC46 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27E1274D4239008DBC46 /* SettingViewController.swift */; };
+		3EBF27EC274E049A008DBC46 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27EB274E049A008DBC46 /* Income.swift */; };
+		3EBF27EE274E04A2008DBC46 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27ED274E04A2008DBC46 /* Expense.swift */; };
+		3EBF27F0274E04AD008DBC46 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF27EF274E04AD008DBC46 /* Place.swift */; };
 		3EF4625A27468CD700BD66AC /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; };
 		3EF4625B27468CD700BD66AC /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4625D2746936900BD66AC /* Assets.xcassets */; };
@@ -100,6 +103,9 @@
 		3EBF27BD274CDFE6008DBC46 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		3EBF27DF274D4225008DBC46 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		3EBF27E1274D4239008DBC46 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3EBF27EB274E049A008DBC46 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		3EBF27ED274E04A2008DBC46 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		3EBF27EF274E04AD008DBC46 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		3EF4625D2746936900BD66AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EF462622746A54300BD66AC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3EF462652746A64F00BD66AC /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
@@ -153,6 +159,7 @@
 			children = (
 				3EBBC685274290DF00113DA1 /* AppDelegate.swift */,
 				3EBBC687274290DF00113DA1 /* SceneDelegate.swift */,
+				3EBF27EA274E0476008DBC46 /* Model */,
 				3E425766274BD4C500A62670 /* Manager */,
 				3EF462642746A61600BD66AC /* Cell */,
 				3EF4624D27467CFE00BD66AC /* ViewController */,
@@ -245,6 +252,16 @@
 				3EBF27BD274CDFE6008DBC46 /* Production.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		3EBF27EA274E0476008DBC46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3EBF27EB274E049A008DBC46 /* Income.swift */,
+				3EBF27ED274E04A2008DBC46 /* Expense.swift */,
+				3EBF27EF274E04AD008DBC46 /* Place.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3EF4624D27467CFE00BD66AC /* ViewController */ = {
@@ -428,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBF27EE274E04A2008DBC46 /* Expense.swift in Sources */,
 				3E425763274BA0BC00A62670 /* Number+Extensions.swift in Sources */,
 				3EBF27E2274D4239008DBC46 /* SettingViewController.swift in Sources */,
 				3E425765274BC8FF00A62670 /* TextFieldManager.swift in Sources */,
@@ -446,7 +464,9 @@
 				3EF4627A274A205300BD66AC /* Date+Extensions.swift in Sources */,
 				3EBBC686274290DF00113DA1 /* AppDelegate.swift in Sources */,
 				3E425761274B7A1300A62670 /* UIButton+Extensions.swift in Sources */,
+				3EBF27F0274E04AD008DBC46 /* Place.swift in Sources */,
 				3EBBC688274290DF00113DA1 /* SceneDelegate.swift in Sources */,
+				3EBF27EC274E049A008DBC46 /* Income.swift in Sources */,
 				3E425753274A887200A62670 /* IncomeViewController.swift in Sources */,
 				3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */,
 				3E7793E5274549C200344A60 /* UIColor+Extensions.swift in Sources */,
@@ -619,7 +639,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyoung.MOCO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -640,7 +660,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyoung.MOCO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

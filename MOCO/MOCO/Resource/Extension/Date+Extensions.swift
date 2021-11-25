@@ -10,11 +10,6 @@ import Foundation
 extension DateFormatter {
     static var monthFormat: DateFormatter {
         let formatter = DateFormatter()
-//        formatter.setLocalizedDateFormatFromTemplate("MMM ")
-//
-//        formatter.setLocalizedDateFormatFromTemplate("M월 ")
-
-//        formatter.date(from: "dateformat".localized())
         formatter.timeZone = TimeZone(abbreviation: "KST")
         formatter.dateFormat = "dateformat".localized()
         

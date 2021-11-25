@@ -14,11 +14,11 @@ extension UIViewController {
         alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
         alert.setValue(contentView, forKey: "contentViewController")
         
-        let cancel = UIAlertAction(title: "취소", style: .destructive) { _ in
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { _ in
             dateBorder.backgroundColor = UIColor.lightGray
         }
         
-        let ok = UIAlertAction(title: "확인", style: .cancel) { _ in
+        let ok = UIAlertAction(title: "확인", style: .default) { _ in
             let value = DateFormatter.defaultFormat.string(from: contentView.datePicker.date)
             
             dateButton.setTitle(value, for: .normal)

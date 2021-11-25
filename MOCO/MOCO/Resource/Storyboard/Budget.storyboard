@@ -154,11 +154,14 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="collectionView" destination="zWi-1X-aiF" id="4PI-hB-vKu"/>
+                        <outlet property="ddayLabel" destination="FFf-X8-feT" id="eiN-o3-aan"/>
                         <outlet property="floationgButton" destination="eOe-ei-2jy" id="szS-iG-KBd"/>
+                        <outlet property="incomeLabel" destination="WkW-De-XXe" id="LHz-ES-5Jn"/>
                         <outlet property="incomeView" destination="eb2-us-R8m" id="otC-Jc-zcZ"/>
                         <outlet property="mapContainerView" destination="gaR-Yr-KxU" id="EC5-5d-bdm"/>
                         <outlet property="mapViewButton" destination="Ry4-jd-CJd" id="Ye7-Cb-rvj"/>
                         <outlet property="monthTitleButton" destination="O6r-xD-eRg" id="N2M-x8-xnj"/>
+                        <outlet property="percentLabel" destination="C75-UY-Ylr" id="xAh-gh-1aU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2K-c4-FmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -191,7 +194,7 @@
                                     <constraint firstAttribute="bottom" secondItem="mcG-02-VNM" secondAttribute="bottom" constant="160" id="VY2-si-qb8"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L31-nq-AWd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L31-nq-AWd">
                                 <rect key="frame" x="0.0" y="492" width="414" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -206,6 +209,7 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="OCe-de-BNp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="FnT-Q1-POk" secondAttribute="trailing" id="6zT-Ta-rDU"/>

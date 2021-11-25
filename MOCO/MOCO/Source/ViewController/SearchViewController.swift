@@ -7,6 +7,7 @@
 
 import UIKit
 
+// 글자수 두글자 이상
 class SearchViewController: UIViewController {
 
     static let identifier = "SearchViewController"
@@ -50,6 +51,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// 글자수 제한
 extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }

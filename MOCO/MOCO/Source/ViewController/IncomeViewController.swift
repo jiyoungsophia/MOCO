@@ -8,6 +8,7 @@
 import UIKit
 
 
+// fullscreen!!
 class IncomeViewController: UIViewController {
     
     static let identifier = "IncomeViewController"

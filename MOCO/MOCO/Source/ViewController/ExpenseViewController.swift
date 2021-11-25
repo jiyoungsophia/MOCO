@@ -30,10 +30,13 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var offlineButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var buttonStatus : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navConfigure()
         configure()
+        
     }
     
     func navConfigure() {
@@ -60,12 +63,16 @@ class ExpenseViewController: UIViewController {
         expenseAlertLabel.isHidden = true
         
         dateLabel.text = "date".localized()
+        dateButton.isUserInteractionEnabled = buttonStatus
+        if dateButton.isUserInteractionEnabled == false {
+            dateButton.setTitleColor(.lightGray, for: .normal)
+        }
 
         placeLabel.text = "place".localized()
         placeMemoLabel.text = "place".localized()
         placeMemoAlertLabel.text = "length_alert".localized(with: 15, comment: "15글자")
         placeMemoAlertLabel.isHidden = true
-        
+
         onlineButton.placeButton()
         onlineButton.setTitle("online".localized(), for: .normal)
         offlineButton.placeButton()
@@ -73,7 +80,7 @@ class ExpenseViewController: UIViewController {
 
         deleteButton.redButton()
         deleteButton.setTitle("delete".localized(), for: .normal)
-        
+        deleteButton.isHidden = buttonStatus
     }
     
     @objc func saveButtonClicked() {

@@ -16,8 +16,4 @@ class MonthCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-//    @IBAction func monthButtonClicked(_ sender: UIButton) {
-//        monthButton.setTitleColor(UIColor.mocoOrange, for: .normal)
-//    }
 }

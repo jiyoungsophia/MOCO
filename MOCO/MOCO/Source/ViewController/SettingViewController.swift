@@ -17,13 +17,14 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        swipeRecognizer.direction = .left
         
     }
     
     
     @IBAction func swipeAction(_ sender: UISwipeGestureRecognizer) {
-        if swipeRecognizer.direction == .right {
-            hero.modalAnimationType = .slide(direction: .right)
+        if swipeRecognizer.direction == .left {
+            hero.modalAnimationType = .slide(direction: .left)
             hero.dismissViewController()
         }
     }

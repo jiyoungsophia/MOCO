@@ -12,8 +12,6 @@ class YearlyViewController: UIViewController {
     
     static let identifier = "YearlyViewController"
     
-    
-
     var months : [String] = []
     
     var calendar = Calendar.current
@@ -86,23 +84,29 @@ class YearlyViewController: UIViewController {
         
         selectButton.setTitleColor(UIColor.mocoOrange, for: .normal)
         if let label = selectButton.titleLabel, let monthLabelText = label.text, let year = components.year {
-            monthButtonActionHandler?(monthLabelText)
+ 
+            guard let userLanguage = Locale.current.languageCode else {return}
+            var rawDate : String = ""
             
-            // "dateformat" = "MMM, yyyy";
-            // "dateformat" = "yyyy년 M월";
+            // button setTitle
+            if userLanguage == "ko" {
+                rawDate = "\(year)년 \(monthLabelText)"
+                print("\(rawDate)")
+            } else {
+                rawDate = "\(monthLabelText), \(year)"
+                print("\(rawDate)")
+            }
+            monthButtonActionHandler?(rawDate)
             
-            
-            //TODO:
-            let filterDate = "\(year)-\(monthLabelText)"    // 6월 선택시 monthLabelText: 5월 31일 출력
-            
-            let format = DateFormatter()
-            format.dateFormat = "dateformat".localized()
-            format.timeZone = TimeZone(abbreviation: "KST")
-            let date = format.date(from: filterDate)
-            print(date)
-            
-            print(Locale.current.languageCode) // 언어에 따라 분기처리
-            // 언어랑 지역에 따라서 다 다름
+            // realm filter용
+            if let date = DateFormatter.monthFormat.date(from: rawDate) {
+                let realmDate = calendar.dateComponents(in: .current, from: date)
+                
+                let year = realmDate.year
+                let month = realmDate.month
+                print(year!)
+                print(month!)
+            }
         }
         hero.dismissViewController()
     }

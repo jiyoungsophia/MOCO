@@ -8,10 +8,6 @@
 import UIKit
 import Hero
 
-enum ViewStatus {
-    case income
-    case expense
-}
 
 class BudgetViewController: UIViewController {
 
@@ -19,9 +15,13 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var floationgButton: UIButton!
     @IBOutlet weak var monthTitleButton: UIButton!
+    @IBOutlet weak var ddayLabel: UILabel!
+    @IBOutlet weak var incomeLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
+
     @IBOutlet weak var mapViewButton: UIButton!
     @IBOutlet weak var mapContainerView: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         swipeGesture()
@@ -32,6 +32,16 @@ class BudgetViewController: UIViewController {
         
         mapContainerView.isHidden = true
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print(#function)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print(#function)
     }
     
     func configure() {
@@ -51,30 +61,32 @@ class BudgetViewController: UIViewController {
         incomeView.addGestureRecognizer(tap)
     }
     
-    @objc func incomeTapGesture() {
-        let sb = UIStoryboard(name: "Write", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: IncomeViewController.identifier) as! IncomeViewController
-
-        let nav = UINavigationController(rootViewController: vc)
-        present(nav, animated: true, completion: nil)
-    }
-    
     func swipeGesture() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
-        swipeLeft.direction = .left
+        swipeLeft.direction = .right
         self.view.addGestureRecognizer(swipeLeft)
     }
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            if swipeGesture.direction == .left {
+            if swipeGesture.direction == .right {
                 let sb = UIStoryboard(name: "Setting", bundle: nil)
                 let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as! SettingViewController
                 vc.modalPresentationStyle = .fullScreen
-                vc.hero.modalAnimationType = .slide(direction: .left)
+                vc.hero.modalAnimationType = .slide(direction: .right)
                 present(vc, animated: true, completion: nil)
             }
         }
+    }
+    
+    // TODO: 수입 데이터 유무에 따라 incomebutton 분기처리
+    @objc func incomeTapGesture() {
+        let sb = UIStoryboard(name: "Write", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: IncomeViewController.identifier) as! IncomeViewController
+
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
     }
     
     @IBAction func showMapView(_ sender: UIButton) {
@@ -85,7 +97,6 @@ class BudgetViewController: UIViewController {
             mapViewButton.setImage(UIImage(systemName: "map"), for: .normal)
             mapContainerView.isHidden = true
         }
-        
     }
     
     
@@ -103,11 +114,14 @@ class BudgetViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+    // 지출 새로 입력시 삭제버튼 hidden
     @IBAction func floatingButtonClicked(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: ExpenseViewController.identifier) as! ExpenseViewController
-
         let nav = UINavigationController(rootViewController: vc)
+
+        vc.buttonStatus = true
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
     }
 }
@@ -125,10 +139,11 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
+    // 수정화면 날짜버튼 비활성화
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: ExpenseViewController.identifier) as! ExpenseViewController
-
+        vc.buttonStatus = false
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }
