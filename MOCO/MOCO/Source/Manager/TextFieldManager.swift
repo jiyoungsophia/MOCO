@@ -8,9 +8,8 @@
 import UIKit
 
 final class textFieldManager {
-    static let shared = textFieldManager()
-    
     private init() {}
+    static let shared = textFieldManager()
     
 //    @objc func zeroFilter(_ textField: UITextField) {
 //        if let text = textField.text, let intText = Int(text) {

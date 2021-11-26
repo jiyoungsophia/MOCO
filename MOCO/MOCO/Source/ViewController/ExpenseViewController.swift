@@ -84,6 +84,14 @@ class ExpenseViewController: UIViewController {
     }
     
     @objc func saveButtonClicked() {
+        if let text = expenseTextField.text?.replacingOccurrences(of: ",", with: "") {
+            guard let textToInt = Int(text) else {return}
+            print(textToInt)
+            textToInt.formatWithSeparator
+        }
+        
+        
+        
         self.dismiss(animated: true, completion: nil)
     }
     

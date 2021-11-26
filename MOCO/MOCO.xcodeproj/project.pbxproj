@@ -45,6 +45,8 @@
 		3EBF284B274F6519008DBC46 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBF284A274F6519008DBC46 /* Alamofire */; };
 		3EBF284D274F7262008DBC46 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF284C274F7262008DBC46 /* Search.swift */; };
 		3EBF2850274F78EA008DBC46 /* category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBF284F274F78EA008DBC46 /* category.swift */; };
+		3EBF285527506D6C008DBC46 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBF285427506D6C008DBC46 /* Realm */; };
+		3EBF285727506D6C008DBC46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBF285627506D6C008DBC46 /* RealmSwift */; };
 		3EF4625A27468CD700BD66AC /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; };
 		3EF4625B27468CD700BD66AC /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4625D2746936900BD66AC /* Assets.xcassets */; };
@@ -131,10 +133,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBF285727506D6C008DBC46 /* RealmSwift in Frameworks */,
 				3EBF283D274F6233008DBC46 /* SwiftyJSON in Frameworks */,
 				3EBF284B274F6519008DBC46 /* Alamofire in Frameworks */,
 				3EF4625A27468CD700BD66AC /* Hero in Frameworks */,
 				3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */,
+				3EBF285527506D6C008DBC46 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +334,8 @@
 				3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */,
 				3EBF283C274F6233008DBC46 /* SwiftyJSON */,
 				3EBF284A274F6519008DBC46 /* Alamofire */,
+				3EBF285427506D6C008DBC46 /* Realm */,
+				3EBF285627506D6C008DBC46 /* RealmSwift */,
 			);
 			productName = MOCO;
 			productReference = 3EBBC682274290DF00113DA1 /* MOCO.app */;
@@ -364,6 +370,7 @@
 				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 3EBBC683274290DF00113DA1 /* Products */;
 			projectDirPath = "";
@@ -668,6 +675,14 @@
 				minimumVersion = 5.4.4;
 			};
 		};
+		3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.20.0;
+			};
+		};
 		3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
@@ -696,6 +711,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		3EBF285427506D6C008DBC46 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		3EBF285627506D6C008DBC46 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 		3EF4625927468CD700BD66AC /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;

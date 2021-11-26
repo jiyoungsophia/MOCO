@@ -6,13 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
 class Income {
- /*
-     amount
-     date
-     _id
-     year
-     month
-*/
+    @Persisted var amount: Int
+    @Persisted var regDate = Date()
+    @Persisted var year: Int
+    @Persisted var month: Int
+    
+    @Persisted(primaryKey: true) var _id: ObjectId
+    
+    convenience init(amount: Int, regDate: Date, year: Int, month: Int) {
+        self.init()
+        self.amount = amount
+        self.regDate = regDate
+        self.year = year
+        self.month = month
+    }
 }
+

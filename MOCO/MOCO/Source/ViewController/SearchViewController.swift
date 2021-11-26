@@ -85,10 +85,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.identifier, for: indexPath) as? SearchCell else {
             return UITableViewCell()
+            
         }
         tableView.separatorStyle = .singleLine
         cell.configureCell(row: searchData[indexPath.row])
+        let code = searchData[indexPath.row].categoryCode
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(searchData[indexPath.row])
     }
 }
 

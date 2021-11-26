@@ -10,6 +10,7 @@ import Alamofire
 import SwiftyJSON
 
 class SearchAPIManager {
+    private init() {}
     static let shared = SearchAPIManager()
     
     func fetchData(query: String, longtitude: Double, latitude: Double, result: @escaping (Result<[Search], Error>) -> () ) {

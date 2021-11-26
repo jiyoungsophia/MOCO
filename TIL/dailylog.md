@@ -256,6 +256,21 @@ override func viewDidLoad() {
 * Locale.current.languageCode
 
 * Method 이름을 잘보자 ! 자동완성에 너무 의존하지 말자 !
+
 * Json asset으로 만들기 (신기하다)
+
 * popup창 -> notification으로 옵저버달거나 viewDidAppear
+
 * 채널톡 (바로 대화가능 무료)
+
+  <br>
+
+  <br>
+
+## Day12 - 211126
+
+### ⚡️TEAM BUILDING
+
+* Comparable Equatable
+* AVKit, AVFoundation
+* DispatchQueue: group enter(), leave()
