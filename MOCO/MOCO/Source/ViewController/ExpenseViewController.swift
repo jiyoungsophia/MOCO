@@ -84,12 +84,15 @@ class ExpenseViewController: UIViewController {
     }
     
     @objc func saveButtonClicked() {
-        if let text = expenseTextField.text?.replacingOccurrences(of: ",", with: "") {
+        if let text = expenseTextField.text?.replacingOccurrences(of: ",", with: ""),
+           let date = dateButton.currentTitle,
+           let placeText = placeTextField.text {
             guard let textToInt = Int(text) else {return}
             print(textToInt)
             textToInt.formatWithSeparator
+        } else {
+            //alert
         }
-        
         
         
         self.dismiss(animated: true, completion: nil)
@@ -149,11 +152,15 @@ class ExpenseViewController: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
         
         present(vc, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(vc, animated: true)
         //TODO: search controller에서 돌아왔을때 (closure)
-//        placeView.isHidden = false
-//        placeTextField.isUserInteractionEnabled = false
-//        placeTextField.text = "오프라인주소"
+        
+        vc.selectPlaceHandler = { [weak self] place in
+            self?.placeLabel.isHidden = true
+            self?.placeView.isHidden = false
+            self?.placeTextField.isUserInteractionEnabled = false
+            self?.placeTextField.text = place
+            self?.placeTextField.textColor = .lightGray
+        }
     }
     
     @IBAction func memoDidChange(_ sender: UITextField) {

@@ -23,7 +23,6 @@ class SearchAPIManager {
             "query" : query,
             "x" : longtitude,
             "y" : latitude,
-            "radius" : 15000,
             "page": 1,
             "size": 15
         ] 

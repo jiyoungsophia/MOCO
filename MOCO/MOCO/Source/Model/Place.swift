@@ -6,13 +6,26 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Place {
-    /*
-     place name
-     category name
-     longtitude
-     latitude
-     id
-     */
+// 지도뷰: Place에서 마커 찍고 마커 클릭했을 때 filter placeId
+class Place: Object {
+
+    @Persisted var placeId: Int
+    @Persisted var placeName: String
+    @Persisted var categoryCode: String?
+    @Persisted var longtitude: Double
+    @Persisted var latitude: Double
+        
+    convenience init(placeId: Int, placeName: String, categoryCode: String?, longtitude: Double, latitude: Double){
+        self.init()
+        self.placeId = placeId
+        self.placeName = placeName
+        self.categoryCode = categoryCode
+        self.longtitude = longtitude
+        self.latitude = latitude
+    }
+   
+    
+    
 }

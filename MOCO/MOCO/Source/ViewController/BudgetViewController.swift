@@ -31,18 +31,18 @@ class BudgetViewController: UIViewController {
         floationgButton.layer.shadowOpacity = 0.2
         
         mapContainerView.isHidden = true
-        print("응??")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print(#function)
+//        print(#function)
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        print(#function)
+//        print(#function)
     }
     
     func configure() {

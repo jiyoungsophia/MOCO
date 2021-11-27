@@ -8,17 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Expense {
- /*
-     date
-     amount
-     isOffline(bool)
-     onlineMemo?
-     place id? 
-     _id
-     year
-     month
-     */
+class Expense: Object {
     @Persisted var amount: Int
     @Persisted var regDate = Date()
     @Persisted var isOffline: Bool
@@ -29,10 +19,13 @@ class Expense {
     
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    convenience init(amount: Int, regDate: Date, isOffline:year: Int, month: Int) {
+    convenience init(amount: Int, regDate: Date, isOffline: Bool, placeId: String?, memo: String?, year: Int, month: Int) {
         self.init()
         self.amount = amount
         self.regDate = regDate
+        self.isOffline = isOffline
+        self.placeId = placeId
+        self.memo = memo
         self.year = year
         self.month = month
     }

@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
+//        print(#function)
         collectionViewConfig()
         locationManager.delegate = self
     }

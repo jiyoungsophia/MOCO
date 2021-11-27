@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Income {
+class Income: Object {
     @Persisted var amount: Int
     @Persisted var regDate = Date()
     @Persisted var year: Int

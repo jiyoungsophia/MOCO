@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 // 글자수 두글자 이상
 class SearchViewController: UIViewController {
@@ -21,8 +22,11 @@ class SearchViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    var selectedPlaceName: String = ""
+    var selectPlaceHandler: ((String) -> (Void))?
+    
     var locationManager = CLLocationManager()
-
     // 여기 이렇게 해줘도 되는지 모르겠음
     var location: CLLocation = CLLocation(latitude: 0, longitude: 0)
     var userCoordinate = CLLocationCoordinate2D() {
@@ -63,16 +67,16 @@ class SearchViewController: UIViewController {
         
         SearchAPIManager.shared.fetchData(query: query, longtitude: location.coordinate.longitude, latitude: location.coordinate.latitude) { [weak self] result in
             switch result {
-            
+                
             case .success(let searchResults):
                 self?.searchData = searchResults
-                print(searchResults)
             case .failure(let error):
                 print(error)
             }
-            
         }
     }
+    
+    
     
     
 }
@@ -94,8 +98,32 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // 저장은 잘되는데 dismiss가 잘 안됨
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(searchData[indexPath.row])
+        let row = searchData[indexPath.row]
+        
+        let selectedPlace = Place(placeId: row.id, placeName: row.placeName, categoryCode: row.categoryCode, longtitude: row.longtitude, latitude: row.latitude)
+        
+        // id로 렘에 저장된 곳 조회
+        let result = RealmManager.shared.loadPlace(id: selectedPlace.placeId)
+        
+        if result.isEmpty { // 새로 간곳 등록
+            RealmManager.shared.savePlace(place: selectedPlace)
+            selectedPlaceName = selectedPlace.placeName
+        } else {  // 주소 바꼈을때 기존 렘데이터 수정 (맞게 쓴건지 모르겟음 ..)
+            if result[0].longtitude != selectedPlace.longtitude || result[0].latitude != selectedPlace.latitude {
+                RealmManager.shared.updatePlace(place: result[0], longtitude: selectedPlace.longtitude, latitude: selectedPlace.latitude)
+                selectedPlaceName = result[0].placeName
+                
+            } else { // 조회
+                selectedPlaceName = result[0].placeName
+            }
+        }
+                
+        selectPlaceHandler?(selectedPlaceName)
+        self.dismiss(animated: true, completion: nil)
+        
+        
     }
 }
 
@@ -115,6 +143,9 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     }
 }
 
+
+
+// 빼기,,
 extension SearchViewController: CLLocationManagerDelegate {
     
     func checkDeviceLocationAuthorization() {
@@ -178,9 +209,6 @@ extension SearchViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.last {
-            print("위치 검색 완료")
-//            userLongtitude = location.coordinate.longitude
-//            userLatitude = location.coordinate.latitude
             userCoordinate = location.coordinate
             print(userCoordinate)
             // Alert if user do not use precise location
