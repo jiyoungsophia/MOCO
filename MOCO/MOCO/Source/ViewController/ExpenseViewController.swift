@@ -67,35 +67,40 @@ class ExpenseViewController: UIViewController {
         if dateButton.isUserInteractionEnabled == false {
             dateButton.setTitleColor(.lightGray, for: .normal)
         }
-
+        
         placeLabel.text = "place".localized()
         placeMemoLabel.text = "place".localized()
         placeMemoAlertLabel.text = "length_alert".localized(with: 15, comment: "15글자")
         placeMemoAlertLabel.isHidden = true
-
+        
         onlineButton.placeButton()
         onlineButton.setTitle("online".localized(), for: .normal)
         offlineButton.placeButton()
         offlineButton.setTitle("offline".localized(), for: .normal)
-
+        
         deleteButton.redButton()
         deleteButton.setTitle("delete".localized(), for: .normal)
         deleteButton.isHidden = buttonStatus
     }
     
     @objc func saveButtonClicked() {
-        if let text = expenseTextField.text?.replacingOccurrences(of: ",", with: ""),
-           let date = dateButton.currentTitle,
-           let placeText = placeTextField.text {
-            guard let textToInt = Int(text) else {return}
-            print(textToInt)
-            textToInt.formatWithSeparator
+        if let expense = expenseTextField.text, expense != "",
+           let date = dateButton.currentTitle, date != "",
+           let placeText = placeTextField.text, placeText != "" {
+            
+            guard let expenseToInt = Int(expense) else {return}
+            print(expenseToInt)
+            expenseToInt.formatWithSeparator
+            
+            //렘에 저장
+            self.dismiss(animated: true, completion: nil)
+            
         } else {
-            //alert
+            presentAlert(title: "failedtosave".localized(), message: "enterall".localized(), okTitle: "ok".localized(), handler: {}) 
         }
         
         
-        self.dismiss(animated: true, completion: nil)
+        
     }
     
     @objc func closeButtonClicked() {
@@ -147,7 +152,7 @@ class ExpenseViewController: UIViewController {
             placeView.isHidden = true
             placeTextField.text = ""
         }
-                
+        
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
         

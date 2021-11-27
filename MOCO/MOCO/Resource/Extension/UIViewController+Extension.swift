@@ -9,16 +9,16 @@ import UIKit
 
 extension UIViewController {
     func datePickerAlert(contentView: DatePickerViewController, dateBorder: UIView, dateButton: UIButton) {
-        let alert = UIAlertController(title: "날짜를 선택해주세요", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "choosethedate".localized(), message: "", preferredStyle: .alert)
         
         alert.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = UIColor.white
         alert.setValue(contentView, forKey: "contentViewController")
         
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { _ in
+        let cancel = UIAlertAction(title: "cancel".localized(), style: .cancel) { _ in
             dateBorder.backgroundColor = UIColor.lightGray
         }
         
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
+        let ok = UIAlertAction(title: "ok".localized(), style: .default) { _ in
             let value = DateFormatter.defaultFormat.string(from: contentView.datePicker.date)
             
             dateButton.setTitle(value, for: .normal)
@@ -30,10 +30,12 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func presentLocationAlert(title: String, message: String, settingTitle: String = "설정", handler: @escaping () -> ()) {
+
+    
+    func presentAlert(title: String, message: String, okTitle: String = "gotosetting".localized(), handler: @escaping () -> ()) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: settingTitle, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "cancel".localized(), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: okTitle, style: .default, handler: { _ in
                 handler()
             }))
             present(alert, animated: true, completion: nil)

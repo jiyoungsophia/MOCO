@@ -6,7 +6,7 @@
   
 */
 
-"income" = "Income";
+"budget" = "Budget";
 "expense" = "Expenses";
 "amount" = "Amount";
 "length_alert" = "You can enter up to %d letters";
@@ -16,22 +16,15 @@
 "offline" = "Offline";
 "delete" = "Delete this expense";
 "enter_location" = "Enter location";
+"ok" = "OK";
 "cancel" = "Cancel";
 "reset" = "Reset";
 
 "dateformat" = "MMM, yyyy";
+"choosethedate" = "Please choose the date";
 
-"jan" = "JAN";
-"feb" = "FEB";
-"mar" = "MAR";
-"apr" = "APR";
-"may" = "MAY";
-"jun" = "JUN";
-"jul" = "JUL";
-"aug" = "AUG";
-"sep" = "SEP";
-"oct" = "OCT";
-"nov" = "NOV";
-"dec" = "DEC";
+"gotosetting" = "Go to Setting";
+"failedtosave" = "Failed to save";
+"writebudget" = "Please write down your budget";
 
-
+"enterall" = "Please enter all inputs";

@@ -19,6 +19,7 @@ class RealmManager {
         print(localRealm.configuration.fileURL)
     }
     
+    //MARK: - Place
     func savePlace(place: Place) {
         try! localRealm.write {
             localRealm.add(place)
@@ -34,6 +35,34 @@ class RealmManager {
             place.longtitude = longtitude
             place.latitude = latitude
             localRealm.add(place, update: .modified)
+        })
+    }
+    
+    //MARK: - Income
+    func saveIncome(income: Income) {
+        try! localRealm.write {
+            localRealm.add(income)
+        }
+    }
+    
+    func loadIncome(year: Int, month: Int) -> [Income] {
+        let query = localRealm.objects(Income.self).where {
+            ($0.year == year && $0.month == month)
+        }
+        return Array(query)
+    }
+    
+    func updateIncome(income: Income, amount: Int) {
+        try! localRealm.write({
+            income.amount += amount
+            localRealm.add(income, update: .modified)
+        })
+    }
+    
+    func deleteIncome(id: ObjectId) {
+        try! localRealm.write({
+            guard let object = localRealm.object(ofType: Income.self, forPrimaryKey: id) else { return }
+            localRealm.delete(object)
         })
     }
     

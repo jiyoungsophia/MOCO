@@ -60,6 +60,7 @@
 		3EF4627A274A205300BD66AC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF46279274A205300BD66AC /* Date+Extensions.swift */; };
 		3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */; };
 		B5297C3A2750F9B40089036E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297C392750F9B40089036E /* RealmManager.swift */; };
+		B5297C3F275253E50089036E /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297C3E275253E50089036E /* InputManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -128,6 +129,7 @@
 		B5297C392750F9B40089036E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		B5297C3C2751274C0089036E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B5297C3D2751275D0089036E /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		B5297C3E275253E50089036E /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		3E425766274BD4C500A62670 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B5297C3E275253E50089036E /* InputManager.swift */,
 				3E425764274BC8FF00A62670 /* TextFieldManager.swift */,
 				3EBF2846274F6401008DBC46 /* SearchAPIManager.swift */,
 				B5297C392750F9B40089036E /* RealmManager.swift */,
@@ -440,6 +443,7 @@
 				3E425761274B7A1300A62670 /* UIButton+Extensions.swift in Sources */,
 				3EBF27F0274E04AD008DBC46 /* Place.swift in Sources */,
 				3EBBC688274290DF00113DA1 /* SceneDelegate.swift in Sources */,
+				B5297C3F275253E50089036E /* InputManager.swift in Sources */,
 				3EBF27EC274E049A008DBC46 /* Income.swift in Sources */,
 				3E425753274A887200A62670 /* IncomeViewController.swift in Sources */,
 				3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */,

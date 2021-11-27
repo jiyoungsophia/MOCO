@@ -75,10 +75,7 @@ class SearchViewController: UIViewController {
             }
         }
     }
-    
-    
-    
-    
+
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -98,7 +95,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    // 저장은 잘되는데 dismiss가 잘 안됨
+    // 저장은 잘되는데 dismiss가 잘 안됨 확인 필요!!!
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = searchData[indexPath.row]
         
@@ -119,7 +116,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 selectedPlaceName = result[0].placeName
             }
         }
-                
+        
         selectPlaceHandler?(selectedPlaceName)
         self.dismiss(animated: true, completion: nil)
         
@@ -138,7 +135,6 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -161,8 +157,8 @@ extension SearchViewController: CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             checkAppLocationAuthorization(authorizationStatus)
         } else {
-            presentLocationAlert(title: "기기 위치 설정 비활성화",
-                                 message: "위치 서비스를 위해 설정이 필요합니다.") { [weak self] in
+            presentAlert(title: "기기 위치 설정 비활성화",
+                         message: "위치 서비스를 위해 설정이 필요합니다.") { [weak self] in
                 self?.openSettingURL()
             }
         }
@@ -175,8 +171,8 @@ extension SearchViewController: CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization() // 앱을 사용하는 동안에 대한 위치 권한 요청
             locationManager.startUpdatingLocation() // 위치 접근 시작 -> didUpdateLocation 실행
         case .restricted, .denied:
-            presentLocationAlert(title: "어플 위치 설정 비활성화",
-                                 message: "위치 서비스를 위해 설정이 필요합니다.") { [weak self] in
+            presentAlert(title: "어플 위치 설정 비활성화",
+                         message: "위치 서비스를 위해 설정이 필요합니다.") { [weak self] in
                 self?.openSettingURL()
             }
         case .authorizedWhenInUse:
@@ -196,8 +192,8 @@ extension SearchViewController: CLLocationManagerDelegate {
             case .fullAccuracy:
                 break
             case .reducedAccuracy:
-                presentLocationAlert(title: "정확한 위치 비활성화",
-                                     message: "앱의 정확한 동작을 위해서 설정이 필요할 수 있습니다.") { [weak self] in
+                presentAlert(title: "정확한 위치 비활성화",
+                             message: "앱의 정확한 동작을 위해서 설정이 필요할 수 있습니다.") { [weak self] in
                     self?.openSettingURL()
                 }
             @unknown default:
@@ -229,16 +225,16 @@ extension SearchViewController: CLLocationManagerDelegate {
         
         switch authorizationStatus {
         case .authorizedWhenInUse:
-            presentLocationAlert(title: "사용자 위치를 얻는데 실패했습니다.",
-                                 message: "위치를 얻으려면 다시 시도해주세요.",
-                                 settingTitle: "다시 시도") { [weak self] in
+            presentAlert(title: "사용자 위치를 얻는데 실패했습니다.",
+                         message: "위치를 얻으려면 다시 시도해주세요.",
+                         okTitle: "다시 시도") { [weak self] in
                 self?.locationManager.startUpdatingLocation()
             }
         case .notDetermined:
             locationManager.startUpdatingLocation() // 위치 접근 시작
         case .restricted, .denied:
-            presentLocationAlert(title: "어플 위치 설정 비활성화",
-                                 message: "위치 서비스를 위해 설정이 필요합니다.") { [weak self] in
+            presentAlert(title: "어플 위치 설정 비활성화",
+                         message: "위치 서비스를 위해 설정이 필요합니다.") { [weak self] in
                 self?.openSettingURL()
             }
         case .authorizedAlways:
