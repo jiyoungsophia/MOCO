@@ -31,3 +31,13 @@
 
 "registerbudget" = "이곳을 눌러\n이번 달 예산 등록하기";
 
+"setting" = "설정";
+"backup" = "백업하기";
+"restore" = "복구하기";
+"feedback" = "피드백 보내기";
+"version" = "앱 버전  %d.%d.%d";
+
+"nobackupfile" = "백업할 파일이 없습니다";
+"checkemail" = "아이폰 설정에서 이메일 계정을 확인해주세요";
+"restorecomplete" = "복구가 완료되었습니다";
+

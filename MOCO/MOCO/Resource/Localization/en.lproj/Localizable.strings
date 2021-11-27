@@ -31,3 +31,12 @@
 
 "registerbudget" = "Press here and\nregister your budget";
 
+"setting" = "Setting";
+"backup" = "Back Up";
+"restore" = "Restore";
+"feedback" = "Send feedback";
+"version" = "App version  %d.%d.%d";
+
+"nobackupfile" = "There are no files to back up.";
+"checkemail" = "Please check your email account in iPhone Settings";
+"restorecomplete" = "The restoration is complete";

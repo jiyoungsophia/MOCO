@@ -61,6 +61,8 @@
 		3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */; };
 		B5297C3A2750F9B40089036E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297C392750F9B40089036E /* RealmManager.swift */; };
 		B5297C3F275253E50089036E /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297C3E275253E50089036E /* InputManager.swift */; };
+		B5707C542752A54E001E2A79 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = B5707C532752A54E001E2A79 /* Zip */; };
+		B5707C572752AAD3001E2A79 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B5707C562752AAD3001E2A79 /* JGProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,9 +139,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5707C542752A54E001E2A79 /* Zip in Frameworks */,
 				3EBF285727506D6C008DBC46 /* RealmSwift in Frameworks */,
 				3EBF283D274F6233008DBC46 /* SwiftyJSON in Frameworks */,
 				3EBF284B274F6519008DBC46 /* Alamofire in Frameworks */,
+				B5707C572752AAD3001E2A79 /* JGProgressHUD in Frameworks */,
 				3EF4625A27468CD700BD66AC /* Hero in Frameworks */,
 				3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */,
 				3EBF285527506D6C008DBC46 /* Realm in Frameworks */,
@@ -342,6 +346,8 @@
 				3EBF284A274F6519008DBC46 /* Alamofire */,
 				3EBF285427506D6C008DBC46 /* Realm */,
 				3EBF285627506D6C008DBC46 /* RealmSwift */,
+				B5707C532752A54E001E2A79 /* Zip */,
+				B5707C562752AAD3001E2A79 /* JGProgressHUD */,
 			);
 			productName = MOCO;
 			productReference = 3EBBC682274290DF00113DA1 /* MOCO.app */;
@@ -377,6 +383,8 @@
 				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */,
+				B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 3EBBC683274290DF00113DA1 /* Products */;
 			projectDirPath = "";
@@ -707,6 +715,22 @@
 				minimumVersion = 6.5.9;
 			};
 		};
+		B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -739,6 +763,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		B5707C532752A54E001E2A79 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		B5707C562752AAD3001E2A79 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

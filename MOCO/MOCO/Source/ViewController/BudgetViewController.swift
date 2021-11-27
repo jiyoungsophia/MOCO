@@ -112,7 +112,7 @@ class BudgetViewController: UIViewController {
                 let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as! SettingViewController
                 vc.modalPresentationStyle = .fullScreen
                 vc.hero.modalAnimationType = .slide(direction: .right)
-                present(nav, animated: true, completion: nil)
+                present(vc, animated: true, completion: nil)
             }
         }
     }
