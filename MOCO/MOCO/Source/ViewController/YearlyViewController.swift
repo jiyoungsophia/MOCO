@@ -91,10 +91,10 @@ class YearlyViewController: UIViewController {
             // button setTitle
             if userLanguage == "ko" {
                 rawDate = "\(year)년 \(monthLabelText)"
-                print("\(rawDate)")
+//                print("\(rawDate)")
             } else {
                 rawDate = "\(monthLabelText), \(year)"
-                print("\(rawDate)")
+//                print("\(rawDate)")
             }
             monthButtonActionHandler?(rawDate)
             
@@ -104,8 +104,8 @@ class YearlyViewController: UIViewController {
                 
                 let year = realmDate.year
                 let month = realmDate.month
-                print(year!)
-                print(month!)
+//                print(year!)
+//                print(month!)
             }
         }
         hero.dismissViewController()

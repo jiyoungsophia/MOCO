@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class IncomeViewController: UIViewController {
     
@@ -16,17 +17,14 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var lengthAlertLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
     
-    var realmIncome: [Income] = []
+    var incomeData: [Income] = []
     var dateList: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         loadIncome()
-        
         navConfigure()
         configure()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,26 +58,28 @@ class IncomeViewController: UIViewController {
     
     func loadIncome() {
         dateList = InputManager.shared.dateToYearMonth(date: Date())
-        realmIncome = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
+        incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
         
-        if !realmIncome.isEmpty {
+        if !incomeData.isEmpty {
             resetButton.isHidden = false
         } else {
             resetButton.isHidden = true
         }
     }
     
+    // 저장되는 날짜 확인할 것!!!
     @objc func saveButtonClicked() {
         // 입력 있을때
         if let income = incomeTextField.text, income != "" {
             
             let amount = InputManager.shared.textToInt(text: income)
+            let now = DateFormatter.krFormat.string(from: Date())
     
-            if realmIncome.isEmpty { // 새 수입등록
-                let newIncome = Income(amount: amount, regDate: Date(), year: dateList[0], month: dateList[1])
+            if incomeData.isEmpty { // 새 수입등록
+                let newIncome = Income(amount: amount, regDate: DateFormatter.krFormat.date(from: now)!, year: dateList[0], month: dateList[1])
                 RealmManager.shared.saveIncome(income: newIncome)
             } else { // 업데이트
-                RealmManager.shared.updateIncome(income: realmIncome[0], amount: amount)
+                RealmManager.shared.updateIncome(income: incomeData[0], amount: amount, regDate: Date())
             }
             self.dismiss(animated: true, completion: nil)
             

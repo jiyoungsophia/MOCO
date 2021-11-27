@@ -206,7 +206,7 @@ extension SearchViewController: CLLocationManagerDelegate {
         
         if let location = locations.last {
             userCoordinate = location.coordinate
-            print(userCoordinate)
+//            print(userCoordinate)
             // Alert if user do not use precise location
             checkLocationAccuracy()
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RE1-KB-5RY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RE1-KB-5RY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,9 @@
     <customFonts key="customFonts">
         <array key="NotoSansKR-Black.otf">
             <string>NotoSansKR-Black</string>
+        </array>
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
         </array>
         <array key="NotoSansKR-Light.otf">
             <string>NotoSansKR-Light</string>
@@ -92,6 +95,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duu-f4-Pj6">
+                                        <rect key="frame" x="16" y="16" width="326" height="88"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -102,6 +111,10 @@
                                     <constraint firstItem="C75-UY-Ylr" firstAttribute="leading" secondItem="FFf-X8-feT" secondAttribute="trailing" constant="8" id="FKv-ct-RhS"/>
                                     <constraint firstItem="FFf-X8-feT" firstAttribute="top" secondItem="eb2-us-R8m" secondAttribute="top" constant="24" id="Ppc-0W-yuA"/>
                                     <constraint firstItem="WkW-De-XXe" firstAttribute="trailing" secondItem="FFf-X8-feT" secondAttribute="trailing" id="VlM-Sl-A9r"/>
+                                    <constraint firstItem="Duu-f4-Pj6" firstAttribute="leading" secondItem="eb2-us-R8m" secondAttribute="leading" constant="16" id="WFI-cI-1XX"/>
+                                    <constraint firstItem="Duu-f4-Pj6" firstAttribute="top" secondItem="eb2-us-R8m" secondAttribute="top" constant="16" id="c7f-iC-Okb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Duu-f4-Pj6" secondAttribute="bottom" constant="16" id="jwP-YF-RiC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Duu-f4-Pj6" secondAttribute="trailing" constant="16" id="ms2-lC-uDK"/>
                                     <constraint firstAttribute="height" constant="120" id="oUE-bl-eYp"/>
                                     <constraint firstItem="FFf-X8-feT" firstAttribute="leading" secondItem="eb2-us-R8m" secondAttribute="leading" constant="24" id="ucZ-f0-G9H"/>
                                 </constraints>
@@ -162,6 +175,7 @@
                         <outlet property="mapViewButton" destination="Ry4-jd-CJd" id="Ye7-Cb-rvj"/>
                         <outlet property="monthTitleButton" destination="O6r-xD-eRg" id="N2M-x8-xnj"/>
                         <outlet property="percentLabel" destination="C75-UY-Ylr" id="xAh-gh-1aU"/>
+                        <outlet property="registerLabel" destination="Duu-f4-Pj6" id="F1Z-4V-luU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2K-c4-FmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -46,15 +46,16 @@ class RealmManager {
     }
     
     func loadIncome(year: Int, month: Int) -> [Income] {
-        let query = localRealm.objects(Income.self).where {
-            ($0.year == year && $0.month == month)
-        }
-        return Array(query)
+//        let query = localRealm.objects(Income.self).where {
+//            ($0.year == year && $0.month == month)
+//        }
+        return Array(localRealm.objects(Income.self).filter("year == \(year) AND month == \(month)"))
     }
     
-    func updateIncome(income: Income, amount: Int) {
+    func updateIncome(income: Income, amount: Int, regDate: Date) {
         try! localRealm.write({
             income.amount += amount
+            income.regDate = regDate
             localRealm.add(income, update: .modified)
         })
     }

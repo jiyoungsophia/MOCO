@@ -89,7 +89,7 @@ class ExpenseViewController: UIViewController {
            let placeText = placeTextField.text, placeText != "" {
             
             guard let expenseToInt = Int(expense) else {return}
-            print(expenseToInt)
+//            print(expenseToInt)
             expenseToInt.formatWithSeparator
             
             //렘에 저장

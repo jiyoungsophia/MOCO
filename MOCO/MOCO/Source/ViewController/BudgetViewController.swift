@@ -7,6 +7,7 @@
 
 import UIKit
 import Hero
+import RealmSwift
 
 
 class BudgetViewController: UIViewController {
@@ -18,32 +19,56 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var ddayLabel: UILabel!
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
+    @IBOutlet weak var registerLabel: UILabel!
     
     @IBOutlet weak var mapViewButton: UIButton!
     @IBOutlet weak var mapContainerView: UIView!
     
+    var incomeData: [Income] = []
+//    {
+//        didSet {
+//            loadData()
+//        }
+//    }
+    var dateList: [Int] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
+
         swipeGesture()
         configure()
-        floationgButton.layer.shadowColor = UIColor.black.cgColor
-        floationgButton.layer.shadowOffset = .zero
-        floationgButton.layer.shadowOpacity = 0.2
         
-        mapContainerView.isHidden = true
+        dateList = InputManager.shared.dateToYearMonth(date: Date())
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        print(#function)
+        print(#function)
+
+        loadData()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-//        print(#function)
+        
     }
+    
+    func loadData() {
+        incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
+        if incomeData.isEmpty {
+            registerLabel.isHidden = false
+        } else {
+            // ddaylabel
+            incomeLabel.text = "+ \(incomeData[0].amount.formatWithSeparator)"
+            // percentage
+        }
+        
+    }
+    
     
     func configure() {
         incomeView.setViewShadow(backgroundColor: UIColor.mocoBlue)
@@ -55,11 +80,23 @@ class BudgetViewController: UIViewController {
         collectionView.dataSource = self
         
         monthTitleButton.semanticContentAttribute = .forceRightToLeft
-        
         monthTitleButton.setTitle(DateFormatter.monthFormat.string(from: Date()), for: .normal)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(incomeTapGesture))
         incomeView.addGestureRecognizer(tap)
+        
+        floationgButton.layer.shadowColor = UIColor.black.cgColor
+        floationgButton.layer.shadowOffset = .zero
+        floationgButton.layer.shadowOpacity = 0.2
+        
+        mapContainerView.isHidden = true
+        
+        registerLabel.text = "registerbudget".localized()
+        registerLabel.backgroundColor = UIColor.mocoBlue
+        registerLabel.isHidden = true
+        
+        ddayLabel.text = "D - \(InputManager.shared.calculateDday())"
+        
     }
     
     func swipeGesture() {
@@ -75,7 +112,7 @@ class BudgetViewController: UIViewController {
                 let vc = sb.instantiateViewController(withIdentifier: SettingViewController.identifier) as! SettingViewController
                 vc.modalPresentationStyle = .fullScreen
                 vc.hero.modalAnimationType = .slide(direction: .right)
-                present(vc, animated: true, completion: nil)
+                present(nav, animated: true, completion: nil)
             }
         }
     }

@@ -10,6 +10,7 @@ import Foundation
 extension DateFormatter {
     static var monthFormat: DateFormatter {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
         formatter.timeZone = TimeZone(abbreviation: "KST")
         formatter.dateFormat = "dateformat".localized()
         
@@ -17,10 +18,17 @@ extension DateFormatter {
     }
     
     static var defaultFormat: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "KST")
+        let formatter = DateFormatter()    
         formatter.dateFormat = "yyyy. MM. dd"
-        
         return formatter
     }
+    
+    static var krFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.timeZone = TimeZone(abbreviation: "KST")
+        return formatter
+    }
+    
+
 }
