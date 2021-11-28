@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26DC3E280C70B690540277FF /* Pods_MOCO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D769DCE0CCAF7C73E7A4DF83 /* Pods_MOCO.framework */; };
 		3E425751274A883B00A62670 /* Write.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E425750274A883B00A62670 /* Write.storyboard */; };
 		3E425753274A887200A62670 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425752274A887200A62670 /* IncomeViewController.swift */; };
 		3E425755274A887F00A62670 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425754274A887F00A62670 /* ExpenseViewController.swift */; };
@@ -132,6 +133,9 @@
 		B5297C3C2751274C0089036E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B5297C3D2751275D0089036E /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		B5297C3E275253E50089036E /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
+		BB3FEC90133D18BC9DC2D967 /* Pods-MOCO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.debug.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.debug.xcconfig"; sourceTree = "<group>"; };
+		C16FEBCCA8D31D59B970F6D7 /* Pods-MOCO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.release.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.release.xcconfig"; sourceTree = "<group>"; };
+		D769DCE0CCAF7C73E7A4DF83 /* Pods_MOCO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				3EF4625A27468CD700BD66AC /* Hero in Frameworks */,
 				3EF4627D274A286400BD66AC /* IQKeyboardManagerSwift in Frameworks */,
 				3EBF285527506D6C008DBC46 /* Realm in Frameworks */,
+				26DC3E280C70B690540277FF /* Pods_MOCO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +249,8 @@
 			children = (
 				3EBBC684274290DF00113DA1 /* MOCO */,
 				3EBBC683274290DF00113DA1 /* Products */,
+				84AF98086D6E99D78A07D028 /* Pods */,
+				D4C8F32C043A62F97DEF3489 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,6 +320,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		84AF98086D6E99D78A07D028 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB3FEC90133D18BC9DC2D967 /* Pods-MOCO.debug.xcconfig */,
+				C16FEBCCA8D31D59B970F6D7 /* Pods-MOCO.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B5297C3B275127210089036E /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +338,14 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		D4C8F32C043A62F97DEF3489 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D769DCE0CCAF7C73E7A4DF83 /* Pods_MOCO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,10 +353,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EBBC696274290E300113DA1 /* Build configuration list for PBXNativeTarget "MOCO" */;
 			buildPhases = (
+				74F97BE56FF39A7C368AC8A7 /* [CP] Check Pods Manifest.lock */,
 				3EBBC67E274290DF00113DA1 /* Sources */,
 				3EBBC67F274290DF00113DA1 /* Frameworks */,
 				3EBBC680274290DF00113DA1 /* Resources */,
 				3EF4625C27468CD700BD66AC /* Embed Frameworks */,
+				ED6B95F849B6B4864E0E1FF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -378,13 +404,13 @@
 			);
 			mainGroup = 3EBBC679274290DF00113DA1;
 			packageReferences = (
-				3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */,
-				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
-				B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */,
-				B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero.git" */,
+				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */,
+				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */,
+				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */,
+				B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip.git" */,
+				B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */,
 			);
 			productRefGroup = 3EBBC683274290DF00113DA1 /* Products */;
 			projectDirPath = "";
@@ -420,6 +446,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74F97BE56FF39A7C368AC8A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MOCO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED6B95F849B6B4864E0E1FF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MOCO/Pods-MOCO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MOCO/Pods-MOCO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MOCO/Pods-MOCO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3EBBC67E274290DF00113DA1 /* Sources */ = {
@@ -611,7 +679,7 @@
 		};
 		3EBBC697274290E300113DA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5297C3C2751274C0089036E /* Debug.xcconfig */;
+			baseConfigurationReference = BB3FEC90133D18BC9DC2D967 /* Pods-MOCO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -632,7 +700,7 @@
 		};
 		3EBBC698274290E300113DA1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5297C3D2751275D0089036E /* Production.xcconfig */;
+			baseConfigurationReference = C16FEBCCA8D31D59B970F6D7 /* Pods-MOCO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -644,6 +712,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyoung.MOCO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -675,7 +744,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
@@ -683,7 +752,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -691,7 +760,7 @@
 				minimumVersion = 5.4.4;
 			};
 		};
-		3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+		3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
@@ -699,7 +768,7 @@
 				minimumVersion = 10.20.0;
 			};
 		};
-		3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */ = {
+		3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
 			requirement = {
@@ -707,7 +776,7 @@
 				minimumVersion = 1.6.1;
 			};
 		};
-		3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -715,7 +784,7 @@
 				minimumVersion = 6.5.9;
 			};
 		};
-		B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */ = {
+		B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -723,7 +792,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+		B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
 			requirement = {
@@ -736,42 +805,42 @@
 /* Begin XCSwiftPackageProductDependency section */
 		3EBF283C274F6233008DBC46 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			package = 3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */;
 			productName = SwiftyJSON;
 		};
 		3EBF284A274F6519008DBC46 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 		3EBF285427506D6C008DBC46 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */;
 			productName = Realm;
 		};
 		3EBF285627506D6C008DBC46 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */;
 			productName = RealmSwift;
 		};
 		3EF4625927468CD700BD66AC /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */;
+			package = 3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero.git" */;
 			productName = Hero;
 		};
 		3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */;
 			productName = IQKeyboardManagerSwift;
 		};
 		B5707C532752A54E001E2A79 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */;
+			package = B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip.git" */;
 			productName = Zip;
 		};
 		B5707C562752AAD3001E2A79 /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			package = B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */;
 			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
