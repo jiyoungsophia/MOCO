@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol passDateListDelegate {
+    func sendYearMonth(year: Int, month: Int)
+}
+
 // TODO: months 선언 위치
 class YearlyViewController: UIViewController {
     
@@ -19,6 +23,8 @@ class YearlyViewController: UIViewController {
     var components = DateComponents()
     
     var monthButtonActionHandler: ((String) -> (Void))?
+    
+    var delegate: passDateListDelegate?
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var hearderView: UIView!
@@ -39,7 +45,6 @@ class YearlyViewController: UIViewController {
         hearderView.backgroundColor = UIColor.mocoOrange
         hearderView.setTopCornerRound(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         
-        // func makeMonthYear()
         dateFormatter.dateFormat = "yyyy"
         components.year = calendar.component(.year, from: Date())
         
@@ -91,10 +96,8 @@ class YearlyViewController: UIViewController {
             // button setTitle
             if userLanguage == "ko" {
                 rawDate = "\(year)년 \(monthLabelText)"
-//                print("\(rawDate)")
             } else {
                 rawDate = "\(monthLabelText), \(year)"
-//                print("\(rawDate)")
             }
             monthButtonActionHandler?(rawDate)
             
@@ -102,11 +105,12 @@ class YearlyViewController: UIViewController {
             if let date = DateFormatter.monthFormat.date(from: rawDate) {
                 let realmDate = calendar.dateComponents(in: .current, from: date)
                 
-                let year = realmDate.year
-                let month = realmDate.month
-//                print(year!)
-//                print(month!)
+                guard let year = realmDate.year else {return}
+                guard let month = realmDate.month else {return}
+                
+                delegate?.sendYearMonth(year: year, month: month)
             }
+            
         }
         hero.dismissViewController()
     }

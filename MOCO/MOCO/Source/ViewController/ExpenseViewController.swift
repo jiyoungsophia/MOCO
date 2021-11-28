@@ -97,9 +97,7 @@ class ExpenseViewController: UIViewController {
         deleteButton.redButton()
         deleteButton.setTitle("delete".localized(), for: .normal)
         deleteButton.isHidden = buttonStatus
-        
-//        dateList = InputManager.shared.dateToYearMonth(date: Date())
-        
+            
     }
     
     func editConfig() {
@@ -219,7 +217,6 @@ class ExpenseViewController: UIViewController {
             RealmManager.shared.deleteExpense(id: self.expenseData!._id)
             self.closeButtonClicked()
         }
-        
     }
     
 }

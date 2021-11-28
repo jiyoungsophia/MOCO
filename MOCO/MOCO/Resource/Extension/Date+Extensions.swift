@@ -10,7 +10,7 @@ import Foundation
 extension DateFormatter {
     static var monthFormat: DateFormatter {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_KR")
+//        formatter.locale = Locale(identifier: "ko_KR")
         formatter.timeZone = TimeZone(abbreviation: "KST")
         formatter.dateFormat = "dateformat".localized()
         

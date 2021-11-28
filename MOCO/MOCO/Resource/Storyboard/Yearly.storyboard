@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j2U-m9-xEd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j2U-m9-xEd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,19 +17,13 @@
         <!--Yearly View Controller-->
         <scene sceneID="kga-CU-Tm4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Llh-nI-O9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="vEe-1U-WYf">
-                    <connections>
-                        <action selector="recognizeTap:" destination="j2U-m9-xEd" id="8nm-Br-Klz"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController storyboardIdentifier="YearlyViewController" id="j2U-m9-xEd" customClass="YearlyViewController" customModule="MOCO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFC-GR-IcA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MqA-XX-sYI">
-                                <rect key="frame" x="37" y="224" width="340" height="200"/>
+                                <rect key="frame" x="37" y="214" width="340" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxC-nk-cJ9">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="50"/>
@@ -105,7 +99,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MqA-XX-sYI" firstAttribute="centerX" secondItem="Sp3-hX-c6W" secondAttribute="centerX" id="17K-EG-evb"/>
-                            <constraint firstItem="MqA-XX-sYI" firstAttribute="top" secondItem="Sp3-hX-c6W" secondAttribute="top" constant="180" id="ndQ-UR-Jj7"/>
+                            <constraint firstItem="MqA-XX-sYI" firstAttribute="top" secondItem="Sp3-hX-c6W" secondAttribute="top" constant="170" id="ndQ-UR-Jj7"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="vEe-1U-WYf" appends="YES" id="Tp3-Qe-tZK"/>
@@ -121,6 +115,12 @@
                         <outlet property="yearLabel" destination="zJS-sH-Y3a" id="OGK-IY-XJg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Llh-nI-O9t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vEe-1U-WYf">
+                    <connections>
+                        <action selector="recognizeTap:" destination="j2U-m9-xEd" id="8nm-Br-Klz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="53.571428571428569"/>
         </scene>

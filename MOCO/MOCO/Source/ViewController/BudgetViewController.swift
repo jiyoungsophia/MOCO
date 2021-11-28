@@ -10,7 +10,12 @@ import Hero
 import RealmSwift
 
 
-class BudgetViewController: UIViewController {
+class BudgetViewController: UIViewController, passDateListDelegate {
+    func sendYearMonth(year: Int, month: Int) {
+        dateList = [year, month]
+        print(dateList)
+    }
+    
     
     @IBOutlet weak var incomeView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -28,11 +33,17 @@ class BudgetViewController: UIViewController {
     var placeData: [Place] = []
     var incomeData: [Income] = []
 
-    var dateList: [Int] = []
+    var dateList: [Int] = [] {
+        didSet {
+            loadIncome()
+            loadExpense()
+            configureIncomeView()
+        }
+    }
+    let current = InputManager.shared.dateToYearMonth(date: Date())
     
     var expenseData: [Expense] = [] {
         didSet {
-            print("didSet")
             self.collectionView.reloadData()
         }
     }
@@ -42,31 +53,25 @@ class BudgetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
 
         swipeGesture()
         configure()
-        //TODO: 날짜 조회
-        dateList = InputManager.shared.dateToYearMonth(date: Date())
+        dateList = current
         // isFirstRun 에 추가
 //        RealmManager.shared.saveOnline()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print(#function)
         
         loadIncome()
         loadExpense()
         configureIncomeView()
         
     }
+
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-    }
-    
+    //MARK: - viewWillAppear
     func loadIncome() {
         incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
         
@@ -76,12 +81,21 @@ class BudgetViewController: UIViewController {
         expenseData = RealmManager.shared.loadExpense(year: dateList[0], month: dateList[1])
     }
 
+    
     func configureIncomeView() {
         if incomeData.isEmpty {
             registerLabel.isHidden = false
         } else {
             registerLabel.isHidden = true
             
+            //dday 설정
+            if current[0] == dateList[0] && current[1] == dateList[1] {
+                ddayLabel.text = "⏰  D - \(InputManager.shared.calculateDday())"
+            } else {
+                ddayLabel.text = "⏰  D - 0"
+            }
+            
+            // 남은 예산
             let totalIncome = incomeData[0].amount
             let totalExpense = expenseData.map { $0.amount }.reduce(0) { $0 + $1 }
             let result = totalIncome - totalExpense
@@ -100,8 +114,11 @@ class BudgetViewController: UIViewController {
             percentLabel.text = "\(100 - percent)%"
             print(percent)
         }
+        
+        
     }
     
+    //MARK: - viewDidLoad
     func configure() {
         incomeView.setViewShadow(backgroundColor: UIColor.mocoBlue)
         
@@ -113,7 +130,6 @@ class BudgetViewController: UIViewController {
         
         monthTitleButton.semanticContentAttribute = .forceRightToLeft
         monthTitleButton.setTitle(DateFormatter.monthFormat.string(from: Date()), for: .normal)
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(incomeTapGesture))
         incomeView.addGestureRecognizer(tap)
         
@@ -127,11 +143,10 @@ class BudgetViewController: UIViewController {
         registerLabel.backgroundColor = UIColor.mocoBlue
         registerLabel.isHidden = true
         
-        ddayLabel.text = "🕰  D - \(InputManager.shared.calculateDday())"
-        
         alertImageView.isHidden = true
     }
     
+    //MARK: - Transition
     func swipeGesture() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeLeft.direction = .right
@@ -170,7 +185,7 @@ class BudgetViewController: UIViewController {
     }
     
     
-    
+    //MARK: - IBAction Button Click
     @IBAction func yearlyButtonClicked(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Yearly", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: YearlyViewController.identifier) as! YearlyViewController
@@ -178,7 +193,7 @@ class BudgetViewController: UIViewController {
         vc.monthButtonActionHandler = { selectedMonth in
             self.monthTitleButton.setTitle(selectedMonth, for: .normal)
         }
-        
+        vc.delegate = self
         vc.hero.modalAnimationType = .fade
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
@@ -196,6 +211,8 @@ class BudgetViewController: UIViewController {
     }
 }
 
+
+//MARK: - Extension CollectionView
 extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return expenseData.count
