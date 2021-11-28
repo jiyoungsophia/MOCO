@@ -12,14 +12,14 @@ class Expense: Object {
     @Persisted var amount: Int
     @Persisted var regDate = Date()
     @Persisted var isOffline: Bool
-    @Persisted var placeId: String? // offline
-    @Persisted var memo: String? // online
+    @Persisted var placeId: Int? // offline
+    @Persisted var memo: String // online
     @Persisted var year: Int
     @Persisted var month: Int
     
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    convenience init(amount: Int, regDate: Date, isOffline: Bool, placeId: String?, memo: String?, year: Int, month: Int) {
+    convenience init(amount: Int, regDate: Date, isOffline: Bool, placeId: Int?, memo: String, year: Int, month: Int) {
         self.init()
         self.amount = amount
         self.regDate = regDate

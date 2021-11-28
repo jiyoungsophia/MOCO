@@ -20,11 +20,13 @@
 "cancel" = "Cancel";
 "reset" = "Reset";
 
+"dday" = "Until next month, D- %d";
 "dateformat" = "MMM, yyyy";
 "choosethedate" = "Please choose the date";
 
 "gotosetting" = "Go to Setting";
 "failedtosave" = "Failed to save";
+"checkamount" = "Please check the amount";
 "writebudget" = "Please write down your budget";
 
 "enterall" = "Please enter all inputs";
@@ -40,3 +42,4 @@
 "nobackupfile" = "There are no files to back up.";
 "checkemail" = "Please check your email account in iPhone Settings";
 "restorecomplete" = "The restoration is complete";
+

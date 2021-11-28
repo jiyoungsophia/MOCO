@@ -24,14 +24,20 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var mapViewButton: UIButton!
     @IBOutlet weak var mapContainerView: UIView!
     
+    var placeData: [Place] = []
     var incomeData: [Income] = []
-//    {
-//        didSet {
-//            loadData()
-//        }
-//    }
+
     var dateList: [Int] = []
     
+    var expenseData: [Expense] = [] {
+        didSet {
+            print("didSet")
+            self.collectionView.reloadData()
+        }
+    }
+
+    var isOffline: Bool = false
+    var placeId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +47,16 @@ class BudgetViewController: UIViewController {
         configure()
         
         dateList = InputManager.shared.dateToYearMonth(date: Date())
-        
+        // isFirstRun 에 추가
+//        RealmManager.shared.saveOnline()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(#function)
 
-        loadData()
-        
+        loadIncome()
+        loadExpense()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,16 +64,19 @@ class BudgetViewController: UIViewController {
         
     }
     
-    func loadData() {
+    func loadIncome() {
         incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
         if incomeData.isEmpty {
             registerLabel.isHidden = false
         } else {
-            // ddaylabel
+            registerLabel.isHidden = true
             incomeLabel.text = "+ \(incomeData[0].amount.formatWithSeparator)"
             // percentage
         }
-        
+    }
+    
+    func loadExpense() {
+        expenseData = RealmManager.shared.loadExpense(year: dateList[0], month: dateList[1])
     }
     
     
@@ -95,7 +105,7 @@ class BudgetViewController: UIViewController {
         registerLabel.backgroundColor = UIColor.mocoBlue
         registerLabel.isHidden = true
         
-        ddayLabel.text = "D - \(InputManager.shared.calculateDday())"
+        ddayLabel.text = "🕰 D－ \(InputManager.shared.calculateDday())"
         
     }
     
@@ -166,32 +176,37 @@ class BudgetViewController: UIViewController {
 
 extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return expenseData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpenseCell.identifier, for: indexPath) as? ExpenseCell else {
             return UICollectionViewCell()
         }
-        
+        let item = expenseData[indexPath.item]
+        placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
+        cell.configureCell(item: item, place: placeData[0])
+    
         return cell
     }
     
-    // 수정화면 날짜버튼 비활성화
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: ExpenseViewController.identifier) as! ExpenseViewController
         vc.buttonStatus = false
+        vc.expenseData = expenseData[indexPath.item]
         let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
     }
+    
 }
 
 extension BudgetViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let spacing: CGFloat = 28
         let width = UIScreen.main.bounds.width - (spacing * 2)
-        return CGSize(width: width, height: 100)
+        return CGSize(width: width, height: 90)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)

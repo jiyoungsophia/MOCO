@@ -77,6 +77,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="resetButtonClicked:" destination="Cmg-UH-qiA" eventType="touchUpInside" id="sJH-8X-zYR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="abt-sp-Hge"/>
@@ -314,6 +317,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="deleteButtonClicked:" destination="fVK-Dq-eu1" eventType="touchUpInside" id="sov-2B-aVs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SNM-fB-OCn"/>

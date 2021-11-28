@@ -24,7 +24,7 @@ class SearchViewController: UIViewController {
     }
     
     var selectedPlaceName: String = ""
-    var selectPlaceHandler: ((String) -> (Void))?
+    var selectPlaceHandler: ((Int, String) -> (Void))?
     
     var locationManager = CLLocationManager()
     // 여기 이렇게 해줘도 되는지 모르겠음
@@ -32,7 +32,7 @@ class SearchViewController: UIViewController {
     var userCoordinate = CLLocationCoordinate2D() {
         didSet {
             location = CLLocation(latitude: self.userCoordinate.latitude,
-                                  longitude: self.userCoordinate.longitude)
+                                longitude: self.userCoordinate.longitude)
             
         }
     }
@@ -117,9 +117,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        selectPlaceHandler?(selectedPlaceName)
+        selectPlaceHandler?(selectedPlace.placeId, selectedPlaceName)
         self.dismiss(animated: true, completion: nil)
-        
         
     }
 }
@@ -129,9 +128,7 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text, text.count >= 2 {
             fetchSearchData(location: location, query: text)
-            
         }
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

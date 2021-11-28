@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="NotoSansKR-Medium.otf">
+            <string>NotoSansKR-Medium</string>
+        </array>
         <array key="NotoSansKR-Regular.otf">
             <string>NotoSansKR-Regular</string>
         </array>
@@ -17,42 +20,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ExpenseCell" reuseIdentifier="ExpenseCell" id="gTV-IL-0wX" customClass="ExpenseCell" customModule="MOCO" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="90"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syw-xZ-OkJ">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="90"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipse2" translatesAutoresizingMaskIntoConstraints="NO" id="gSO-AZ-KDp">
-                                <rect key="frame" x="14" y="15" width="70" height="70"/>
+                                <rect key="frame" x="20" y="13" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="6t7-3d-u77"/>
-                                    <constraint firstAttribute="height" constant="70" id="YK8-TM-aYN"/>
+                                    <constraint firstAttribute="width" constant="64" id="6t7-3d-u77"/>
+                                    <constraint firstAttribute="height" constant="64" id="YK8-TM-aYN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4J-XH-9af">
-                                <rect key="frame" x="92" y="27" width="272" height="22"/>
+                                <rect key="frame" x="104" y="15" width="260" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-uA-EMx">
-                                <rect key="frame" x="92" y="53" width="272" height="25"/>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="104" y="32.5" width="260" height="21"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021. 12. 25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4Y-8V-9Ag">
-                                <rect key="frame" x="303.5" y="8" width="68.5" height="15"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="305" y="8" width="67" height="14"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGray5Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI6-kK-A9N">
-                                <rect key="frame" x="26.5" y="26" width="45" height="48"/>
+                                <rect key="frame" x="29.5" y="21" width="45" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,13 +67,13 @@
                             <constraint firstItem="rSc-uA-EMx" firstAttribute="leading" secondItem="h4J-XH-9af" secondAttribute="leading" id="Bm8-3x-xjH"/>
                             <constraint firstItem="gSO-AZ-KDp" firstAttribute="centerY" secondItem="syw-xZ-OkJ" secondAttribute="centerY" id="GO3-S2-CUS"/>
                             <constraint firstAttribute="trailing" secondItem="Z4Y-8V-9Ag" secondAttribute="trailing" constant="8" id="MMr-bG-li9"/>
-                            <constraint firstItem="gSO-AZ-KDp" firstAttribute="leading" secondItem="syw-xZ-OkJ" secondAttribute="leading" constant="14" id="P67-O5-Qq4"/>
+                            <constraint firstItem="gSO-AZ-KDp" firstAttribute="leading" secondItem="syw-xZ-OkJ" secondAttribute="leading" constant="20" id="P67-O5-Qq4"/>
                             <constraint firstItem="Z4Y-8V-9Ag" firstAttribute="top" secondItem="syw-xZ-OkJ" secondAttribute="top" constant="8" id="SRu-rL-2yx"/>
                             <constraint firstItem="iI6-kK-A9N" firstAttribute="centerY" secondItem="gSO-AZ-KDp" secondAttribute="centerY" id="VYL-3a-LjB"/>
-                            <constraint firstItem="h4J-XH-9af" firstAttribute="leading" secondItem="gSO-AZ-KDp" secondAttribute="trailing" constant="8" id="cVq-Zo-MZV"/>
+                            <constraint firstItem="h4J-XH-9af" firstAttribute="leading" secondItem="gSO-AZ-KDp" secondAttribute="trailing" constant="20" id="cVq-Zo-MZV"/>
                             <constraint firstAttribute="trailing" secondItem="h4J-XH-9af" secondAttribute="trailing" constant="16" id="jJs-LM-AR3"/>
-                            <constraint firstItem="rSc-uA-EMx" firstAttribute="top" secondItem="h4J-XH-9af" secondAttribute="bottom" constant="4" id="nzn-f7-j3r"/>
-                            <constraint firstItem="h4J-XH-9af" firstAttribute="top" secondItem="Z4Y-8V-9Ag" secondAttribute="bottom" constant="4" id="si6-d6-LSd"/>
+                            <constraint firstItem="rSc-uA-EMx" firstAttribute="top" secondItem="h4J-XH-9af" secondAttribute="bottom" id="nzn-f7-j3r"/>
+                            <constraint firstItem="h4J-XH-9af" firstAttribute="top" secondItem="Z4Y-8V-9Ag" secondAttribute="centerY" id="si6-d6-LSd"/>
                             <constraint firstItem="rSc-uA-EMx" firstAttribute="trailing" secondItem="h4J-XH-9af" secondAttribute="trailing" id="tFT-1m-oSo"/>
                         </constraints>
                     </view>
@@ -85,7 +88,11 @@
             </constraints>
             <size key="customSize" width="282" height="83"/>
             <connections>
+                <outlet property="amountLabel" destination="rSc-uA-EMx" id="PNQ-qm-59u"/>
                 <outlet property="backView" destination="syw-xZ-OkJ" id="FgX-bU-3fF"/>
+                <outlet property="categoryIconLabel" destination="iI6-kK-A9N" id="Yyw-O3-3En"/>
+                <outlet property="dateLabel" destination="Z4Y-8V-9Ag" id="ceW-Ga-3Bh"/>
+                <outlet property="placeLabel" destination="h4J-XH-9af" id="Eqa-sT-L9p"/>
             </connections>
             <point key="canvasLocation" x="224.63768115942031" y="88.392857142857139"/>
         </collectionViewCell>
@@ -94,6 +101,9 @@
         <image name="ellipse2" width="70" height="70"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

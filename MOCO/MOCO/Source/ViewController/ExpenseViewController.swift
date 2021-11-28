@@ -7,6 +7,7 @@
 
 import UIKit
 import Hero
+import RealmSwift
 
 class ExpenseViewController: UIViewController {
     
@@ -30,13 +31,27 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var offlineButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
-    var buttonStatus : Bool = false
+    var buttonStatus: Bool = false
+    var expenseData: Expense?
+    var dateList: [Int] = []
+    var isOffline: Bool = false
+    var placeId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navConfigure()
         configure()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if expenseData != nil {
+            editConfig()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        expenseTextField.becomeFirstResponder()
     }
     
     func navConfigure() {
@@ -52,13 +67,14 @@ class ExpenseViewController: UIViewController {
     
     func configure() {
         placeView.isHidden = true
-        dateButton.setTitle(DateFormatter.defaultFormat.string(from: Date()), for: .normal)
+        dateButton.setTitle(DateFormatter.defaultFormat.string(from: expenseData?.regDate ?? Date()), for: .normal)
         
         expenseTextField.delegate = self
         placeTextField.delegate = self
         
         expenseTextField.addTarget(self, action: #selector(zeroFilter(_:)), for: .editingChanged)
         expenseTextField.placeholder = "amount".localized()
+        expenseTextField.text = expenseData?.amount.formatWithSeparator
         expenseAlertLabel.text = "length_alert".localized(with: 10, comment: "10글자")
         expenseAlertLabel.isHidden = true
         
@@ -81,26 +97,54 @@ class ExpenseViewController: UIViewController {
         deleteButton.redButton()
         deleteButton.setTitle("delete".localized(), for: .normal)
         deleteButton.isHidden = buttonStatus
+        
+//        dateList = InputManager.shared.dateToYearMonth(date: Date())
+        
+    }
+    
+    func editConfig() {
+        if expenseData?.isOffline == true {
+            offlineButton.placeButtonClicked()
+            onlineButton.placeButton()
+            onlineButton.isUserInteractionEnabled = false
+            placeTextField.isUserInteractionEnabled = false
+            placeTextField.textColor = .lightGray
+            placeId = expenseData?.placeId ?? 0
+        } else if expenseData?.isOffline == false {
+            onlineButton.placeButtonClicked()
+            offlineButton.placeButton()
+        }
+        placeView.isHidden = false
+        placeLabel.isHidden = true
+        placeTextField.text = expenseData?.memo
     }
     
     @objc func saveButtonClicked() {
-        if let expense = expenseTextField.text, expense != "",
-           let date = dateButton.currentTitle, date != "",
+        // 입력 다 한 경우
+        if let expenseText = expenseTextField.text, expenseText != "0", expenseText != "",
+           let date = DateFormatter.defaultFormat.date(from: dateButton.currentTitle!),
            let placeText = placeTextField.text, placeText != "" {
             
-            guard let expenseToInt = Int(expense) else {return}
-//            print(expenseToInt)
-            expenseToInt.formatWithSeparator
+            let amount = InputManager.shared.textToInt(text: expenseText)
+            if offlineButton.backgroundColor == UIColor.mocoPink && placeTextField.textColor == UIColor.lightGray {
+                isOffline = placeStatus.offline.description
+            } else {
+                isOffline = placeStatus.online.description
+            }
             
-            //렘에 저장
-            self.dismiss(animated: true, completion: nil)
-            
-        } else {
-            presentAlert(title: "failedtosave".localized(), message: "enterall".localized(), okTitle: "ok".localized(), handler: {}) 
+            dateList = InputManager.shared.dateToYearMonth(date: date)
+            print(dateList)
+            if let expense = expenseData { // 수정일 경우
+                RealmManager.shared.updateExpense(expense: expense, amount: amount, regDate: date, isOffline: isOffline, placeId: placeId, memo: placeText, year: dateList[0], month: dateList[1])
+                self.dismiss(animated: true, completion: nil)
+            } else { // 새로 등록일 경우
+                let newExpense = Expense(amount: amount, regDate: date, isOffline: isOffline, placeId: placeId, memo: placeText, year: dateList[0], month: dateList[1])
+                RealmManager.shared.saveExpense(expense: newExpense)
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else { // 하나라도 입력 없을 때
+            presentOkAlert(title: "failedtosave".localized(), message: "enterall".localized())
         }
-        
-        
-        
     }
     
     @objc func closeButtonClicked() {
@@ -121,7 +165,6 @@ class ExpenseViewController: UIViewController {
         guard let contentView = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as? DatePickerViewController else {
             return
         }
-        
         contentView.view.backgroundColor = .clear
         self.datePickerAlert(contentView: contentView, dateBorder: self.dateBorder, dateButton: self.dateButton)
     }
@@ -155,21 +198,28 @@ class ExpenseViewController: UIViewController {
         
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
-        
         present(vc, animated: true, completion: nil)
-        //TODO: search controller에서 돌아왔을때 (closure)
         
-        vc.selectPlaceHandler = { [weak self] place in
+        vc.selectPlaceHandler = { [weak self] idData, nameData in
             self?.placeLabel.isHidden = true
             self?.placeView.isHidden = false
             self?.placeTextField.isUserInteractionEnabled = false
-            self?.placeTextField.text = place
+            self?.placeTextField.text = nameData
+            self?.placeId = idData
             self?.placeTextField.textColor = .lightGray
         }
     }
     
     @IBAction func memoDidChange(_ sender: UITextField) {
         checkMaxLength(textField: placeTextField, maxLength: 15, alertLabel: placeMemoAlertLabel)
+    }
+    
+    @IBAction func deleteButtonClicked(_ sender: UIButton) {
+        presentAlert(title: "삭제하시겠습니까?", message: "이 지출이 삭제됩니다", okTitle: "삭제") {
+            RealmManager.shared.deleteExpense(id: self.expenseData!._id)
+            self.closeButtonClicked()
+        }
+        
     }
     
 }
@@ -197,5 +247,4 @@ extension ExpenseViewController: UITextFieldDelegate {
             return true
         }
     }
-    
 }

@@ -70,13 +70,13 @@ class IncomeViewController: UIViewController {
     // 저장되는 날짜 확인할 것!!!
     @objc func saveButtonClicked() {
         // 입력 있을때
-        if let income = incomeTextField.text, income != "" {
+        if let income = incomeTextField.text, income != "0", income != "" {
             
             let amount = InputManager.shared.textToInt(text: income)
             let now = DateFormatter.krFormat.string(from: Date())
     
             if incomeData.isEmpty { // 새 수입등록
-                let newIncome = Income(amount: amount, regDate: DateFormatter.krFormat.date(from: now)!, year: dateList[0], month: dateList[1])
+                let newIncome = Income(amount: amount, regDate: Date(), year: dateList[0], month: dateList[1])
                 RealmManager.shared.saveIncome(income: newIncome)
             } else { // 업데이트
                 RealmManager.shared.updateIncome(income: incomeData[0], amount: amount, regDate: Date())
@@ -101,6 +101,14 @@ class IncomeViewController: UIViewController {
             textField.text = ""
         }
     }
+    
+    @IBAction func resetButtonClicked(_ sender: UIButton) {
+        presentAlert(title: "초기화하시겠습니까?", message: "이번 달 예산이 초기화됩니다", okTitle: "삭제") {
+            RealmManager.shared.deleteIncome(id: self.incomeData[0]._id)
+            self.closeButtonClicked()
+        }
+    }
+    
 }
 
 extension IncomeViewController: UITextFieldDelegate {

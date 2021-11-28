@@ -20,11 +20,13 @@
 "cancel" = "취소";
 "reset" = "초기화";
 
+"dday" = "다음 달까지, D- %d";
 "dateformat" = "yyyy년 M월";
 "choosethedate" = "날짜를 선택해주세요";
 
 "gotosetting" = "설정으로 이동";
 "failedtosave" = "저장 실패";
+"checkamount" = "금액을 확인해주세요";
 "writebudget" = "예산을 적어주세요";
 
 "enterall" = "모두 입력해주세요";
