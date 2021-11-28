@@ -37,13 +37,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4J-XH-9af">
-                                <rect key="frame" x="104" y="15" width="260" height="17.5"/>
+                                <rect key="frame" x="104" y="19.5" width="260" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-uA-EMx">
-                                <rect key="frame" x="104" y="32.5" width="260" height="21"/>
+                                <rect key="frame" x="104" y="37" width="260" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                             <constraint firstItem="h4J-XH-9af" firstAttribute="leading" secondItem="gSO-AZ-KDp" secondAttribute="trailing" constant="20" id="cVq-Zo-MZV"/>
                             <constraint firstAttribute="trailing" secondItem="h4J-XH-9af" secondAttribute="trailing" constant="16" id="jJs-LM-AR3"/>
                             <constraint firstItem="rSc-uA-EMx" firstAttribute="top" secondItem="h4J-XH-9af" secondAttribute="bottom" id="nzn-f7-j3r"/>
-                            <constraint firstItem="h4J-XH-9af" firstAttribute="top" secondItem="Z4Y-8V-9Ag" secondAttribute="centerY" id="si6-d6-LSd"/>
+                            <constraint firstItem="h4J-XH-9af" firstAttribute="top" secondItem="Z4Y-8V-9Ag" secondAttribute="firstBaseline" id="si6-d6-LSd"/>
                             <constraint firstItem="rSc-uA-EMx" firstAttribute="trailing" secondItem="h4J-XH-9af" secondAttribute="trailing" id="tFT-1m-oSo"/>
                         </constraints>
                     </view>

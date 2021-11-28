@@ -48,7 +48,7 @@ class IncomeViewController: UIViewController {
         incomeTextField.placeholder = "amount".localized()
         incomeTextField.addTarget(self, action: #selector(zeroFilter(_:)), for: .editingChanged)
         
-        lengthAlertLabel.text = "length_alert".localized(with: 10, comment: "10글자")
+        lengthAlertLabel.text = "length_alert".localized(with: 8, comment: "8글자")
         lengthAlertLabel.isHidden = true
         
         // 데이터 유무에 따라 isHidden
@@ -120,7 +120,7 @@ extension IncomeViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return textFieldManager.shared.changeTextField(textField: textField, string: string, alertLabel: lengthAlertLabel, range: range, maxLength: 10)
+        return textFieldManager.shared.changeTextField(textField: textField, string: string, alertLabel: lengthAlertLabel, range: range, maxLength: 11)
     }
     
 }

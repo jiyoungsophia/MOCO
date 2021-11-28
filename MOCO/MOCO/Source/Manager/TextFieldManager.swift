@@ -24,7 +24,7 @@ final class textFieldManager {
             var beforeForemattedString = textWithoutSeparator + string // 이전 입력숫자 + 새 입력숫자
             
             if NumberFormatter.defaultFormat.number(from: string) != nil { // 10글자 이하일 때
-                if let formattedNumber = NumberFormatter.defaultFormat.number(from: beforeForemattedString), let formattedString = NumberFormatter.defaultFormat.string(from: formattedNumber), formattedString.count < 14 {
+                if let formattedNumber = NumberFormatter.defaultFormat.number(from: beforeForemattedString), let formattedString = NumberFormatter.defaultFormat.string(from: formattedNumber), formattedString.count < maxLength {
                     textField.text = formattedString
                     alertLabel.isHidden = true
                     return false
@@ -37,7 +37,7 @@ final class textFieldManager {
                     let substringToReplace = text[rangeOfTextToReplace]
                     let count = text.count - substringToReplace.count + string.count
                     alertLabel.isHidden = false
-                    return count < 14
+                    return count < maxLength
                 }
             } else {
                 if string == "" { // 백스페이스일때

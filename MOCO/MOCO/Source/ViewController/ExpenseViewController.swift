@@ -75,7 +75,7 @@ class ExpenseViewController: UIViewController {
         expenseTextField.addTarget(self, action: #selector(zeroFilter(_:)), for: .editingChanged)
         expenseTextField.placeholder = "amount".localized()
         expenseTextField.text = expenseData?.amount.formatWithSeparator
-        expenseAlertLabel.text = "length_alert".localized(with: 10, comment: "10글자")
+        expenseAlertLabel.text = "length_alert".localized(with: 8, comment: "8글자")
         expenseAlertLabel.isHidden = true
         
         dateLabel.text = "date".localized()
@@ -242,7 +242,7 @@ extension ExpenseViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == expenseTextField {
-            return textFieldManager.shared.changeTextField(textField: expenseTextField, string: string, alertLabel: expenseAlertLabel, range: range, maxLength: 10)
+            return textFieldManager.shared.changeTextField(textField: expenseTextField, string: string, alertLabel: expenseAlertLabel, range: range, maxLength: 11)
         } else {
             return true
         }

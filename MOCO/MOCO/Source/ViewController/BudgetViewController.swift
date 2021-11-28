@@ -20,6 +20,7 @@ class BudgetViewController: UIViewController {
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var registerLabel: UILabel!
+    @IBOutlet weak var alertImageView: UIImageView!
     
     @IBOutlet weak var mapViewButton: UIButton!
     @IBOutlet weak var mapContainerView: UIView!
@@ -45,7 +46,7 @@ class BudgetViewController: UIViewController {
 
         swipeGesture()
         configure()
-        
+        //TODO: 날짜 조회
         dateList = InputManager.shared.dateToYearMonth(date: Date())
         // isFirstRun 에 추가
 //        RealmManager.shared.saveOnline()
@@ -54,9 +55,11 @@ class BudgetViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(#function)
-
+        
         loadIncome()
         loadExpense()
+        configureIncomeView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,19 +69,38 @@ class BudgetViewController: UIViewController {
     
     func loadIncome() {
         incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
-        if incomeData.isEmpty {
-            registerLabel.isHidden = false
-        } else {
-            registerLabel.isHidden = true
-            incomeLabel.text = "+ \(incomeData[0].amount.formatWithSeparator)"
-            // percentage
-        }
+        
     }
     
     func loadExpense() {
         expenseData = RealmManager.shared.loadExpense(year: dateList[0], month: dateList[1])
     }
-    
+
+    func configureIncomeView() {
+        if incomeData.isEmpty {
+            registerLabel.isHidden = false
+        } else {
+            registerLabel.isHidden = true
+            
+            let totalIncome = incomeData[0].amount
+            let totalExpense = expenseData.map { $0.amount }.reduce(0) { $0 + $1 }
+            let result = totalIncome - totalExpense
+            var resultText = ""
+            if result > 0 {
+                alertImageView.isHidden = true
+                resultText = "+\(result.formatWithSeparator)"
+            } else {
+                alertImageView.isHidden = false
+                resultText = result.formatWithSeparator
+            }
+            incomeLabel.text = resultText
+            
+            // percentage
+            let percent = Int(( Double(totalExpense) / Double(totalIncome) ) * 100)
+            percentLabel.text = "\(100 - percent)%"
+            print(percent)
+        }
+    }
     
     func configure() {
         incomeView.setViewShadow(backgroundColor: UIColor.mocoBlue)
@@ -105,8 +127,9 @@ class BudgetViewController: UIViewController {
         registerLabel.backgroundColor = UIColor.mocoBlue
         registerLabel.isHidden = true
         
-        ddayLabel.text = "🕰 D－ \(InputManager.shared.calculateDday())"
+        ddayLabel.text = "🕰  D - \(InputManager.shared.calculateDday())"
         
+        alertImageView.isHidden = true
     }
     
     func swipeGesture() {
@@ -127,7 +150,6 @@ class BudgetViewController: UIViewController {
         }
     }
     
-    // TODO: 수입 데이터 유무에 따라 incomebutton 분기처리
     @objc func incomeTapGesture() {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: IncomeViewController.identifier) as! IncomeViewController

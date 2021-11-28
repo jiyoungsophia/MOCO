@@ -102,10 +102,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="Wr1-Xu-6Eb">
+                                        <rect key="frame" x="317" y="-12" width="45" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="5Id-bj-tBD"/>
+                                            <constraint firstAttribute="width" constant="45" id="T7O-25-9xf"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="C75-UY-Ylr" secondAttribute="trailing" constant="24" id="4Qv-yw-cqB"/>
+                                    <constraint firstItem="Wr1-Xu-6Eb" firstAttribute="top" secondItem="eb2-us-R8m" secondAttribute="top" constant="-12" id="6kj-EL-KA4"/>
                                     <constraint firstItem="WkW-De-XXe" firstAttribute="leading" secondItem="FFf-X8-feT" secondAttribute="leading" id="8zu-2r-uf3"/>
                                     <constraint firstItem="WkW-De-XXe" firstAttribute="top" secondItem="FFf-X8-feT" secondAttribute="bottom" constant="4" id="DqQ-Ny-ddf"/>
                                     <constraint firstItem="C75-UY-Ylr" firstAttribute="bottom" secondItem="WkW-De-XXe" secondAttribute="bottom" id="EMr-20-w4g"/>
@@ -114,6 +122,7 @@
                                     <constraint firstItem="WkW-De-XXe" firstAttribute="trailing" secondItem="FFf-X8-feT" secondAttribute="trailing" id="VlM-Sl-A9r"/>
                                     <constraint firstItem="Duu-f4-Pj6" firstAttribute="leading" secondItem="eb2-us-R8m" secondAttribute="leading" constant="16" id="WFI-cI-1XX"/>
                                     <constraint firstItem="Duu-f4-Pj6" firstAttribute="top" secondItem="eb2-us-R8m" secondAttribute="top" constant="16" id="c7f-iC-Okb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wr1-Xu-6Eb" secondAttribute="trailing" constant="-4" id="j0X-hc-GZk"/>
                                     <constraint firstAttribute="bottom" secondItem="Duu-f4-Pj6" secondAttribute="bottom" constant="16" id="jwP-YF-RiC"/>
                                     <constraint firstAttribute="trailing" secondItem="Duu-f4-Pj6" secondAttribute="trailing" constant="16" id="ms2-lC-uDK"/>
                                     <constraint firstAttribute="height" constant="106" id="oUE-bl-eYp"/>
@@ -167,6 +176,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="alertImageView" destination="Wr1-Xu-6Eb" id="2dX-GS-alB"/>
                         <outlet property="collectionView" destination="zWi-1X-aiF" id="4PI-hB-vKu"/>
                         <outlet property="ddayLabel" destination="FFf-X8-feT" id="eiN-o3-aan"/>
                         <outlet property="floationgButton" destination="eOe-ei-2jy" id="szS-iG-KBd"/>
@@ -248,6 +258,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="alert" width="45" height="52"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="group4" width="70" height="70"/>
         <image name="map" catalog="system" width="128" height="110"/>

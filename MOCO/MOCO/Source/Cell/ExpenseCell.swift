@@ -28,7 +28,7 @@ class ExpenseCell: UICollectionViewCell {
         
         categoryIconLabel.text = CategoryDict[place.categoryCode ?? "0"]
         placeLabel.text = item.memo
-        amountLabel.text = "ㅡ \(item.amount.formatWithSeparator)"
+        amountLabel.text = "- \(item.amount.formatWithSeparator)"
         dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
     }
 }
