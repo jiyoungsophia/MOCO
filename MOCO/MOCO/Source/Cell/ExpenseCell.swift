@@ -31,4 +31,12 @@ class ExpenseCell: UICollectionViewCell {
         amountLabel.text = "- \(item.amount.formatWithSeparator)"
         dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
     }
+    
+    func configureMapCell(item: Expense, id: Int) {
+        
+        categoryIconLabel.text = CategoryDict["id" ?? "0"]
+        placeLabel.text = item.memo
+        amountLabel.text = "- \(item.amount.formatWithSeparator)"
+        dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
+    }
 }

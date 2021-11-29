@@ -44,6 +44,10 @@ class RealmManager {
         return Array(localRealm.objects(Place.self).filter("placeId == \(id)"))
     }
     
+    func loadPlaceData() -> [Place] {
+        return Array(localRealm.objects(Place.self))
+    }
+    
     func updatePlace(place: Place, longtitude: Double, latitude: Double) {
         try! localRealm.write({
             place.longtitude = longtitude
@@ -76,7 +80,6 @@ class RealmManager {
         })
     }
     
-    //TODO: 달아야함 !!!
     func deleteIncome(id: ObjectId) {
         try! localRealm.write({
             guard let object = localRealm.object(ofType: Income.self, forPrimaryKey: id) else { return }
@@ -115,5 +118,10 @@ class RealmManager {
             localRealm.delete(object)
         })
     }
+    
+    func loadOfflineExpense(year: Int, month: Int) -> [Expense] {
+        return Array(localRealm.objects(Expense.self).filter("year == \(year) AND month == \(month) AND isOffline == true").sorted(byKeyPath: "regDate", ascending: false))
+    }
+    
     
 }
