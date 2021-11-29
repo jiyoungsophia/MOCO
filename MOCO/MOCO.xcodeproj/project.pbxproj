@@ -404,13 +404,13 @@
 			);
 			mainGroup = 3EBBC679274290DF00113DA1;
 			packageReferences = (
-				3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero.git" */,
-				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */,
-				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */,
-				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */,
-				B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip.git" */,
-				B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */,
+				3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */,
+				3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */,
+				B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 3EBBC683274290DF00113DA1 /* Products */;
 			projectDirPath = "";
@@ -744,7 +744,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */ = {
+		3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
 			requirement = {
@@ -752,7 +752,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -760,7 +760,7 @@
 				minimumVersion = 5.4.4;
 			};
 		};
-		3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */ = {
+		3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
 			requirement = {
@@ -768,7 +768,7 @@
 				minimumVersion = 10.20.0;
 			};
 		};
-		3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero.git" */ = {
+		3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
 			requirement = {
@@ -776,7 +776,7 @@
 				minimumVersion = 1.6.1;
 			};
 		};
-		3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */ = {
+		3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -784,7 +784,7 @@
 				minimumVersion = 6.5.9;
 			};
 		};
-		B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
+		B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -792,7 +792,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */ = {
+		B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
 			requirement = {
@@ -805,42 +805,42 @@
 /* Begin XCSwiftPackageProductDependency section */
 		3EBF283C274F6233008DBC46 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON.git" */;
+			package = 3EBF283B274F6232008DBC46 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
 		3EBF284A274F6519008DBC46 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 3EBF2849274F6519008DBC46 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		3EBF285427506D6C008DBC46 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */;
+			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = Realm;
 		};
 		3EBF285627506D6C008DBC46 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa.git" */;
+			package = 3EBF285327506D6B008DBC46 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
 		};
 		3EF4625927468CD700BD66AC /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero.git" */;
+			package = 3EF4625827468CD700BD66AC /* XCRemoteSwiftPackageReference "Hero" */;
 			productName = Hero;
 		};
 		3EF4627C274A286400BD66AC /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */;
+			package = 3EF4627B274A286400BD66AC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
 		B5707C532752A54E001E2A79 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip.git" */;
+			package = B5707C522752A54E001E2A79 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
 		};
 		B5707C562752AAD3001E2A79 /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD.git" */;
+			package = B5707C552752AAD2001E2A79 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */

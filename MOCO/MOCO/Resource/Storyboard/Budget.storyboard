@@ -62,6 +62,7 @@
                                 </state>
                                 <connections>
                                     <action selector="yearlyButtonClicked:" destination="RE1-KB-5RY" eventType="touchUpInside" id="KgA-qR-ZTb"/>
+                                    <action selector="yearlyButtonClicked:" destination="SJH-yR-hvc" eventType="touchUpInside" id="z4W-XD-ohB"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-1X-aiF">
@@ -141,7 +142,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-Yr-KxU">
-                                <rect key="frame" x="0.0" y="218" width="414" height="644"/>
+                                <rect key="frame" x="0.0" y="218" width="414" height="678"/>
                                 <connections>
                                     <segue destination="DgW-o8-Ec2" kind="embed" id="f0R-cm-H4v"/>
                                 </connections>
@@ -162,7 +163,7 @@
                             <constraint firstItem="O6r-xD-eRg" firstAttribute="top" secondItem="qcd-SL-Hca" secondAttribute="bottom" constant="44" id="IZz-61-hIe"/>
                             <constraint firstItem="u0t-yF-Idr" firstAttribute="trailing" secondItem="eOe-ei-2jy" secondAttribute="trailing" constant="40" id="Rfh-OW-40q"/>
                             <constraint firstItem="gaR-Yr-KxU" firstAttribute="top" secondItem="O6r-xD-eRg" secondAttribute="bottom" constant="18" id="VBm-EF-lmd"/>
-                            <constraint firstItem="u0t-yF-Idr" firstAttribute="bottom" secondItem="gaR-Yr-KxU" secondAttribute="bottom" id="ZWK-cD-fh5"/>
+                            <constraint firstAttribute="bottom" secondItem="gaR-Yr-KxU" secondAttribute="bottom" id="ZWK-cD-fh5"/>
                             <constraint firstItem="qcd-SL-Hca" firstAttribute="top" secondItem="u0t-yF-Idr" secondAttribute="top" constant="38" id="b95-fJ-Xha"/>
                             <constraint firstItem="zWi-1X-aiF" firstAttribute="top" secondItem="eb2-us-R8m" secondAttribute="bottom" constant="8" id="dVG-Z8-06Y"/>
                             <constraint firstItem="eb2-us-R8m" firstAttribute="top" secondItem="O6r-xD-eRg" secondAttribute="bottom" constant="28" id="kJc-ap-c0d"/>
@@ -190,6 +191,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2K-c4-FmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="SJH-yR-hvc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="580" y="-78"/>
         </scene>
@@ -198,14 +200,14 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="DgW-o8-Ec2" customClass="MapViewController" customModule="MOCO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9O-Fl-4tx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FnT-Q1-POk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="644"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FnT-Q1-POk" customClass="NMFMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcG-02-VNM">
-                                        <rect key="frame" x="18" y="434" width="50" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcG-02-VNM" customClass="NMFLocationButton">
+                                        <rect key="frame" x="18" y="468" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mcG-02-VNM" secondAttribute="height" multiplier="1:1" id="EWN-PF-6cF"/>
@@ -220,7 +222,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L31-nq-AWd">
-                                <rect key="frame" x="0.0" y="492" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="526" width="414" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7ys-3a-dNb"/>
@@ -248,13 +250,13 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="L31-nq-AWd" id="45h-Gp-qKm"/>
-                        <outlet property="locationButton" destination="mcG-02-VNM" id="UeN-di-2rZ"/>
-                        <outlet property="mapView" destination="FnT-Q1-POk" id="Rn4-Ow-9ZV"/>
+                        <outlet property="locationButton" destination="mcG-02-VNM" id="hnm-HW-lVp"/>
+                        <outlet property="mapView" destination="FnT-Q1-POk" id="FpA-SU-AOt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNc-UO-82z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350.72463768115944" y="569.86607142857144"/>
+            <point key="canvasLocation" x="1284" y="-5"/>
         </scene>
     </scenes>
     <resources>

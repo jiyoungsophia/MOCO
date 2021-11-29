@@ -319,8 +319,6 @@ override func viewDidLoad() {
 
 * Protocol 써봤다 !
 
- 
-
 <br>
 
 #### 📌 디바이스로 확인할 것
@@ -329,3 +327,25 @@ override func viewDidLoad() {
 * dDay 날짜 12시에 확인
 * 장소검색 선택시 dismiss
 * 이메일 피드백 확인
+
+<br>
+
+<br>
+
+## Day14 - 211128
+
+* 엄청난 삽질을 했지만 ..^^.. 쓸 기운이 없으므로,,
+* 같은 데이터를 한번에 여러곳에 보내줄땐 notification 잊지말자 ^^!
+* 또 큰일 났다. 지도뷰는 정말 내 역량으로는 불가능한 곳인것같다. 장소데이터와 지출데이터 구조가 잘못된 건 아니겠지만 내 머리로는 감당 안되는 구조다ㅠ 트렌드미디어 장르 데이터 받아올때 고생했던 게 떠오르는데, 이번엔 한번 더 꼬인거같다
+  * Place: placeId, categoryCode, latitude, longitude
+  * Expense: PlaceId
+  * Expense 데이터에 있는 place id와 Place 데이터에 place id가 같으면 해당 Place 데이터를 가져와서 Expense 데이터와 연결지어주면 되는데 나는 이게 왜이렇게 어려운지 .. 
+  * cell에서 indexPath.item하고 섞이면 아주 머리 터지는 조합이다. 
+  * 사용해야하는 고차함수들에 대한 이해도 조금 부족한것 같다
+* 🤯
+
+<br>
+
+### ⚡️TEAM BUILDING
+
+* 했는데,, 기억이 없다..
