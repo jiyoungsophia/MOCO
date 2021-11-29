@@ -64,6 +64,11 @@
 		B5297C3F275253E50089036E /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297C3E275253E50089036E /* InputManager.swift */; };
 		B5707C542752A54E001E2A79 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = B5707C532752A54E001E2A79 /* Zip */; };
 		B5707C572752AAD3001E2A79 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B5707C562752AAD3001E2A79 /* JGProgressHUD */; };
+		B5AC8D0127552B3C00717830 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5AC8D0027552B3C00717830 /* Onboarding.storyboard */; };
+		B5AC8D0327552B5500717830 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D0227552B5500717830 /* OnboardingViewController.swift */; };
+		B5AC8D0527552DA600717830 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D0427552DA600717830 /* Onboarding.swift */; };
+		B5AC8D072755307600717830 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D062755307600717830 /* OnboardingCell.swift */; };
+		B5AC8D09275540F700717830 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D08275540F700717830 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +138,11 @@
 		B5297C3C2751274C0089036E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B5297C3D2751275D0089036E /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		B5297C3E275253E50089036E /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
+		B5AC8D0027552B3C00717830 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		B5AC8D0227552B5500717830 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B5AC8D0427552DA600717830 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		B5AC8D062755307600717830 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		B5AC8D08275540F700717830 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		BB3FEC90133D18BC9DC2D967 /* Pods-MOCO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.debug.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.debug.xcconfig"; sourceTree = "<group>"; };
 		C16FEBCCA8D31D59B970F6D7 /* Pods-MOCO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.release.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.release.xcconfig"; sourceTree = "<group>"; };
 		D769DCE0CCAF7C73E7A4DF83 /* Pods_MOCO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +176,7 @@
 				3EF4627727478CF600BD66AC /* Yearly.storyboard */,
 				3E425750274A883B00A62670 /* Write.storyboard */,
 				3EBF27DF274D4225008DBC46 /* Setting.storyboard */,
+				B5AC8D0027552B3C00717830 /* Onboarding.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 				3EBF27ED274E04A2008DBC46 /* Expense.swift */,
 				3EBF27EF274E04AD008DBC46 /* Place.swift */,
 				3EBF284C274F7262008DBC46 /* Search.swift */,
+				B5AC8D0427552DA600717830 /* Onboarding.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				3EBF284F274F78EA008DBC46 /* category.swift */,
+				B5AC8D08275540F700717830 /* Storage.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -304,6 +317,7 @@
 				3E425754274A887F00A62670 /* ExpenseViewController.swift */,
 				3E42575B274B64C000A62670 /* DatePickerViewController.swift */,
 				3EBF27E1274D4239008DBC46 /* SettingViewController.swift */,
+				B5AC8D0227552B5500717830 /* OnboardingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -316,6 +330,7 @@
 				3EF462662746A64F00BD66AC /* ExpenseCell.xib */,
 				3EF4627327477E3900BD66AC /* MonthCell.swift */,
 				3EF4627427477E3900BD66AC /* MonthCell.xib */,
+				B5AC8D062755307600717830 /* OnboardingCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -436,6 +451,7 @@
 				3E77942327465A4A00344A60 /* Localizable.strings in Resources */,
 				3E7793DB2745445500344A60 /* NotoSansKR-Regular.otf in Resources */,
 				3EF462682746A64F00BD66AC /* ExpenseCell.xib in Resources */,
+				B5AC8D0127552B3C00717830 /* Onboarding.storyboard in Resources */,
 				3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */,
 				3E7793DC2745445500344A60 /* NotoSansKR-Black.otf in Resources */,
 				3EF4627827478CF600BD66AC /* Yearly.storyboard in Resources */,
@@ -494,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5AC8D072755307600717830 /* OnboardingCell.swift in Sources */,
 				3EBF27EE274E04A2008DBC46 /* Expense.swift in Sources */,
 				3E425763274BA0BC00A62670 /* Number+Extensions.swift in Sources */,
 				3EBF27E2274D4239008DBC46 /* SettingViewController.swift in Sources */,
@@ -521,6 +538,9 @@
 				3EBBC688274290DF00113DA1 /* SceneDelegate.swift in Sources */,
 				B5297C3F275253E50089036E /* InputManager.swift in Sources */,
 				3EBF27EC274E049A008DBC46 /* Income.swift in Sources */,
+				B5AC8D0527552DA600717830 /* Onboarding.swift in Sources */,
+				B5AC8D09275540F700717830 /* Storage.swift in Sources */,
+				B5AC8D0327552B5500717830 /* OnboardingViewController.swift in Sources */,
 				3E425753274A887200A62670 /* IncomeViewController.swift in Sources */,
 				3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */,
 				3EBF2850274F78EA008DBC46 /* category.swift in Sources */,

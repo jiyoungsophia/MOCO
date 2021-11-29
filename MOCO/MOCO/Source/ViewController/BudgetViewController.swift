@@ -11,10 +11,8 @@ import RealmSwift
 
 
 class BudgetViewController: UIViewController {
-//    func sendYearMonth(year: Int, month: Int) {
-//        dateList = [year, month]
-////        print("Budget: \(dateList)")
-//    }
+    
+    static let identifier = "BudgetViewController"
     
     
     @IBOutlet weak var incomeView: UIView!
@@ -61,8 +59,6 @@ class BudgetViewController: UIViewController {
         swipeGesture()
         configure()
         dateList = current
-        // isFirstRun 에 추가
-//        RealmManager.shared.saveOnline()
         
         NotificationCenter.default.addObserver(self, selector: #selector(dateNoti(noti:)), name: .dateNotification, object: nil)
     }
