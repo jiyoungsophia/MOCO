@@ -10,11 +10,9 @@ import Hero
 import RealmSwift
 
 
-class BudgetViewController: UIViewController, passDateListDelegate {
-    func sendYearMonth(year: Int, month: Int) {
-        dateList = [year, month]
-        print(dateList)
-    }
+class BudgetViewController: UIViewController {
+    
+    static let identifier = "BudgetViewController"
     
     
     @IBOutlet weak var incomeView: UIView!
@@ -30,6 +28,8 @@ class BudgetViewController: UIViewController, passDateListDelegate {
     @IBOutlet weak var mapViewButton: UIButton!
     @IBOutlet weak var mapContainerView: UIView!
     
+    let current = InputManager.shared.dateToYearMonth(date: Date())
+    
     var placeData: [Place] = []
     var incomeData: [Income] = []
 
@@ -40,7 +40,7 @@ class BudgetViewController: UIViewController, passDateListDelegate {
             configureIncomeView()
         }
     }
-    let current = InputManager.shared.dateToYearMonth(date: Date())
+    
     
     var expenseData: [Expense] = [] {
         didSet {
@@ -51,14 +51,28 @@ class BudgetViewController: UIViewController, passDateListDelegate {
     var isOffline: Bool = false
     var placeId: Int = 0
     
+//    var offlineExpense: [Expense] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         swipeGesture()
         configure()
         dateList = current
-        // isFirstRun 에 추가
-//        RealmManager.shared.saveOnline()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(dateNoti(noti:)), name: .dateNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .dateNotification, object: nil)
+    }
+    
+    @objc func dateNoti(noti: NSNotification) {
+        if let year = noti.userInfo?["year"] as? Int,
+           let month = noti.userInfo?["month"] as? Int {
+            dateList[0] = year
+            dateList[1] = month
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +93,11 @@ class BudgetViewController: UIViewController, passDateListDelegate {
     
     func loadExpense() {
         expenseData = RealmManager.shared.loadExpense(year: dateList[0], month: dateList[1])
+        
+        // 맵뷰에 보여줄 오프라인 데이터
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as! MapViewController
+//        vc.offlineExpense = expenseData.filter{ $0.isOffline == true }
+
     }
 
     
@@ -112,7 +131,7 @@ class BudgetViewController: UIViewController, passDateListDelegate {
             // percentage
             let percent = Int(( Double(totalExpense) / Double(totalIncome) ) * 100)
             percentLabel.text = "\(100 - percent)%"
-            print(percent)
+//            print(percent)
         }
         
         
@@ -193,7 +212,10 @@ class BudgetViewController: UIViewController, passDateListDelegate {
         vc.monthButtonActionHandler = { selectedMonth in
             self.monthTitleButton.setTitle(selectedMonth, for: .normal)
         }
-        vc.delegate = self
+        /// 이부분!!
+//        vc.delegate = self
+//        vc.delegate = MapViewController()
+        ///
         vc.hero.modalAnimationType = .fade
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil)
@@ -225,7 +247,6 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let item = expenseData[indexPath.item]
         placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
         cell.configureCell(item: item, place: placeData[0])
-    
         return cell
     }
     
@@ -255,3 +276,6 @@ extension BudgetViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension Notification.Name {
+    static let dateNotification = NSNotification.Name("dateNoti")
+}

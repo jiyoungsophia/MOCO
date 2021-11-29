@@ -9,6 +9,7 @@ import Foundation
 
 final class InputManager {
     private init() {}
+    
     static let shared = InputManager()
     
     func dateToYearMonth(date: Date) -> [Int] {
@@ -51,4 +52,5 @@ final class InputManager {
 
         return dDay.day! + 1
     }
+    
 }

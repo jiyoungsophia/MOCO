@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        sleep(2)
+        
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         // 아래 라인 없애기
 //        UINavigationBar.appearance().shadowImage = UIImage()

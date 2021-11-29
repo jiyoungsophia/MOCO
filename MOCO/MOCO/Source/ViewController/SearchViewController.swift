@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import CoreLocationUI
 import RealmSwift
 
 // 글자수 두글자 이상
@@ -140,16 +141,16 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
 
 // 빼기,,
 extension SearchViewController: CLLocationManagerDelegate {
-    
+
     func checkDeviceLocationAuthorization() {
         let authorizationStatus: CLAuthorizationStatus
-        
+
         if #available(iOS 14.0, *) {
             authorizationStatus = locationManager.authorizationStatus // iOS14 이상
         } else {
             authorizationStatus = CLLocationManager.authorizationStatus() // iOS14 미만
         }
-        
+
         // iOS 위치 서비스 확인
         if CLLocationManager.locationServicesEnabled() {
             checkAppLocationAuthorization(authorizationStatus)
@@ -160,7 +161,7 @@ extension SearchViewController: CLLocationManagerDelegate {
             }
         }
     }
-    
+
     func checkAppLocationAuthorization(_ authorizationStatus: CLAuthorizationStatus) {
         switch authorizationStatus {
         case .notDetermined:
@@ -180,11 +181,11 @@ extension SearchViewController: CLLocationManagerDelegate {
             break
         }
     }
-    
+
     func checkLocationAccuracy() {
         if #available(iOS 14.0, *) {
             let accurancyState = locationManager.accuracyAuthorization
-            
+
             switch accurancyState {
             case .fullAccuracy:
                 break
@@ -198,9 +199,9 @@ extension SearchViewController: CLLocationManagerDelegate {
             }
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+
         if let location = locations.last {
             userCoordinate = location.coordinate
 //            print(userCoordinate)
@@ -209,17 +210,17 @@ extension SearchViewController: CLLocationManagerDelegate {
         }
         locationManager.stopUpdatingLocation()
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+
         let authorizationStatus: CLAuthorizationStatus
-        
+
         if #available(iOS 14.0, *) {
             authorizationStatus = locationManager.authorizationStatus // iOS14 이상
         } else {
             authorizationStatus = CLLocationManager.authorizationStatus() // iOS14 미만
         }
-        
+
         switch authorizationStatus {
         case .authorizedWhenInUse:
             presentAlert(title: "사용자 위치를 얻는데 실패했습니다.",
@@ -240,17 +241,16 @@ extension SearchViewController: CLLocationManagerDelegate {
             break
         }
     }
-    
+
     // 6. iOS 14 미만: 앱이 위치 관리자를 생성, 승인 상태가 변경이 될 때 대리자에게 승인상태 알려줌
     // 권한이 변경 될 때 마다 감지해서 실행됨
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkDeviceLocationAuthorization()
     }
-    
+
     // 7. iOS 14 이상: 앱이 위치 관리자를 생성, 승인 상태가 변경이 될 때 대리자에게 승인상태 알려줌
     // 권한이 변경 될 때 마다 감지해서 실행됨
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkDeviceLocationAuthorization()
     }
-    
 }

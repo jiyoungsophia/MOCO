@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol passDateListDelegate {
-    func sendYearMonth(year: Int, month: Int)
-}
+//protocol passDateListDelegate {
+//    func sendYearMonth(year: Int, month: Int)
+//}
 
 // TODO: months 선언 위치
 class YearlyViewController: UIViewController {
@@ -24,7 +24,7 @@ class YearlyViewController: UIViewController {
     
     var monthButtonActionHandler: ((String) -> (Void))?
     
-    var delegate: passDateListDelegate?
+//    var delegate: passDateListDelegate?
     
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var hearderView: UIView!
@@ -108,7 +108,9 @@ class YearlyViewController: UIViewController {
                 guard let year = realmDate.year else {return}
                 guard let month = realmDate.month else {return}
                 
-                delegate?.sendYearMonth(year: year, month: month)
+//                delegate?.sendYearMonth(year: year, month: month)
+                
+                NotificationCenter.default.post(name: NSNotification.Name("dateNoti"), object: nil, userInfo: ["year": year,"month": month])
             }
             
         }
