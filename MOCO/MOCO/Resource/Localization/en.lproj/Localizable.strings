@@ -43,3 +43,9 @@
 "checkemail" = "Please check your email account in iPhone Settings";
 "restorecomplete" = "The restoration is complete";
 
+"on1title" = "Monthly budget setting";
+"on1desc" = "Register your monthly budget and see how much you spent and how much you have left!\n";
+"on2title" = "Simple spending management";
+"on2desc" = "Please enter a simple expense statement.\nMOCO will sort it out on its own!\n";
+"on3title" = "Healthy consumption habits";
+"on3desc" = "Shall we start making healthy consumption habits with MOCO?\n";

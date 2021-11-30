@@ -2,22 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>KAKAO_API_KEY</key>
-	<string>ed0871c685ddac7153fb60798de14172</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>사용자의 위치는 사용자 주변의 소비 내역을 보여주고, 장소 검색을 향상하는데 사용됩니다.</string>
-	<key>NMFClientId</key>
-	<string>25wdh3k5jc</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NotoSansKR-Light.otf</string>
-		<string>NotoSansKR-Regular.otf</string>
-		<string>NotoSansKR-Medium.otf</string>
-		<string>NotoSansKR-Bold.otf</string>
-		<string>NotoSansKR-Black.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -31,11 +15,25 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>KAKAO_API_KEY</key>
+	<string>ed0871c685ddac7153fb60798de14172</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NMFClientId</key>
+	<string>25wdh3k5jc</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>사용자의 위치는 사용자 주변의 소비 내역을 보여주고, 장소 검색을 향상하는데 사용됩니다.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSansKR-Light.otf</string>
+		<string>NotoSansKR-Regular.otf</string>
+		<string>NotoSansKR-Medium.otf</string>
+		<string>NotoSansKR-Bold.otf</string>
+		<string>NotoSansKR-Black.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -76,5 +74,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

@@ -42,7 +42,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-Ls-3uZ">
                                                 <rect key="frame" x="16" y="69" width="382" height="1"/>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="zo7-3x-zi0"/>
                                                 </constraints>
@@ -85,7 +85,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-5f-IFS">
                                                 <rect key="frame" x="16" y="69" width="382" height="1"/>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Z4v-oz-ff0"/>
                                                 </constraints>
@@ -117,7 +117,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-cf-uQI">
                                                 <rect key="frame" x="16" y="69" width="382" height="1"/>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="BKA-PK-Kya"/>
                                                 </constraints>
@@ -146,7 +146,7 @@
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-8D-gLI">
                                                 <rect key="frame" x="16" y="69" width="382" height="1"/>
-                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Ey4-XI-UvV"/>
                                                 </constraints>
@@ -169,7 +169,7 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xP-gt-z7H">
                                 <rect key="frame" x="0.0" y="100.5" width="414" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="pxe-Uf-pkR"/>
                                 </constraints>
@@ -222,8 +222,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
