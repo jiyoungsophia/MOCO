@@ -83,6 +83,8 @@ class BudgetViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        //TODO: 여기서 onboarding FirstTime 체크
+        
         loadIncome()
         loadExpense()
         configureIncomeView()
@@ -257,8 +259,8 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
 
         let item = expenseData[indexPath.item]
-        placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
-        cell.configureCell(item: item, place: placeData[0])
+//        placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
+        cell.configureCell(item: item)
         return cell
     }
     

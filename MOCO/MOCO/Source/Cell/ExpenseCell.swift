@@ -24,19 +24,20 @@ class ExpenseCell: UICollectionViewCell {
         setCellShadow(backView: backView)
     }
     
-    func configureCell(item: Expense, place: Place) {
+    func configureCell(item: Expense) {
         
-        categoryIconLabel.text = CategoryDict[place.categoryCode ?? "0"]
+        let idName = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
+        categoryIconLabel.text = CategoryDict[idName]
         placeLabel.text = item.memo
         amountLabel.text = "- \(item.amount.formatWithSeparator)"
         dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
     }
     
-    func configureMapCell(item: Expense, id: Int) {
-        
-        categoryIconLabel.text = CategoryDict["id" ?? "0"]
-        placeLabel.text = item.memo
-        amountLabel.text = "- \(item.amount.formatWithSeparator)"
-        dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
-    }
+//    func configureMapCell(item: Expense, id: Int) {
+//
+//        categoryIconLabel.text = CategoryDict["id" ?? "0"]
+//        placeLabel.text = item.memo
+//        amountLabel.text = "- \(item.amount.formatWithSeparator)"
+//        dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
+//    }
 }

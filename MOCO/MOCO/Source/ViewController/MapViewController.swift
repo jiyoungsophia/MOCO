@@ -9,8 +9,7 @@ import UIKit
 import CoreLocation
 import CoreLocationUI
 import NMapsMap
-import CoreMIDI
-import CoreAudio
+import RealmSwift
 
 
 // TODO: 프로그레스바!!!
@@ -41,6 +40,7 @@ class MapViewController: UIViewController {
     
     let current = InputManager.shared.dateToYearMonth(date: Date())
     
+    var place: Results<Place>?
     var placeData: [Place] = []
     var dateList: [Int] = [] {
         didSet {
@@ -55,12 +55,13 @@ class MapViewController: UIViewController {
     }
     
     var markers: [NMFMarker] = []
-
+    var idList: [Int] = []
     let markDefault = NMFOverlayImage(name: "pmarker")
     let markFocus = NMFOverlayImage(name: "pomarker")
     
     
     let DEFAULT_CAMERA_POSITION = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.56645675932999, lng: 126.97798801299875))
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +104,16 @@ class MapViewController: UIViewController {
     
     func loadOfflineExpense() {
         offlineExpense = RealmManager.shared.loadOfflineExpense(year: dateList[0], month: dateList[1])
-        placeData = RealmManager.shared.loadPlaceData
+        
+        
+        idList = offlineExpense.map { $0.placeId ?? 0 }
+
+        for id in idList {
+            place = RealmManager.shared.loadPlaceData(id: id)
+            self.placeData.append(place)
+        }
+//
+//        placeData = RealmManager.shared.loadPlace(id: <#T##Int#>)
 //        for item in offlineExpense {
 //            placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0 )
 //        }
@@ -161,16 +171,10 @@ class MapViewController: UIViewController {
         
     }
     
-    //    func makeMarkers() {
-    //        self.markers.removeAll()
-    //        let marker = NMFMarker(position: NMGLatLng(lat: placeData[0].latitude, lng: placeData[0].longtitude))
-    //        marker.iconImage = markDefault
-    //        marker.touchHandler = { (marker) -> Bool in
-    //            print("touch")
-    //            return true
-    //        }
-    //        markers.append(marker)
-    //    }
+    func makeMarker() {
+        
+        
+    }
     
     
     
@@ -210,9 +214,10 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
 //            print(place)
 //        }
         
-        for id in offlineExpense {
-            placeData
-        }
+        
+//        for id in offlineExpense {
+//            placeData
+//        }
         
         //TODO: item 없으면 toast??
 //        print(placeData)
@@ -224,6 +229,8 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         
         return cell
     }
+    
+//    prepareForUse
 }
 
 extension MapViewController: UICollectionViewDelegateFlowLayout {

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        sleep(2)
+        sleep(1)
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         // 아래 라인 없애기
