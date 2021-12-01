@@ -96,15 +96,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    // 저장은 잘되는데 dismiss가 잘 안됨 확인 필요!!!
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchController.isActive = false
         let row = searchData[indexPath.row]
         
         let selectedPlace = Place(placeId: row.id, placeName: row.placeName, categoryCode: row.categoryCode, longtitude: row.longtitude, latitude: row.latitude)
         
         // id로 렘에 저장된 곳 조회
-        let result = RealmManager.shared.loadPlace(id: selectedPlace.placeId)
-        
+        let result = RealmManager.shared.loadPlaceList(id: selectedPlace.placeId)
         if result.isEmpty { // 새로 간곳 등록
             RealmManager.shared.savePlace(place: selectedPlace)
             selectedPlaceName = selectedPlace.placeName
@@ -118,9 +117,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        selectPlaceHandler?(selectedPlace.placeId, selectedPlaceName)
-        self.dismiss(animated: true, completion: nil)
-        
+        self.dismiss(animated: true) {
+            self.selectPlaceHandler?(selectedPlace.placeId, self.selectedPlaceName)
+        }
     }
 }
 

@@ -26,7 +26,7 @@ class ExpenseCell: UICollectionViewCell {
     
     func configureCell(item: Expense) {
         
-        let idName = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
+        let idName = RealmManager.shared.loadPlaceCode(id: item.placeId ?? 0)
         categoryIconLabel.text = CategoryDict[idName]
         placeLabel.text = item.memo
         amountLabel.text = "- \(item.amount.formatWithSeparator)"

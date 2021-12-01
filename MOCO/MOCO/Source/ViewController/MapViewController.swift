@@ -40,7 +40,7 @@ class MapViewController: UIViewController {
     
     let current = InputManager.shared.dateToYearMonth(date: Date())
     
-    var place: Results<Place>?
+//    var place: Results<Place
     var placeData: [Place] = []
     var dateList: [Int] = [] {
         didSet {
@@ -103,24 +103,19 @@ class MapViewController: UIViewController {
     
     
     func loadOfflineExpense() {
+        self.placeData.removeAll()
         offlineExpense = RealmManager.shared.loadOfflineExpense(year: dateList[0], month: dateList[1])
         
         
         idList = offlineExpense.map { $0.placeId ?? 0 }
 
         for id in idList {
-            place = RealmManager.shared.loadPlaceData(id: id)
-            self.placeData.append(place)
+//            place =
+            self.placeData.append(RealmManager.shared.loadPlaceData(id: id))
         }
-//
-//        placeData = RealmManager.shared.loadPlace(id: <#T##Int#>)
-//        for item in offlineExpense {
-//            placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0 )
-//        }
-//        self.offlineExpense.forEach { expense in
-//            placeData = RealmManager.shared.loadPlace(id: expense.placeId ?? 0)
-//        }
-//        print(placeData)
+        print("idList: \(idList)")
+        print(placeData)
+
         
         //        let marker = NMFMarker(position: NMGLatLng(lat: placeData.last?.latitude ?? 0, lng: placeData.last?.longtitude ?? 0))
         //        marker.iconImage = markDefault
@@ -205,32 +200,10 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             return UICollectionViewCell()
         }
         let item = offlineExpense[indexPath.item]
-        placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
-//        cell.configureCell(item: item, place: placeData[0])
-//        placeData.filter {
-//            $0.placeId == item.placeId ?? 0
-//        }
-//        for place in placeData {
-//            print(place)
-//        }
-        
-        
-//        for id in offlineExpense {
-//            placeData
-//        }
-        
-        //TODO: item 없으면 toast??
-//        print(placeData)
-        
-        
-        
-        
-        
-        
+
         return cell
     }
     
-//    prepareForUse
 }
 
 extension MapViewController: UICollectionViewDelegateFlowLayout {

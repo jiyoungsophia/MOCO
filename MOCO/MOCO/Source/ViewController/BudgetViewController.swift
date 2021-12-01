@@ -30,11 +30,6 @@ class BudgetViewController: UIViewController {
     
     let current = InputManager.shared.dateToYearMonth(date: Date())
     
-//    var placeId: Int = 0 {
-//        didSet {
-//            placeData = RealmManager.shared.loadPlace(id: placeId)
-//        }
-//    }
     var placeData: [Place] = []
     var incomeData: [Income] = []
 
@@ -83,13 +78,13 @@ class BudgetViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        //TODO: 여기서 onboarding FirstTime 체크
-        
         loadIncome()
         loadExpense()
         configureIncomeView()
-        
+     
     }
+
+  
 
     
     //MARK: - viewWillAppear
@@ -100,18 +95,7 @@ class BudgetViewController: UIViewController {
     
     func loadExpense() {
         expenseData = RealmManager.shared.loadExpense(year: dateList[0], month: dateList[1])
-//        let expensePlaceIds = expenseData.map { $0.placeId }
-        
-//        for id in expensePlaceIds {
-//            placeData = RealmManager.shared.loadPlace(id: id ?? 0)
-//        }
-//        print(placeData)
-//        let placeList: [Place] = []
-//        placeList.append(placeData)
-        
-        // 맵뷰에 보여줄 오프라인 데이터
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: MapViewController.identifier) as! MapViewController
-//        vc.offlineExpense = expenseData.filter{ $0.isOffline == true }
+
         print(placeId)
 
     }
@@ -259,7 +243,6 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
 
         let item = expenseData[indexPath.item]
-//        placeData = RealmManager.shared.loadPlace(id: item.placeId ?? 0)
         cell.configureCell(item: item)
         return cell
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 class MonthCell: UICollectionViewCell {
-    static let identifier = "MonthCelld"
+    static let identifier = "MonthCell"
     
     @IBOutlet weak var monthButton: UIButton!
     

@@ -40,12 +40,16 @@ class RealmManager {
         }
     }
     
-    func loadPlace(id: Int) -> String {
+    func loadPlaceList(id: Int) -> [Place] {
+        return Array(localRealm.objects(Place.self).filter("placeId == \(id)"))
+    }
+    
+    func loadPlaceCode(id: Int) -> String {
         return localRealm.objects(Place.self).filter("placeId == \(id)").first?.categoryCode ?? ""
     }
     
-    func loadPlaceData(id: Int) -> Results<Place> {
-        return localRealm.objects(Place.self).filter("placeId == \(id)")
+    func loadPlaceData(id: Int) -> Place {
+        return localRealm.objects(Place.self).filter("placeId == \(id)").first!
     }
     
     func updatePlace(place: Place, longtitude: Double, latitude: Double) {
