@@ -22,16 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if Storage.isFirstTime() {
                 setRootViewController(scene, name: "Onboarding",
                                       identifier: OnboardingViewController.identifier)
-        
+
             RealmManager.shared.saveOnline()
-            
+
             } else {
-                setRootViewController(scene, name: "Onboarding",
-                                      identifier: OnboardingViewController.identifier)
+                setRootViewController(scene, name: "Budget",
+                                      identifier: BudgetViewController.identifier)
             }
         }
-        
-        private func setRootViewController(_ scene: UIScene, name: String, identifier: String) {
+
+        func setRootViewController(_ scene: UIScene, name: String, identifier: String) {
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
                 let sb = UIStoryboard(name: name, bundle: nil)

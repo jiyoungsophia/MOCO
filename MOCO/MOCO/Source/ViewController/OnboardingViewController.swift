@@ -19,7 +19,7 @@ class OnboardingViewController: UIViewController {
     var currentPage = 0 {
         didSet {
             pageControl.currentPage = currentPage
-
+            
             if currentPage == slides.count - 1 {
                 nextButton.setTitle("Get Started", for: .normal)
             } else {
@@ -44,12 +44,17 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
+            dismiss(animated: true, completion: nil)
             let sb = UIStoryboard(name: "Budget", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: BudgetViewController.identifier) as! BudgetViewController
-            present(vc, animated: true, completion: nil)
+            UIApplication.shared.windows.first?.rootViewController = vc
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+            //                        present(vc, animated: true, completion: nil)
+            
+            
         } else {
             currentPage += 1
-
+            
             let indexPath = IndexPath(item: currentPage, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
