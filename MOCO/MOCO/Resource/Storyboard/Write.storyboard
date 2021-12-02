@@ -333,7 +333,7 @@
                     <connections>
                         <outlet property="dateBorder" destination="2sm-bs-F9q" id="hMK-oa-KBv"/>
                         <outlet property="dateLabel" destination="lOJ-Gm-Up0" id="Ke6-d3-7eu"/>
-                        <outlet property="dateTextField" destination="5Fg-hj-V4h" id="6e3-jp-ZOU"/>
+                        <outlet property="dateTextField" destination="5Fg-hj-V4h" id="9uh-BB-XXm"/>
                         <outlet property="deleteButton" destination="3qK-jd-kxV" id="yYI-4A-Fks"/>
                         <outlet property="expenseAlertLabel" destination="JLv-Y0-ItU" id="OHJ-aK-dVK"/>
                         <outlet property="expenseBorder" destination="ede-d2-2KG" id="rXO-H7-skM"/>

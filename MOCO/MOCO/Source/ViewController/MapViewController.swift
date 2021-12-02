@@ -89,8 +89,10 @@ class MapViewController: UIViewController {
     func loadOfflineExpense() {
         self.placeData.removeAll()
         offlineExpense = RealmManager.shared.loadOfflineExpense(year: dateList[0], month: dateList[1])
-        idList = offlineExpense.map { $0.placeId ?? 0 }
-        //FIXME: 중복제거
+        
+        let removedDuplicate: Set = Set(offlineExpense.map { $0.placeId ?? 0 })
+        idList = Array(removedDuplicate)
+        
         for id in idList {
             self.placeData.append(RealmManager.shared.loadPlaceData(id: id))
         }
