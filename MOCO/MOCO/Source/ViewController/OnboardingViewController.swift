@@ -35,8 +35,8 @@ class OnboardingViewController: UIViewController {
         collectionView.dataSource = self
         
         slides = [
-            OnboardingSlide(title: "on1title".localized(), description: "on1desc".localized(), image:UIImage(named: "onboarding2")!),
-            OnboardingSlide(title: "on2title".localized(), description: "on2desc".localized(), image: UIImage(named: "onboarding3")!),
+            OnboardingSlide(title: "on1title".localized(), description: "on1desc".localized(), image: UIImage(named: "onboarding2")!),
+            OnboardingSlide(title: "on2title".localized(), description: "on2desc".localized(), image: UIImage(named: "onboarding".localized())!),
             OnboardingSlide(title: "on3title".localized(), description: "on3desc".localized(), image: UIImage(named: "onboarding1")!)
         ]
     }

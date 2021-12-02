@@ -72,6 +72,7 @@ class SettingViewController: UIViewController {
         }
         do {
             let zipFilePath = try Zip.quickZipFiles(urlPaths, fileName: "MOCO_backup") // Zip
+            print("압축경로: \(zipFilePath)")
             presentActivityViewController()
         }
         catch {

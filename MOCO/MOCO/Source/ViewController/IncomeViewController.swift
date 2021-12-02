@@ -107,7 +107,6 @@ class IncomeViewController: UIViewController {
             self.closeButtonClicked()
         }
     }
-    
 }
 
 extension IncomeViewController: UITextFieldDelegate {
@@ -121,5 +120,4 @@ extension IncomeViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return textFieldManager.shared.changeTextField(textField: textField, string: string, alertLabel: lengthAlertLabel, range: range, maxLength: 11)
     }
-    
 }

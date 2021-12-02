@@ -85,9 +85,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
         tableView.separatorStyle = .singleLine
-        cell.configureCell(row: searchData[indexPath.row])
-        let code = searchData[indexPath.row].categoryCode
-        
+        cell.configureCell(row: searchData[indexPath.row])        
         return cell
     }
     

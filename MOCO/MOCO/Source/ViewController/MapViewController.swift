@@ -69,6 +69,9 @@ class MapViewController: UIViewController {
         
         locationButton.mapView = mapView
         mapView.positionMode = .direction
+        mapView.logoAlign = .leftTop
+        mapView.logoInteractionEnabled = true
+
     }
     
     deinit {

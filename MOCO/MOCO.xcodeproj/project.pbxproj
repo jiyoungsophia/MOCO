@@ -49,7 +49,6 @@
 		3EBF285727506D6C008DBC46 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBF285627506D6C008DBC46 /* RealmSwift */; };
 		3EF4625A27468CD700BD66AC /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; };
 		3EF4625B27468CD700BD66AC /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 3EF4625927468CD700BD66AC /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EF4625D2746936900BD66AC /* Assets.xcassets */; };
 		3EF462632746A54300BD66AC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF462622746A54300BD66AC /* UIView+Extensions.swift */; };
 		3EF462672746A64F00BD66AC /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF462652746A64F00BD66AC /* ExpenseCell.swift */; };
 		3EF462682746A64F00BD66AC /* ExpenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EF462662746A64F00BD66AC /* ExpenseCell.xib */; };
@@ -69,6 +68,7 @@
 		B5AC8D072755307600717830 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D062755307600717830 /* OnboardingCell.swift */; };
 		B5AC8D09275540F700717830 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D08275540F700717830 /* Storage.swift */; };
 		B5AC8D0B2758692100717830 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D0A2758692100717830 /* UITextField+Extensions.swift */; };
+		B5AC8D0D2758F90100717830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5AC8D0C2758F90100717830 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -124,7 +124,6 @@
 		3EBF2846274F6401008DBC46 /* SearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPIManager.swift; sourceTree = "<group>"; };
 		3EBF284C274F7262008DBC46 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		3EBF284F274F78EA008DBC46 /* category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = category.swift; sourceTree = "<group>"; };
-		3EF4625D2746936900BD66AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EF462622746A54300BD66AC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3EF462652746A64F00BD66AC /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
 		3EF462662746A64F00BD66AC /* ExpenseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseCell.xib; sourceTree = "<group>"; };
@@ -143,6 +142,7 @@
 		B5AC8D062755307600717830 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		B5AC8D08275540F700717830 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B5AC8D0A2758692100717830 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		B5AC8D0C2758F90100717830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB3FEC90133D18BC9DC2D967 /* Pods-MOCO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.debug.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.debug.xcconfig"; sourceTree = "<group>"; };
 		C16FEBCCA8D31D59B970F6D7 /* Pods-MOCO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOCO.release.xcconfig"; path = "Target Support Files/Pods-MOCO/Pods-MOCO.release.xcconfig"; sourceTree = "<group>"; };
 		D769DCE0CCAF7C73E7A4DF83 /* Pods_MOCO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOCO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,7 +213,7 @@
 				B5297C3B275127210089036E /* Config */,
 				3E77941F274659A200344A60 /* Localization */,
 				3EBBC693274290E200113DA1 /* Info.plist */,
-				3EF4625D2746936900BD66AC /* Assets.xcassets */,
+				B5AC8D0C2758F90100717830 /* Assets.xcassets */,
 				3E7793D5274543E400344A60 /* Font */,
 				3E7793D4274543D700344A60 /* Extension */,
 				3E1A796227467C75005A73AB /* Storyboard */,
@@ -224,8 +224,8 @@
 		3E7793D4274543D700344A60 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3E7793E4274549C200344A60 /* UIColor+Extensions.swift */,
 				3E7794282746647B00344A60 /* String+Extensions.swift */,
+				3E7793E4274549C200344A60 /* UIColor+Extensions.swift */,
 				3EF462622746A54300BD66AC /* UIView+Extensions.swift */,
 				3EF46279274A205300BD66AC /* Date+Extensions.swift */,
 				3E42575E274B73FC00A62670 /* UIViewController+Extension.swift */,
@@ -447,12 +447,12 @@
 				3E425751274A883B00A62670 /* Write.storyboard in Resources */,
 				3E7793DF2745445500344A60 /* NotoSansKR-Light.otf in Resources */,
 				3EBBC692274290E200113DA1 /* LaunchScreen.storyboard in Resources */,
+				B5AC8D0D2758F90100717830 /* Assets.xcassets in Resources */,
 				3EF4627627477E3900BD66AC /* MonthCell.xib in Resources */,
 				3E77942327465A4A00344A60 /* Localizable.strings in Resources */,
 				3E7793DB2745445500344A60 /* NotoSansKR-Regular.otf in Resources */,
 				3EF462682746A64F00BD66AC /* ExpenseCell.xib in Resources */,
 				B5AC8D0127552B3C00717830 /* Onboarding.storyboard in Resources */,
-				3EF4625E2746936900BD66AC /* Assets.xcassets in Resources */,
 				3E7793DC2745445500344A60 /* NotoSansKR-Black.otf in Resources */,
 				3EF4627827478CF600BD66AC /* Yearly.storyboard in Resources */,
 				3E77943927467A2700344A60 /* Search.storyboard in Resources */,
