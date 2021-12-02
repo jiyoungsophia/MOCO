@@ -16,8 +16,8 @@ extension UITextField {
         datePicker.maximumDate = Date()
         
         if #available(iOS 14, *) {
-          datePicker.preferredDatePickerStyle = .wheels
-          datePicker.sizeToFit()
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
         }
         self.inputView = datePicker
         
@@ -34,12 +34,10 @@ extension UITextField {
     }
 }
 
-// 날짜 붙여넣기 막기
+// 날짜 텍스트필드 editmenu 없애기
 class CustomTextField: UITextField {
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        if action == #selector(UIResponderStandardEditActions.paste(_:)) {
-            return false
-        }
-        return super.canPerformAction(action, withSender: sender)
+
+        return false
     }
 }

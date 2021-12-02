@@ -98,7 +98,6 @@ class ExpenseViewController: UIViewController {
         deleteButton.redButton()
         deleteButton.setTitle("delete".localized(), for: .normal)
         deleteButton.isHidden = buttonStatus
-        
     }
     
     func editConfig() {
@@ -228,6 +227,7 @@ extension ExpenseViewController: UITextFieldDelegate {
             self.placeBorder.backgroundColor = UIColor.mocoPink
         }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == expenseTextField {
             self.expenseBorder.backgroundColor = UIColor.lightGray
