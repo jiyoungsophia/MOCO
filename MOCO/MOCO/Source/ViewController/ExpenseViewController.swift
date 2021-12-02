@@ -17,7 +17,7 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var expenseBorder: UIView!
     @IBOutlet weak var expenseAlertLabel: UILabel!
     
-    @IBOutlet weak var dateButton: UIButton!
+    @IBOutlet weak var dateTextField: CustomTextField!
     @IBOutlet weak var dateBorder: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -67,8 +67,7 @@ class ExpenseViewController: UIViewController {
     
     func configure() {
         placeView.isHidden = true
-        dateButton.setTitle(DateFormatter.defaultFormat.string(from: expenseData?.regDate ?? Date()), for: .normal)
-        
+ 
         expenseTextField.delegate = self
         placeTextField.delegate = self
         
@@ -79,9 +78,11 @@ class ExpenseViewController: UIViewController {
         expenseAlertLabel.isHidden = true
         
         dateLabel.text = "date".localized()
-        dateButton.isUserInteractionEnabled = buttonStatus
-        if dateButton.isUserInteractionEnabled == false {
-            dateButton.setTitleColor(.lightGray, for: .normal)
+        dateTextField.text = DateFormatter.defaultFormat.string(from: expenseData?.regDate ?? Date())
+        dateTextField.setInputViewDatePicker(target: self, selector: #selector(tapDone))
+        dateTextField.isUserInteractionEnabled = buttonStatus
+        if dateTextField.isUserInteractionEnabled == false {
+            dateTextField.textColor = .lightGray
         }
         
         placeLabel.text = "place".localized()
@@ -97,7 +98,7 @@ class ExpenseViewController: UIViewController {
         deleteButton.redButton()
         deleteButton.setTitle("delete".localized(), for: .normal)
         deleteButton.isHidden = buttonStatus
-            
+        
     }
     
     func editConfig() {
@@ -117,10 +118,17 @@ class ExpenseViewController: UIViewController {
         placeTextField.text = expenseData?.memo
     }
     
+    @objc func tapDone() {
+        if let datePicker = self.dateTextField.inputView as? UIDatePicker {
+            dateTextField.text = DateFormatter.defaultFormat.string(from: datePicker.date)
+        }
+        self.dateTextField.resignFirstResponder()
+    }
+    
     @objc func saveButtonClicked() {
         // 입력 다 한 경우
         if let expenseText = expenseTextField.text, expenseText != "0", expenseText != "",
-           let date = DateFormatter.defaultFormat.date(from: dateButton.currentTitle!),
+           let date = DateFormatter.defaultFormat.date(from: dateTextField.text!),
            let placeText = placeTextField.text, placeText != "" {
             
             let amount = InputManager.shared.textToInt(text: expenseText)
@@ -131,7 +139,7 @@ class ExpenseViewController: UIViewController {
             }
             
             dateList = InputManager.shared.dateToYearMonth(date: date)
-
+            
             if let expense = expenseData { // 수정일 경우
                 RealmManager.shared.updateExpense(expense: expense, amount: amount, regDate: date, isOffline: isOffline, placeId: placeId, memo: placeText, year: dateList[0], month: dateList[1])
                 self.dismiss(animated: true, completion: nil)
@@ -156,16 +164,7 @@ class ExpenseViewController: UIViewController {
             textField.text = ""
         }
     }
-    
-    @IBAction func dateButtonClicked(_ sender: UIButton) {
-        self.dateBorder.backgroundColor = UIColor.mocoPink
-        
-        guard let contentView = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerViewController") as? DatePickerViewController else {
-            return
-        }
-        contentView.view.backgroundColor = .clear
-        self.datePickerAlert(contentView: contentView, dateBorder: self.dateBorder, dateButton: self.dateButton)
-    }
+ 
     
     func checkMaxLength(textField: UITextField!, maxLength: Int, alertLabel: UILabel) {
         if (textField.text!.count > maxLength) {

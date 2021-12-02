@@ -177,40 +177,35 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRV-gC-FtN">
-                                                <rect key="frame" x="49.5" y="17" width="316.5" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="qye-vU-eYB"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="dateButtonClicked:" destination="fVK-Dq-eu1" eventType="touchUpInside" id="ipi-eD-p6Z"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLv-Y0-ItU">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Fg-hj-V4h" customClass="CustomTextField" customModule="MOCO" customModuleProvider="target">
+                                                <rect key="frame" x="49.5" y="17" width="316.5" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="pzU-ew-SGW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="hRV-gC-FtN" secondAttribute="trailing" id="95f-oc-53p"/>
                                             <constraint firstItem="2sm-bs-F9q" firstAttribute="width" secondItem="kyt-Pc-71H" secondAttribute="width" id="CU5-ks-7qP"/>
                                             <constraint firstItem="JLv-Y0-ItU" firstAttribute="leading" secondItem="kyt-Pc-71H" secondAttribute="leading" id="D5r-NG-z2F"/>
+                                            <constraint firstItem="2sm-bs-F9q" firstAttribute="top" secondItem="5Fg-hj-V4h" secondAttribute="bottom" id="J7A-CV-vcB"/>
                                             <constraint firstAttribute="trailing" secondItem="2sm-bs-F9q" secondAttribute="trailing" id="Ljn-3T-gBw"/>
+                                            <constraint firstItem="5Fg-hj-V4h" firstAttribute="centerY" secondItem="lOJ-Gm-Up0" secondAttribute="centerY" id="MyC-lI-QOl"/>
                                             <constraint firstItem="2sm-bs-F9q" firstAttribute="leading" secondItem="kyt-Pc-71H" secondAttribute="leading" id="R5j-mT-mDU"/>
                                             <constraint firstAttribute="trailing" secondItem="JLv-Y0-ItU" secondAttribute="trailing" id="SS2-b9-jNP"/>
-                                            <constraint firstItem="hRV-gC-FtN" firstAttribute="leading" secondItem="lOJ-Gm-Up0" secondAttribute="trailing" constant="16" id="YPo-Fp-mwm"/>
                                             <constraint firstItem="JLv-Y0-ItU" firstAttribute="top" secondItem="kyt-Pc-71H" secondAttribute="top" id="e3K-bz-EG2"/>
-                                            <constraint firstItem="2sm-bs-F9q" firstAttribute="top" secondItem="hRV-gC-FtN" secondAttribute="bottom" id="onv-jL-jHR"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Fg-hj-V4h" secondAttribute="trailing" id="oHA-19-7pG"/>
                                             <constraint firstItem="lOJ-Gm-Up0" firstAttribute="leading" secondItem="2sm-bs-F9q" secondAttribute="leading" id="onx-nv-kg3"/>
                                             <constraint firstAttribute="bottom" secondItem="2sm-bs-F9q" secondAttribute="bottom" id="sbF-0p-c9r"/>
-                                            <constraint firstItem="lOJ-Gm-Up0" firstAttribute="centerY" secondItem="hRV-gC-FtN" secondAttribute="centerY" id="wyZ-RH-Z8i"/>
+                                            <constraint firstItem="5Fg-hj-V4h" firstAttribute="leading" secondItem="lOJ-Gm-Up0" secondAttribute="trailing" constant="16" id="yCy-dn-UDC"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjQ-xZ-wJE">
@@ -337,8 +332,8 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dateBorder" destination="2sm-bs-F9q" id="hMK-oa-KBv"/>
-                        <outlet property="dateButton" destination="hRV-gC-FtN" id="KVX-gv-B1X"/>
                         <outlet property="dateLabel" destination="lOJ-Gm-Up0" id="Ke6-d3-7eu"/>
+                        <outlet property="dateTextField" destination="5Fg-hj-V4h" id="6e3-jp-ZOU"/>
                         <outlet property="deleteButton" destination="3qK-jd-kxV" id="yYI-4A-Fks"/>
                         <outlet property="expenseAlertLabel" destination="JLv-Y0-ItU" id="OHJ-aK-dVK"/>
                         <outlet property="expenseBorder" destination="ede-d2-2KG" id="rXO-H7-skM"/>
@@ -356,35 +351,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7F-F8-6e0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756.52173913043487" y="-107.14285714285714"/>
-        </scene>
-        <!--Date Picker View Controller-->
-        <scene sceneID="tGn-vz-UEL">
-            <objects>
-                <viewController storyboardIdentifier="DatePickerViewController" id="hM3-t1-NHD" customClass="DatePickerViewController" customModule="MOCO" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EWw-Pl-mta">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="m8q-ix-Zah">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </datePicker>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="5a6-Fe-QRJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="m8q-ix-Zah" secondAttribute="trailing" id="2sI-PQ-9eM"/>
-                            <constraint firstItem="m8q-ix-Zah" firstAttribute="leading" secondItem="5a6-Fe-QRJ" secondAttribute="leading" id="RUs-pY-4zj"/>
-                            <constraint firstItem="5a6-Fe-QRJ" firstAttribute="bottom" secondItem="m8q-ix-Zah" secondAttribute="bottom" id="VVq-ZJ-o1q"/>
-                            <constraint firstItem="m8q-ix-Zah" firstAttribute="top" secondItem="5a6-Fe-QRJ" secondAttribute="top" id="iYn-p5-24M"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="datePicker" destination="m8q-ix-Zah" id="11W-rd-gpY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="teY-0k-qCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1538" y="-96"/>
         </scene>
     </scenes>
     <resources>
