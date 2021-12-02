@@ -90,7 +90,7 @@ class MapViewController: UIViewController {
         self.placeData.removeAll()
         offlineExpense = RealmManager.shared.loadOfflineExpense(year: dateList[0], month: dateList[1])
         idList = offlineExpense.map { $0.placeId ?? 0 }
-
+        //FIXME: 중복제거
         for id in idList {
             self.placeData.append(RealmManager.shared.loadPlaceData(id: id))
         }
