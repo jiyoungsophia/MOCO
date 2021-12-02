@@ -52,7 +52,7 @@ class SettingViewController: UIViewController {
     }
     
     func presentActivityViewController() {
-        let fileName = (documentDirectoryPath()! as NSString).appendingPathComponent("archive.zip")
+        let fileName = (documentDirectoryPath()! as NSString).appendingPathComponent("MOCO_backup.zip")
         let fileURL = URL(fileURLWithPath: fileName)
         
         let vc = UIActivityViewController(activityItems: [fileURL], applicationActivities: [])
@@ -128,7 +128,7 @@ extension SettingViewController: UIDocumentPickerDelegate {
         if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
             do {
                 let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let fileURL = documentDirectory.appendingPathComponent("archive.zip")
+                let fileURL = documentDirectory.appendingPathComponent("MOCO_backup.zip")
                 
                 self.progress.show(in: self.view, animated: true)
                 try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in
@@ -147,7 +147,7 @@ extension SettingViewController: UIDocumentPickerDelegate {
                 try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
                 
                 let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let fileURL = documentDirectory.appendingPathComponent("archive.zip")
+                let fileURL = documentDirectory.appendingPathComponent("MOCO_backup.zip")
                 
                 self.progress.show(in: self.view, animated: true)
                 try Zip.unzipFile(fileURL, destination: documentDirectory, overwrite: true, password: nil, progress: { progress in

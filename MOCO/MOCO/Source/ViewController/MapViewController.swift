@@ -25,7 +25,7 @@ class MapViewController: UIViewController {
     var userCoordinate = CLLocationCoordinate2D() {
         didSet {
             location = CLLocation(latitude: self.userCoordinate.latitude,
-                                  longitude: self.userCoordinate.longitude)
+                                longitude: self.userCoordinate.longitude)
         }
     }
     
@@ -35,6 +35,9 @@ class MapViewController: UIViewController {
     var dateList: [Int] = [] {
         didSet {
             loadOfflineExpense()
+            makeMarker()
+            selectedExpense.removeAll()
+            self.collectionView.reloadData()
         }
     }
     
@@ -45,9 +48,10 @@ class MapViewController: UIViewController {
         }
     }
     
+    var idList: [Int] = []
     var markers: [NMFMarker] = []
     var selectedMarker: NMFMarker?
-    var idList: [Int] = []
+
     let markDefault = NMFOverlayImage(name: "pmarker")
     let markFocus = NMFOverlayImage(name: "pomarker")
     
@@ -98,8 +102,12 @@ class MapViewController: UIViewController {
         }
     }
     
-    //FIXME: 한개만 찍히게
     func makeMarker() {
+        self.markers.forEach { marker in
+            marker.mapView = nil
+        }
+        markers.removeAll()
+
         self.placeData.forEach { place in
             let marker = NMFMarker(position: NMGLatLng(lat: place.latitude, lng: place.longtitude))
             marker.iconImage = markDefault
@@ -107,18 +115,17 @@ class MapViewController: UIViewController {
             
             marker.touchHandler = { [weak self] marker -> Bool in
                 guard let self = self else { return true }
-
+                
                 if let selected = self.selectedMarker {
                     selected.iconImage = self.markDefault
                 }
                 
                 (marker as! NMFMarker).iconImage = self.markFocus
                 self.selectedMarker = (marker as! NMFMarker)
-
+                
                 if let id = self.selectedMarker?.userInfo["placeId"] {
                     self.selectedExpense = self.offlineExpense.filter { $0.placeId == id as? Int }
                 }
-                print(self.selectedExpense)
                 return true
             }
             self.markers.append(marker)
@@ -143,7 +150,7 @@ class MapViewController: UIViewController {
     func setMapDefaultLocation() {
         mapView.moveCamera(DEFAULT_CAMERA_POSITION, completion: nil)
     }
-  
+    
 }
 
 extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSource {
