@@ -96,6 +96,7 @@ class MapViewController: UIViewController {
         }
     }
     
+    //FIXME: 한개만 찍히게
     func makeMarker() {
         self.placeData.forEach { place in
             let marker = NMFMarker(position: NMGLatLng(lat: place.latitude, lng: place.longtitude))
