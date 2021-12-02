@@ -8,7 +8,6 @@
 import Foundation
 import RealmSwift
 
-// 지도뷰: Place에서 마커 찍고 마커 클릭했을 때 filter placeId
 class Place: Object {
 
     @Persisted var placeId: Int

@@ -11,14 +11,7 @@ import CoreLocationUI
 import NMapsMap
 import RealmSwift
 
-
-// TODO: 프로그레스바!!!
-
 class MapViewController: UIViewController {
-    func sendYearMonth(year: Int, month: Int) {
-        dateList = [year, month]
-        print("MAP: \(dateList)")
-    }
     
     static let identifier = "MapViewController"
     
@@ -28,19 +21,16 @@ class MapViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let locationManager = CLLocationManager()
-    // 여기 이렇게 해줘도 되는지 모르겠음
     var location: CLLocation = CLLocation(latitude: 0, longitude: 0)
     var userCoordinate = CLLocationCoordinate2D() {
         didSet {
             location = CLLocation(latitude: self.userCoordinate.latitude,
                                   longitude: self.userCoordinate.longitude)
-            
         }
     }
     
     let current = InputManager.shared.dateToYearMonth(date: Date())
     
-//    var place: Results<Place
     var placeData: [Place] = []
     var dateList: [Int] = [] {
         didSet {
@@ -48,20 +38,21 @@ class MapViewController: UIViewController {
         }
     }
     
-    var offlineExpense: [Expense] = [] {
+    var offlineExpense: [Expense] = []
+    var selectedExpense: [Expense] = [] {
         didSet {
             self.collectionView.reloadData()
         }
     }
     
     var markers: [NMFMarker] = []
+    var selectedMarker: NMFMarker?
     var idList: [Int] = []
     let markDefault = NMFOverlayImage(name: "pmarker")
     let markFocus = NMFOverlayImage(name: "pomarker")
     
     
     let DEFAULT_CAMERA_POSITION = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.56645675932999, lng: 126.97798801299875))
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +65,6 @@ class MapViewController: UIViewController {
         
         locationButton.mapView = mapView
         mapView.positionMode = .direction
-        
     }
     
     deinit {
@@ -92,83 +82,50 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadOfflineExpense()
-        
-        //        let marker = NMFMarker()
-        //        marker.position = NMGLatLng(from: userCoordinate)
-        //        marker.iconImage = markDefault
-        //        marker.mapView = mapView
-        
-        
+        makeMarker()
     }
     
     
     func loadOfflineExpense() {
         self.placeData.removeAll()
         offlineExpense = RealmManager.shared.loadOfflineExpense(year: dateList[0], month: dateList[1])
-        
-        
         idList = offlineExpense.map { $0.placeId ?? 0 }
 
         for id in idList {
-//            place =
             self.placeData.append(RealmManager.shared.loadPlaceData(id: id))
         }
-        print("idList: \(idList)")
-        print(placeData)
-
-        
-        //        let marker = NMFMarker(position: NMGLatLng(lat: placeData.last?.latitude ?? 0, lng: placeData.last?.longtitude ?? 0))
-        //        marker.iconImage = markDefault
-        //        marker.mapView = mapView
-        
-        
-//
-//        self.placeData.forEach { place in
-//            let marker = NMFMarker(position: NMGLatLng(lat: place.latitude, lng: place.longtitude))
-//            marker.iconImage = self.markDefault
-//            //                marker.userInfo = ["id": place.placeId]
-//            //            marker.touchHandler = { (marker) -> Bool in
-//            //                print(marker.userInfo["id"])
-//            //                return true
-//            //            }
-//            print(place)
-//            markers.append(marker)
-//        }
-//
-//            for marker in markers {
-//                marker.mapView = self.mapView
-//
-//        }
-        
-        
-        
-        
-        
-        
-        //        self.markers.append(marker)
-        //        placeData.forEach { place in
-        //            let marker = NMFMarker(position: NMGLatLng(lat: place.latitude, lng: place.longtitude))
-        //            marker.iconImage = NMF_MARKER_IMAGE_BLACK
-        //            marker.iconTintColor = UIColor.red
-        //            marker.touchHandler = { (marker) -> Bool in
-        //                print("touch")
-        //                return true
-        //            }
-        //            self.markers.append(marker)
-        //        }
-        //
-        //        DispatchQueue.main.async {
-        //            self.markers.forEach { marker in
-        //                marker.mapView = self.mapView
-        //                print("마커디스패치큐")
-        //            }
-        //        }
-        
     }
     
     func makeMarker() {
+        self.placeData.forEach { place in
+            let marker = NMFMarker(position: NMGLatLng(lat: place.latitude, lng: place.longtitude))
+            marker.iconImage = markDefault
+            marker.userInfo = [ "placeId": place.placeId ]
+            
+            marker.touchHandler = { [weak self] marker -> Bool in
+                guard let self = self else { return true }
+
+                if let selected = self.selectedMarker {
+                    selected.iconImage = self.markDefault
+                }
+                
+                (marker as! NMFMarker).iconImage = self.markFocus
+                self.selectedMarker = (marker as! NMFMarker)
+
+                if let id = self.selectedMarker?.userInfo["placeId"] {
+                    self.selectedExpense = self.offlineExpense.filter { $0.placeId == id as? Int }
+                }
+                print(self.selectedExpense)
+                return true
+            }
+            self.markers.append(marker)
+        }
         
-        
+        DispatchQueue.main.async {
+            self.markers.forEach { marker in
+                marker.mapView = self.mapView
+            }
+        }
     }
     
     
@@ -176,7 +133,6 @@ class MapViewController: UIViewController {
     func collectionViewConfig() {
         let nibName = UINib(nibName: ExpenseCell.identifier, bundle: nil)
         collectionView.register(nibName, forCellWithReuseIdentifier: ExpenseCell.identifier)
-        
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -184,26 +140,23 @@ class MapViewController: UIViewController {
     func setMapDefaultLocation() {
         mapView.moveCamera(DEFAULT_CAMERA_POSITION, completion: nil)
     }
-    
-    
-    
-    
+  
 }
 
 extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return offlineExpense.count
+        return selectedExpense.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpenseCell.identifier, for: indexPath) as? ExpenseCell else {
             return UICollectionViewCell()
         }
-        let item = offlineExpense[indexPath.item]
-
+        let item = selectedExpense[indexPath.item]
+        cell.configureCell(item: item)
+        
         return cell
     }
-    
 }
 
 extension MapViewController: UICollectionViewDelegateFlowLayout {
@@ -220,7 +173,6 @@ extension MapViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
-    
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -290,9 +242,6 @@ extension MapViewController: CLLocationManagerDelegate {
             userCoordinate = location.coordinate
             // 카메라 현재위치로 옮기기
             mapView.moveCamera(NMFCameraUpdate(scrollTo: NMGLatLng(from: userCoordinate)), completion: nil)
-            
-            
-            // Alert if user do not use precise location
             checkLocationAccuracy()
         }
         locationManager.stopUpdatingLocation()
@@ -331,14 +280,12 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
     
-    // 6. iOS 14 미만: 앱이 위치 관리자를 생성, 승인 상태가 변경이 될 때 대리자에게 승인상태 알려줌
-    // 권한이 변경 될 때 마다 감지해서 실행됨
+    //iOS 14 미만
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkDeviceLocationAuthorization()
     }
     
-    // 7. iOS 14 이상: 앱이 위치 관리자를 생성, 승인 상태가 변경이 될 때 대리자에게 승인상태 알려줌
-    // 권한이 변경 될 때 마다 감지해서 실행됨
+    //iOS 14 이상
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkDeviceLocationAuthorization()
     }

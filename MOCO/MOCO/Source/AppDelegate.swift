@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(1)
         
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        // 아래 라인 없애기
-//        UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().backgroundColor = .clear
         UINavigationBar.appearance().isTranslucent = true
         

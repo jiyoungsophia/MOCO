@@ -14,11 +14,11 @@
 "place" = "Place";
 "online" = "Online";
 "offline" = "Offline";
-"delete" = "Delete this expense";
+"delete" = "Delete expense";
 "enter_location" = "Enter location";
 "ok" = "OK";
 "cancel" = "Cancel";
-"reset" = "Reset";
+"reset" = "Reset budget";
 
 "dday" = "Until next month, D- %d";
 "dateformat" = "MMM, yyyy";

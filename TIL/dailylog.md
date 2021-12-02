@@ -332,7 +332,7 @@ override func viewDidLoad() {
 
 <br>
 
-## Day14 - 211128
+## Day14 - 211129
 
 * 엄청난 삽질을 했지만 ..^^.. 쓸 기운이 없으므로,,
 * 같은 데이터를 한번에 여러곳에 보내줄땐 notification 잊지말자 ^^!
@@ -349,3 +349,90 @@ override func viewDidLoad() {
 ### ⚡️TEAM BUILDING
 
 * 했는데,, 기억이 없다..
+
+<br>
+
+<br>
+
+## Day15 - 211130
+
+* 이틀째 Place 렘데이터 가져오는 부분을 해결하지 못해서 잠시 MOCO와 멀어지는 시간을 가졌다
+* 온보딩에 넣을 문구랑 일러스트 고르고 개인정보처리방침 만들었다
+
+<br>
+
+### ⚡️TEAM BUILDING
+
+* 테스트플라이트로 우리팀 앱들 깔아서 서로 테스트봤는데 진짜 재밌었다
+
+<br>
+
+<br>
+
+## Day16 - 211201
+
+* 온보딩 문제
+
+  * SceneDelegate에서 처음이면 온보딩뷰를 루트뷰를 설정해주고, 온보딩뷰 마지막 페이지에서 메인페이지를 present로 띄워주었는데 여기서 문제가 생겼던 것
+
+  * present가 아니라 온보딩 뷰를 dismiss하면서 루트뷰를 다시 메인페이지로 돌려주어야 했다
+
+    <img src="../Screenshots/onboarding.png" alt="basic" width="70%;" />
+
+* searchController 두번 탭해야 dismiss되는 문제
+
+  * tableView 위에 searchController가 올라가있어서 생기는 문제라고 
+
+  * 먼저 searchController를 꺼줘야(?)하나보다. 한줄로 해결!
+
+    <img src="../Screenshots/search.png" alt="basic" width="70%;" />
+
+* 온보딩 문제
+
+  * 이 문제는 내 좋지 않은 머리가 문제인거라.. 달리 해결방법이 없어서 조금 슬프다. ~~잭님이 해결방법이라면 해결방법~~
+
+  ```swift
+  //RealmManager.swift
+  func loadPlaceCode(id: Int) -> String {
+          return localRealm.objects(Place.self).filter("placeId == \(id)").first?.categoryCode ?? ""
+      }
+  ```
+
+  ```swift
+  //BudgetVC: cellForItemAt
+  let item = expenseData[indexPath.item]
+  cell.configureCell(item: item)
+  ```
+
+  ```swift
+  //ExpenseCell
+  func configureCell(item: Expense) {
+          let placeCode = RealmManager.shared.loadPlaceCode(id: item.placeId ?? 0)
+          categoryIconLabel.text = CategoryDict[placeCode]
+          placeLabel.text = item.memo
+          amountLabel.text = "- \(item.amount.formatWithSeparator)"
+          dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
+      }
+  ```
+
+<br>
+
+> 1. 오늘 hue님께 들은 말들이 참 인상깊어서 나를 좀 되돌아보고 반성했다. 내가 코딩당하지말고 코딩을 해라(?) ~~분명 더 멋진 말이었는데~~ 
+>
+> 2. 문제가 생겼을 때 구글링해서 복붙하는 사람은 코더이고 그 문제가 어디서 어떻게 발생한건지 찾아내고 분석하고 복붙하더라도 그 코드를 이해하고 사용하는 사람이 개발자라고 한다. 
+>
+> 3. 그런 점에 있어서 나는 완벽한 코더였다. 코드를 짜다 문제가 생기면 어디가 다쳤을 때처럼 왜 다쳤는지, 어떻게 다친건지, 그래서 무슨 연고를 발라야하는지 생각해야되는데 나는 냅다 구글링복붙코드란 반창고를 붙여버린거다. ~~흙도 안털어내고~~
+>
+> 4. 같은 문제가 생겼을 때 또 똑같이 헤매는 경우가 많았고 이해를 못하고 있으니까 질문도 제대로 못했다..
+>
+> 5. 그리고 또 요즘 약간이라도 새로운걸 생각했다가도 뭐 조금 할줄 아는게 생겼다고 배운거나 다 마스터하자는 생각 반, 급한 맘에 빨리 아는걸로 떼우고 딴거하자는 생각 반으로 은은하게 하던것만 하게되는 것 같은 느낌이 없지 않아있었는데 어떻게 아셨는지 그것도 딱 말씀해주셨다
+>
+> 6. 취업하게 되면 더 촉박한 일정일텐데 지금 안하면 언제하냐고 말씀해주시는데 생각해보니 정말 그렇더라. 
+>
+> 7. 뭐가 그렇게 급했는지 모르겠다. 남은 교육기간이라도 대충 떼우고 다음에 공부하자라는 마음은 접어두고 그때그때 닥친 문제에 대해서 좀 더 여유를 가지고 차근차근 이해하고 공부하고 깊이 생각해보는 시간을 가져야겠다
+>
+> 8. 말이 많았지만 마음이 조급해질 때마다, 개발자가 아닌 코더가 되려고 할때마다 읽으면 좋을 것 같아서 남겨둔다.
+
+<br>
+
+<br>

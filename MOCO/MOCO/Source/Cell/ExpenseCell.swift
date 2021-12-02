@@ -20,24 +20,14 @@ class ExpenseCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         setCellShadow(backView: backView)
     }
     
     func configureCell(item: Expense) {
-        
-        let idName = RealmManager.shared.loadPlaceCode(id: item.placeId ?? 0)
-        categoryIconLabel.text = CategoryDict[idName]
+        let placeCode = RealmManager.shared.loadPlaceCode(id: item.placeId ?? 0)
+        categoryIconLabel.text = CategoryDict[placeCode]
         placeLabel.text = item.memo
         amountLabel.text = "- \(item.amount.formatWithSeparator)"
         dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
     }
-    
-//    func configureMapCell(item: Expense, id: Int) {
-//
-//        categoryIconLabel.text = CategoryDict["id" ?? "0"]
-//        placeLabel.text = item.memo
-//        amountLabel.text = "- \(item.amount.formatWithSeparator)"
-//        dateLabel.text = DateFormatter.defaultFormat.string(from: item.regDate)
-//    }
 }

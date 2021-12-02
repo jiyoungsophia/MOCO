@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 
+//TODO: 날짜 선택 팝업말고 textview inputview뷰로 아래에서 올라오도록
 class IncomeViewController: UIViewController {
     
     static let identifier = "IncomeViewController"
@@ -51,7 +52,6 @@ class IncomeViewController: UIViewController {
         lengthAlertLabel.text = "length_alert".localized(with: 8, comment: "8글자")
         lengthAlertLabel.isHidden = true
         
-        // 데이터 유무에 따라 isHidden
         resetButton.redButton()
         resetButton.setTitle("reset".localized(), for: .normal)
     }
@@ -67,7 +67,6 @@ class IncomeViewController: UIViewController {
         }
     }
     
-    // 저장되는 날짜 확인할 것!!!
     @objc func saveButtonClicked() {
         // 입력 있을때
         if let income = incomeTextField.text, income != "0", income != "" {

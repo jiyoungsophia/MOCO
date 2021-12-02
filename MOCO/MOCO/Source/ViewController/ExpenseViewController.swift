@@ -131,7 +131,7 @@ class ExpenseViewController: UIViewController {
             }
             
             dateList = InputManager.shared.dateToYearMonth(date: date)
-//            print(dateList)
+
             if let expense = expenseData { // 수정일 경우
                 RealmManager.shared.updateExpense(expense: expense, amount: amount, regDate: date, isOffline: isOffline, placeId: placeId, memo: placeText, year: dateList[0], month: dateList[1])
                 self.dismiss(animated: true, completion: nil)

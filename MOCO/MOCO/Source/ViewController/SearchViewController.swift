@@ -10,7 +10,6 @@ import CoreLocation
 import CoreLocationUI
 import RealmSwift
 
-// 글자수 두글자 이상
 class SearchViewController: UIViewController {
     
     static let identifier = "SearchViewController"
@@ -28,7 +27,6 @@ class SearchViewController: UIViewController {
     var selectPlaceHandler: ((Int, String) -> (Void))?
     
     var locationManager = CLLocationManager()
-    // 여기 이렇게 해줘도 되는지 모르겠음
     var location: CLLocation = CLLocation(latitude: 0, longitude: 0)
     var userCoordinate = CLLocationCoordinate2D() {
         didSet {
@@ -41,10 +39,8 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
         locationManager.delegate = self
-        
     }
     
     func configure() {
@@ -76,7 +72,6 @@ class SearchViewController: UIViewController {
             }
         }
     }
-
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -98,6 +93,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         searchController.isActive = false
+        
         let row = searchData[indexPath.row]
         
         let selectedPlace = Place(placeId: row.id, placeName: row.placeName, categoryCode: row.categoryCode, longtitude: row.longtitude, latitude: row.latitude)
@@ -137,8 +133,6 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
 }
 
 
-
-// 빼기,,
 extension SearchViewController: CLLocationManagerDelegate {
 
     func checkDeviceLocationAuthorization() {
@@ -203,8 +197,6 @@ extension SearchViewController: CLLocationManagerDelegate {
 
         if let location = locations.last {
             userCoordinate = location.coordinate
-//            print(userCoordinate)
-            // Alert if user do not use precise location
             checkLocationAccuracy()
         }
         locationManager.stopUpdatingLocation()
@@ -241,14 +233,12 @@ extension SearchViewController: CLLocationManagerDelegate {
         }
     }
 
-    // 6. iOS 14 미만: 앱이 위치 관리자를 생성, 승인 상태가 변경이 될 때 대리자에게 승인상태 알려줌
-    // 권한이 변경 될 때 마다 감지해서 실행됨
+    // iOS 14 미만
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkDeviceLocationAuthorization()
     }
 
-    // 7. iOS 14 이상: 앱이 위치 관리자를 생성, 승인 상태가 변경이 될 때 대리자에게 승인상태 알려줌
-    // 권한이 변경 될 때 마다 감지해서 실행됨
+    // iOS 14 이상
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkDeviceLocationAuthorization()
     }

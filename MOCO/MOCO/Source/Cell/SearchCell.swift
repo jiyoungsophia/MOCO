@@ -13,18 +13,14 @@ class SearchCell: UITableViewCell {
     
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    // 없앨지 말지 고민,,
     @IBOutlet weak var categoryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureCell(row: Search) {

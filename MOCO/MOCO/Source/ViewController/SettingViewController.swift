@@ -115,7 +115,6 @@ class SettingViewController: UIViewController {
             hero.dismissViewController()
         }
     }
-    
 }
 
 extension SettingViewController: UIDocumentPickerDelegate {

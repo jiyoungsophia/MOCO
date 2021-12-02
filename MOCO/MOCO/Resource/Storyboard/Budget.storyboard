@@ -52,8 +52,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6r-xD-eRg">
-                                <rect key="frame" x="18" y="168" width="378" height="32"/>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="22"/>
+                                <rect key="frame" x="18" y="168" width="378" height="31"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="21"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button " image="chevron.down" catalog="system">
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-1X-aiF">
-                                <rect key="frame" x="0.0" y="342" width="414" height="520"/>
+                                <rect key="frame" x="0.0" y="341" width="414" height="521"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hzP-dF-vN9">
                                     <size key="itemSize" width="128" height="128"/>
@@ -77,7 +77,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eb2-us-R8m">
-                                <rect key="frame" x="28" y="228" width="358" height="106"/>
+                                <rect key="frame" x="28" y="227" width="358" height="106"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-X8-feT">
                                         <rect key="frame" x="24" y="16" width="215" height="29"/>
@@ -99,7 +99,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duu-f4-Pj6">
                                         <rect key="frame" x="16" y="16" width="326" height="74"/>
-                                        <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -142,7 +142,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaR-Yr-KxU">
-                                <rect key="frame" x="0.0" y="218" width="414" height="678"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="679"/>
                                 <connections>
                                     <segue destination="DgW-o8-Ec2" kind="embed" id="f0R-cm-H4v"/>
                                 </connections>
@@ -200,14 +200,14 @@
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="DgW-o8-Ec2" customClass="MapViewController" customModule="MOCO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9O-Fl-4tx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="679"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FnT-Q1-POk" customClass="NMFMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="678"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="679"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcG-02-VNM" customClass="NMFLocationButton">
-                                        <rect key="frame" x="18" y="468" width="50" height="50"/>
+                                        <rect key="frame" x="18" y="469" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mcG-02-VNM" secondAttribute="height" multiplier="1:1" id="EWN-PF-6cF"/>
@@ -221,8 +221,8 @@
                                     <constraint firstAttribute="bottom" secondItem="mcG-02-VNM" secondAttribute="bottom" constant="160" id="VY2-si-qb8"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L31-nq-AWd">
-                                <rect key="frame" x="0.0" y="526" width="414" height="120"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L31-nq-AWd">
+                                <rect key="frame" x="0.0" y="527" width="414" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7ys-3a-dNb"/>

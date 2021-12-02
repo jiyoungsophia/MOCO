@@ -102,7 +102,6 @@ class RealmManager {
         return Array(localRealm.objects(Expense.self).filter("year == \(year) AND month == \(month)").sorted(byKeyPath: "regDate", ascending: false))
     }
     
-    // year month 도 업데이트하는게 맞겟지,,?
     func updateExpense(expense: Expense, amount: Int, regDate: Date, isOffline: Bool, placeId: Int?, memo: String, year: Int, month: Int) {
         try! localRealm.write({
             expense.amount = amount

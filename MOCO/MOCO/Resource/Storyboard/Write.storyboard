@@ -29,11 +29,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="₩" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2N-mx-uSu">
-                                <rect key="frame" x="53.5" y="84" width="336.5" height="50"/>
+                                <rect key="frame" x="51" y="84" width="339" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zfA-EO-Z4c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
@@ -51,31 +51,31 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oen-kF-Gmb">
-                                <rect key="frame" x="24" y="134" width="366" height="4"/>
+                                <rect key="frame" x="24" y="134" width="366" height="3"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="4" id="6kY-J8-MqC"/>
+                                    <constraint firstAttribute="height" constant="3" id="6kY-J8-MqC"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-13-yZy">
-                                <rect key="frame" x="24" y="92.5" width="13.5" height="33.5"/>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="23"/>
+                                <rect key="frame" x="24" y="96" width="11" height="26.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="io8-SB-iEH">
-                                <rect key="frame" x="24" y="138" width="366" height="17.5"/>
+                                <rect key="frame" x="24" y="137" width="366" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xt5-t1-amw">
-                                <rect key="frame" x="24" y="205.5" width="80" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xt5-t1-amw">
+                                <rect key="frame" x="24" y="204.5" width="120" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Nfo-CZ-mlq"/>
-                                    <constraint firstAttribute="height" constant="44" id="RGW-Kv-Btc"/>
+                                    <constraint firstAttribute="width" constant="120" id="Nfo-CZ-mlq"/>
+                                    <constraint firstAttribute="height" constant="40" id="RGW-Kv-Btc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="resetButtonClicked:" destination="Cmg-UH-qiA" eventType="touchUpInside" id="sJH-8X-zYR"/>
@@ -120,29 +120,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vJw-5G-ddl">
-                                <rect key="frame" x="24" y="84" width="366" height="320"/>
+                                <rect key="frame" x="24" y="64" width="366" height="280"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXG-F3-RqV">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="70"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4s-JL-SgF">
-                                                <rect key="frame" x="28" y="26" width="338" height="50"/>
+                                                <rect key="frame" x="26.5" y="17" width="339.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="sak-4e-Im1"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ede-d2-2KG">
-                                                <rect key="frame" x="0.0" y="76" width="366" height="4"/>
+                                                <rect key="frame" x="0.0" y="67" width="366" height="3"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="4" id="N8z-Mc-K9z"/>
+                                                    <constraint firstAttribute="height" constant="3" id="N8z-Mc-K9z"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ld-AX-2yC">
-                                                <rect key="frame" x="0.0" y="36" width="12" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="21"/>
+                                                <rect key="frame" x="0.0" y="29" width="10.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -151,7 +151,7 @@
                                         <constraints>
                                             <constraint firstItem="d4s-JL-SgF" firstAttribute="trailing" secondItem="ede-d2-2KG" secondAttribute="trailing" id="9Go-Hd-8QZ"/>
                                             <constraint firstItem="ede-d2-2KG" firstAttribute="width" secondItem="JXG-F3-RqV" secondAttribute="width" id="HDn-gM-um3"/>
-                                            <constraint firstAttribute="height" constant="80" id="K7N-2q-fL7"/>
+                                            <constraint firstAttribute="height" constant="70" id="K7N-2q-fL7"/>
                                             <constraint firstItem="7Ld-AX-2yC" firstAttribute="centerY" secondItem="d4s-JL-SgF" secondAttribute="centerY" id="WlE-Fr-fAV"/>
                                             <constraint firstItem="7Ld-AX-2yC" firstAttribute="leading" secondItem="ede-d2-2KG" secondAttribute="leading" id="Wmg-iv-0Qg"/>
                                             <constraint firstAttribute="bottom" secondItem="ede-d2-2KG" secondAttribute="bottom" id="hAo-uU-XRa"/>
@@ -162,27 +162,27 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyt-Pc-71H">
-                                        <rect key="frame" x="0.0" y="80" width="366" height="80"/>
+                                        <rect key="frame" x="0.0" y="70" width="366" height="70"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sm-bs-F9q">
-                                                <rect key="frame" x="0.0" y="76" width="366" height="4"/>
+                                                <rect key="frame" x="0.0" y="67" width="366" height="3"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="4" id="Bqa-4j-dpZ"/>
+                                                    <constraint firstAttribute="height" constant="3" id="Bqa-4j-dpZ"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOJ-Gm-Up0">
-                                                <rect key="frame" x="0.0" y="36.5" width="37" height="29"/>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="29" width="33.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRV-gC-FtN">
-                                                <rect key="frame" x="53" y="26" width="313" height="50"/>
+                                                <rect key="frame" x="49.5" y="17" width="316.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="qye-vU-eYB"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -214,29 +214,29 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjQ-xZ-wJE">
-                                        <rect key="frame" x="0.0" y="160" width="366" height="80"/>
+                                        <rect key="frame" x="0.0" y="140" width="366" height="70"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcS-g0-yZ8">
-                                                <rect key="frame" x="53" y="26" width="313" height="50"/>
+                                                <rect key="frame" x="49.5" y="17" width="316.5" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="x7z-9d-Y5C"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="memoDidChange:" destination="fVK-Dq-eu1" eventType="editingChanged" id="Ym8-qf-PPh"/>
                                                 </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueG-3U-yNA">
-                                                <rect key="frame" x="0.0" y="76" width="366" height="4"/>
+                                                <rect key="frame" x="0.0" y="67" width="366" height="3"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="4" id="QNP-Rv-Yog"/>
+                                                    <constraint firstAttribute="height" constant="3" id="QNP-Rv-Yog"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nP-fL-Qy4">
-                                                <rect key="frame" x="0.0" y="36.5" width="37" height="29"/>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="29" width="33.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -255,33 +255,33 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGI-ph-3EP">
-                                        <rect key="frame" x="0.0" y="240" width="366" height="80"/>
+                                        <rect key="frame" x="0.0" y="210" width="366" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhL-pE-KJD">
-                                                <rect key="frame" x="0.0" y="40.5" width="37" height="29"/>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="34.5" width="33.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBo-1F-He5">
-                                                <rect key="frame" x="53" y="30" width="100" height="50"/>
+                                                <rect key="frame" x="49.5" y="25" width="90" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="osI-0y-ncS"/>
-                                                    <constraint firstAttribute="width" constant="100" id="unl-gk-T5e"/>
+                                                    <constraint firstAttribute="height" constant="45" id="osI-0y-ncS"/>
+                                                    <constraint firstAttribute="width" constant="90" id="unl-gk-T5e"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="18"/>
                                                 <state key="normal" title="온라인"/>
                                                 <connections>
                                                     <action selector="onlineButtonClicked:" destination="fVK-Dq-eu1" eventType="touchUpInside" id="j42-0F-REs"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hey-Eu-wpY">
-                                                <rect key="frame" x="169" y="30" width="120" height="50"/>
+                                                <rect key="frame" x="155.5" y="25" width="110" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="j5w-3o-fx1"/>
-                                                    <constraint firstAttribute="height" constant="50" id="vRb-3l-DiT"/>
+                                                    <constraint firstAttribute="width" constant="110" id="j5w-3o-fx1"/>
+                                                    <constraint firstAttribute="height" constant="45" id="vRb-3l-DiT"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="22"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="18"/>
                                                 <state key="normal" title="오프라인"/>
                                                 <connections>
                                                     <action selector="offlineButtonClicked:" destination="fVK-Dq-eu1" eventType="touchUpInside" id="5sY-hq-0MD"/>
@@ -309,13 +309,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qK-jd-kxV">
-                                <rect key="frame" x="24" y="454" width="200" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qK-jd-kxV">
+                                <rect key="frame" x="24" y="394" width="180" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="0fu-Ef-17F"/>
-                                    <constraint firstAttribute="width" constant="200" id="pHg-tB-gXK"/>
+                                    <constraint firstAttribute="height" constant="40" id="0fu-Ef-17F"/>
+                                    <constraint firstAttribute="width" constant="180" id="pHg-tB-gXK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="18"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="deleteButtonClicked:" destination="fVK-Dq-eu1" eventType="touchUpInside" id="sov-2B-aVs"/>
@@ -327,7 +327,7 @@
                         <constraints>
                             <constraint firstItem="vJw-5G-ddl" firstAttribute="leading" secondItem="SNM-fB-OCn" secondAttribute="leading" constant="24" id="0bt-A5-Tfr"/>
                             <constraint firstItem="3qK-jd-kxV" firstAttribute="leading" secondItem="vJw-5G-ddl" secondAttribute="leading" id="CRK-HU-aA6"/>
-                            <constraint firstItem="vJw-5G-ddl" firstAttribute="top" secondItem="SNM-fB-OCn" secondAttribute="top" constant="40" id="D9B-Pw-OM3"/>
+                            <constraint firstItem="vJw-5G-ddl" firstAttribute="top" secondItem="SNM-fB-OCn" secondAttribute="top" constant="20" id="D9B-Pw-OM3"/>
                             <constraint firstItem="SNM-fB-OCn" firstAttribute="trailing" secondItem="vJw-5G-ddl" secondAttribute="trailing" constant="24" id="WO0-nu-IHS"/>
                             <constraint firstItem="3qK-jd-kxV" firstAttribute="top" secondItem="vJw-5G-ddl" secondAttribute="bottom" constant="50" id="gh5-bq-WDZ"/>
                         </constraints>

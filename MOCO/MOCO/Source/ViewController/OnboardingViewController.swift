@@ -49,8 +49,6 @@ class OnboardingViewController: UIViewController {
             let vc = sb.instantiateViewController(withIdentifier: BudgetViewController.identifier) as! BudgetViewController
             UIApplication.shared.windows.first?.rootViewController = vc
             UIApplication.shared.windows.first?.makeKeyAndVisible()
-            //                        present(vc, animated: true, completion: nil)
-            
             
         } else {
             currentPage += 1
@@ -82,5 +80,4 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         let width = scrollView.frame.width
         currentPage = Int(scrollView.contentOffset.x / width)
     }
-    
 }

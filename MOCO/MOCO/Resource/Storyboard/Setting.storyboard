@@ -35,20 +35,20 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6jm-i5-tXU">
-                                <rect key="frame" x="0.0" y="101.5" width="414" height="280"/>
+                                <rect key="frame" x="0.0" y="101.5" width="414" height="240"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jjf-nz-8OT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-Ls-3uZ">
-                                                <rect key="frame" x="16" y="69" width="382" height="1"/>
+                                                <rect key="frame" x="16" y="59" width="382" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="zo7-3x-zi0"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH8-Da-f9A">
-                                                <rect key="frame" x="20" y="15" width="374" height="40.5"/>
+                                                <rect key="frame" x="20" y="10" width="374" height="40.5"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
@@ -70,10 +70,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoF-bP-0Gp">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSz-1n-Nz5">
-                                                <rect key="frame" x="20" y="15" width="374" height="40.5"/>
+                                                <rect key="frame" x="20" y="10" width="374" height="40.5"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
@@ -84,7 +84,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-5f-IFS">
-                                                <rect key="frame" x="16" y="69" width="382" height="1"/>
+                                                <rect key="frame" x="16" y="59" width="382" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Z4v-oz-ff0"/>
@@ -102,10 +102,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMQ-Na-uvl">
-                                        <rect key="frame" x="0.0" y="140" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="120" width="414" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VS-4i-xWv">
-                                                <rect key="frame" x="20" y="15" width="374" height="40.5"/>
+                                                <rect key="frame" x="20" y="10" width="374" height="40.5"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
@@ -116,7 +116,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T2Z-cf-uQI">
-                                                <rect key="frame" x="16" y="69" width="382" height="1"/>
+                                                <rect key="frame" x="16" y="59" width="382" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="BKA-PK-Kya"/>
@@ -134,10 +134,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nI8-h0-8eH">
-                                        <rect key="frame" x="0.0" y="210" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="180" width="414" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEd-pi-Inr">
-                                                <rect key="frame" x="20" y="15" width="374" height="40.5"/>
+                                                <rect key="frame" x="20" y="10" width="374" height="40.5"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button">
@@ -145,7 +145,7 @@
                                                 </buttonConfiguration>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-8D-gLI">
-                                                <rect key="frame" x="16" y="69" width="382" height="1"/>
+                                                <rect key="frame" x="16" y="59" width="382" height="1"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Ey4-XI-UvV"/>
@@ -164,7 +164,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="y9w-48-W8l"/>
+                                    <constraint firstAttribute="height" constant="240" id="y9w-48-W8l"/>
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xP-gt-z7H">

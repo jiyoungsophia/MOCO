@@ -40,8 +40,7 @@ class BudgetViewController: UIViewController {
             configureIncomeView()
         }
     }
-    
-    
+        
     var expenseData: [Expense] = [] {
         didSet {
             self.collectionView.reloadData()
@@ -50,9 +49,7 @@ class BudgetViewController: UIViewController {
 
     var isOffline: Bool = false
     var placeId: Int = 0
-    
-//    var offlineExpense: [Expense] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,30 +74,21 @@ class BudgetViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         loadIncome()
         loadExpense()
         configureIncomeView()
-     
     }
-
-  
-
+ 
     
     //MARK: - viewWillAppear
     func loadIncome() {
         incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
-        
     }
     
     func loadExpense() {
         expenseData = RealmManager.shared.loadExpense(year: dateList[0], month: dateList[1])
-
-        print(placeId)
-
     }
 
-    
     func configureIncomeView() {
         if incomeData.isEmpty {
             registerLabel.isHidden = false
@@ -131,11 +119,9 @@ class BudgetViewController: UIViewController {
             // percentage
             let percent = Int(( Double(totalExpense) / Double(totalIncome) ) * 100)
             percentLabel.text = "\(percent)%"
-//            print(percent)
         }
-        
-        
     }
+    
     
     //MARK: - viewDidLoad
     func configure() {
@@ -164,6 +150,7 @@ class BudgetViewController: UIViewController {
         
         alertImageView.isHidden = true
     }
+    
     
     //MARK: - Transition
     func swipeGesture() {
@@ -241,7 +228,6 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpenseCell.identifier, for: indexPath) as? ExpenseCell else {
             return UICollectionViewCell()
         }
-
         let item = expenseData[indexPath.item]
         cell.configureCell(item: item)
         return cell

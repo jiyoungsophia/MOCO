@@ -15,9 +15,7 @@ class DatePickerViewController: UIViewController {
 
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
-        } else {
-            
-        }
+        } 
         datePicker.datePickerMode = .date
         datePicker.maximumDate = Date()
         

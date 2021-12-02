@@ -11,14 +11,6 @@ final class textFieldManager {
     private init() {}
     static let shared = textFieldManager()
     
-//    @objc func zeroFilter(_ textField: UITextField) {
-//        if let text = textField.text, let intText = Int(text) {
-//            textField.text = "\(intText)"
-//        } else {
-//            textField.text = ""
-//        }
-//    }
-    
     func changeTextField(textField: UITextField, string: String, alertLabel: UILabel, range: NSRange, maxLength: Int) -> Bool {
         if let textWithoutSeparator = textField.text?.replacingOccurrences(of: NumberFormatter.defaultFormat.groupingSeparator, with: "") {
             var beforeForemattedString = textWithoutSeparator + string // 이전 입력숫자 + 새 입력숫자
