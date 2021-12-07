@@ -194,7 +194,7 @@
 override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchController = UISearchController(searchResultsController: nil
+        let searchController = UISearchController(searchResultsController: nil)
         tableView.tableHeaderView = searchController.searchBar        
     }
 ```
