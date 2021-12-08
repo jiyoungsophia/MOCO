@@ -95,7 +95,8 @@ class YearlyViewController: UIViewController {
             }
             monthButtonActionHandler?(rawDate)
             
-            // realm filter용
+
+            // realm filter
             if let date = DateFormatter.monthFormat.date(from: rawDate) {
                 let realmDate = calendar.dateComponents(in: .current, from: date)
                 

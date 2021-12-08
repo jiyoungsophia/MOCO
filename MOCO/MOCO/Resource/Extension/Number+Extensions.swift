@@ -15,7 +15,6 @@ extension NumberFormatter {
     }
 }
 
-
 extension Int {
     var formatWithSeparator: String {
         return NumberFormatter.defaultFormat.string(for: self) ?? ""

@@ -8,7 +8,6 @@
 import UIKit
 import RealmSwift
 
-//TODO: 날짜 선택 팝업말고 textview inputview뷰로 아래에서 올라오도록
 class IncomeViewController: UIViewController {
     
     static let identifier = "IncomeViewController"
@@ -19,13 +18,17 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     
     var incomeData: [Income] = []
-    var dateList: [Int] = []
-    
+
+    var year: Int = 0
+    var month: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadIncome()
         navConfigure()
         configure()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +49,6 @@ class IncomeViewController: UIViewController {
     
     func configure() {
         incomeTextField.delegate = self
-        incomeTextField.placeholder = "amount".localized()
         incomeTextField.addTarget(self, action: #selector(zeroFilter(_:)), for: .editingChanged)
         
         lengthAlertLabel.text = "length_alert".localized(with: 8, comment: "8글자")
@@ -57,13 +59,16 @@ class IncomeViewController: UIViewController {
     }
     
     func loadIncome() {
-        dateList = InputManager.shared.dateToYearMonth(date: Date())
-        incomeData = RealmManager.shared.loadIncome(year: dateList[0], month: dateList[1])
-        
+  
+        incomeData = RealmManager.shared.loadIncome(year: year, month: month)
+
         if !incomeData.isEmpty {
             resetButton.isHidden = false
+            incomeTextField.placeholder = incomeData[0].amount.formatWithSeparator
+            print(incomeData[0].amount.formatWithSeparator)
         } else {
             resetButton.isHidden = true
+            incomeTextField.placeholder = "amount".localized()
         }
     }
     
@@ -75,7 +80,7 @@ class IncomeViewController: UIViewController {
             let now = DateFormatter.krFormat.string(from: Date())
     
             if incomeData.isEmpty { // 새 수입등록
-                let newIncome = Income(amount: amount, regDate: Date(), year: dateList[0], month: dateList[1])
+                let newIncome = Income(amount: amount, regDate: DateFormatter.krFormat.date(from: now)!, year: year, month: month)
                 RealmManager.shared.saveIncome(income: newIncome)
             } else { // 업데이트
                 RealmManager.shared.updateIncome(income: incomeData[0], amount: amount, regDate: Date())

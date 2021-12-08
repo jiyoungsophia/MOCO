@@ -92,7 +92,6 @@ class MapViewController: UIViewController {
         makeMarker()
     }
     
-    
     func loadOfflineExpense() {
         self.placeData.removeAll()
         offlineExpense = RealmManager.shared.loadOfflineExpense(year: dateList[0], month: dateList[1])
@@ -140,8 +139,6 @@ class MapViewController: UIViewController {
             }
         }
     }
-    
-    
     
     func collectionViewConfig() {
         let nibName = UINib(nibName: ExpenseCell.identifier, bundle: nil)

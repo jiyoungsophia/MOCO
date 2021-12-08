@@ -98,8 +98,10 @@ class RealmManager {
         }
     }
     
+    //FIXME: 마이그레이션 후 정렬 수정(regDate: 등록시간, expenseDate: 지출날짜(기존 regDate))
     func loadExpense(year: Int, month: Int) -> [Expense] {
         return Array(localRealm.objects(Expense.self).filter("year == \(year) AND month == \(month)").sorted(byKeyPath: "regDate", ascending: false))
+//        .sorted( by: [SortDescriptor(keyPath: "regDate", ascending: false), SortDescriptor(keyPath: "placeId", ascending: false)] ))
     }
     
     func updateExpense(expense: Expense, amount: Int, regDate: Date, isOffline: Bool, placeId: Int?, memo: String, year: Int, month: Int) {

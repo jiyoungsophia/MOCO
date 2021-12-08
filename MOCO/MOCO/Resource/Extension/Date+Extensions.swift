@@ -18,7 +18,8 @@ extension DateFormatter {
     }
     
     static var defaultFormat: DateFormatter {
-        let formatter = DateFormatter()    
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "KST")
         formatter.dateFormat = "yyyy. MM. dd"
         return formatter
     }

@@ -16,7 +16,6 @@
 		3E425763274BA0BC00A62670 /* Number+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425762274BA0BC00A62670 /* Number+Extensions.swift */; };
 		3E425765274BC8FF00A62670 /* TextFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E425764274BC8FF00A62670 /* TextFieldManager.swift */; };
 		3E7793DB2745445500344A60 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D62745445300344A60 /* NotoSansKR-Regular.otf */; };
-		3E7793DC2745445500344A60 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D72745445400344A60 /* NotoSansKR-Black.otf */; };
 		3E7793DD2745445500344A60 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D82745445400344A60 /* NotoSansKR-Medium.otf */; };
 		3E7793DE2745445500344A60 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793D92745445400344A60 /* NotoSansKR-Bold.otf */; };
 		3E7793DF2745445500344A60 /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E7793DA2745445500344A60 /* NotoSansKR-Light.otf */; };
@@ -62,6 +61,7 @@
 		B5297C3F275253E50089036E /* InputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5297C3E275253E50089036E /* InputManager.swift */; };
 		B5707C542752A54E001E2A79 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = B5707C532752A54E001E2A79 /* Zip */; };
 		B5707C572752AAD3001E2A79 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = B5707C562752AAD3001E2A79 /* JGProgressHUD */; };
+		B59A125F275F97FC00C1D38D /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B59A125E275F97FC00C1D38D /* NotoSansKR-Black.otf */; };
 		B5AC8D0127552B3C00717830 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5AC8D0027552B3C00717830 /* Onboarding.storyboard */; };
 		B5AC8D0327552B5500717830 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D0227552B5500717830 /* OnboardingViewController.swift */; };
 		B5AC8D0527552DA600717830 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC8D0427552DA600717830 /* Onboarding.swift */; };
@@ -94,7 +94,6 @@
 		3E425762274BA0BC00A62670 /* Number+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Number+Extensions.swift"; sourceTree = "<group>"; };
 		3E425764274BC8FF00A62670 /* TextFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldManager.swift; sourceTree = "<group>"; };
 		3E7793D62745445300344A60 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
-		3E7793D72745445400344A60 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		3E7793D82745445400344A60 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		3E7793D92745445400344A60 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		3E7793DA2745445500344A60 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
@@ -136,6 +135,7 @@
 		B5297C3C2751274C0089036E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		B5297C3D2751275D0089036E /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		B5297C3E275253E50089036E /* InputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputManager.swift; sourceTree = "<group>"; };
+		B59A125E275F97FC00C1D38D /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		B5AC8D0027552B3C00717830 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		B5AC8D0227552B5500717830 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B5AC8D0427552DA600717830 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		3E7793D5274543E400344A60 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				3E7793D72745445400344A60 /* NotoSansKR-Black.otf */,
+				B59A125E275F97FC00C1D38D /* NotoSansKR-Black.otf */,
 				3E7793D92745445400344A60 /* NotoSansKR-Bold.otf */,
 				3E7793D82745445400344A60 /* NotoSansKR-Medium.otf */,
 				3E7793D62745445300344A60 /* NotoSansKR-Regular.otf */,
@@ -453,11 +453,11 @@
 				3E7793DB2745445500344A60 /* NotoSansKR-Regular.otf in Resources */,
 				3EF462682746A64F00BD66AC /* ExpenseCell.xib in Resources */,
 				B5AC8D0127552B3C00717830 /* Onboarding.storyboard in Resources */,
-				3E7793DC2745445500344A60 /* NotoSansKR-Black.otf in Resources */,
 				3EF4627827478CF600BD66AC /* Yearly.storyboard in Resources */,
 				3E77943927467A2700344A60 /* Search.storyboard in Resources */,
 				3E77943C27467A6500344A60 /* Budget.storyboard in Resources */,
 				3EBBC68D274290DF00113DA1 /* Main.storyboard in Resources */,
+				B59A125F275F97FC00C1D38D /* NotoSansKR-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2WSJ3W54FF;
 				INFOPLIST_FILE = MOCO/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -727,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2WSJ3W54FF;
 				INFOPLIST_FILE = MOCO/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

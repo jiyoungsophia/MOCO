@@ -39,11 +39,15 @@ class ExpenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
+
         navConfigure()
         configure()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         if expenseData != nil {
             editConfig()
         }
@@ -51,6 +55,7 @@ class ExpenseViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         expenseTextField.becomeFirstResponder()
     }
     
@@ -124,6 +129,7 @@ class ExpenseViewController: UIViewController {
         self.dateTextField.resignFirstResponder()
     }
     
+    //FIXME: 오프라인->온라인으로 저장하는 경우 오프라인분류 그대로 저장됨
     @objc func saveButtonClicked() {
         // 입력 다 한 경우
         if let expenseText = expenseTextField.text, expenseText != "0", expenseText != "",

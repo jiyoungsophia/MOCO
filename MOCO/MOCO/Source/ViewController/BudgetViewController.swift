@@ -9,11 +9,9 @@ import UIKit
 import Hero
 import RealmSwift
 
-
 class BudgetViewController: UIViewController {
     
     static let identifier = "BudgetViewController"
-    
     
     @IBOutlet weak var incomeView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -32,7 +30,7 @@ class BudgetViewController: UIViewController {
     
     var placeData: [Place] = []
     var incomeData: [Income] = []
-
+    
     var dateList: [Int] = [] {
         didSet {
             loadIncome()
@@ -73,7 +71,7 @@ class BudgetViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         loadIncome()
         loadExpense()
         configureIncomeView()
@@ -171,12 +169,16 @@ class BudgetViewController: UIViewController {
         }
     }
     
+    
     @objc func incomeTapGesture() {
         let sb = UIStoryboard(name: "Write", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: IncomeViewController.identifier) as! IncomeViewController
-        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
+
+        vc.year = self.dateList[0]
+        vc.month = self.dateList[1]
+
         present(nav, animated: true, completion: nil)
     }
     
@@ -242,7 +244,6 @@ extension BudgetViewController: UICollectionViewDelegate, UICollectionViewDataSo
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
     }
-    
 }
 
 extension BudgetViewController: UICollectionViewDelegateFlowLayout {

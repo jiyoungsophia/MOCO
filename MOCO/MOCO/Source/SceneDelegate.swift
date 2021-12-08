@@ -26,10 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             RealmManager.shared.saveOnline()
 
             } else {
-                setRootViewController(scene, name: "Onboarding",
-                                      identifier: OnboardingViewController.identifier)
-//                setRootViewController(scene, name: "Budget",
-//                                      identifier: BudgetViewController.identifier)
+                setRootViewController(scene, name: "Budget",
+                                      identifier: BudgetViewController.identifier)
             }
         }
 
