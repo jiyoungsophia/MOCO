@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import IQKeyboardManagerSwift
 
 @main
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = true
         
         IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
 
         return true
     }

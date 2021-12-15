@@ -34,7 +34,7 @@ class SettingViewController: UIViewController {
         backupButton.setTitle("backup".localized(), for: .normal)
         restoreButton.setTitle("restore".localized(), for: .normal)
         feedbackButton.setTitle("feedback".localized(), for: .normal)
-        versionButton.setTitle("version".localized(with: [1,0,0]), for: .normal)
+        versionButton.setTitle("version".localized(with: [1,1,0]), for: .normal)
         
     }
     

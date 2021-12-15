@@ -7,6 +7,8 @@ target 'MOCO' do
 
   # Pods for MOCO
   pod 'NMapsMap'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
   
 
 end
